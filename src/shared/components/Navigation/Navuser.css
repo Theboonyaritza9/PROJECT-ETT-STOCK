@@ -1,0 +1,63 @@
+.Nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ul {
+    display: flex;
+}
+ul li {
+    margin: 0 10px;
+    color: #000;
+}
+
+.Nav-search {
+    position: relative;
+}
+
+.Nav-search input{
+    width: 300px;
+    text-indent: 30px;
+    border-radius: 20px;
+    height: 35px;
+    border: 1px solid #ccc;
+}
+
+.Nav-search svg {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.Nav-footer {
+    display: flex;
+    align-items: center;
+}
+
+.Nav-footer svg {
+    margin: 0 20px;
+}
+
+.Nav-profile {
+    display: flex;
+    align-items: center;
+}
+
+.Nav-profile-img {
+    max-width: 52px;
+    height: 50px;
+}
+
+.Nav-profile-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.Nav-profile p{
+    font-weight: bold;
+    margin: 0 5px;
+}
+
