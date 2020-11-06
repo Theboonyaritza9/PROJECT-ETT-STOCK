@@ -1,27 +1,47 @@
 .Nav-container {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: #fff;
+    position: fixed;
+    height: 70px;
 }
 
 ul {
     display: flex;
 }
+
 ul li {
     margin: 0 10px;
     color: #000;
+}
+
+.li-Navlink{
+    padding: 25px;
+}
+
+.li-Navlink:hover {
+    border-bottom: 3px solid dodgerblue;
+}
+.li-Navlink.active{
+    border-bottom: 3px solid dodgerblue;
 }
 
 .Nav-search {
     position: relative;
 }
 
-.Nav-search input{
+.Nav-search input {
     width: 300px;
     text-indent: 30px;
     border-radius: 20px;
     height: 35px;
     border: 1px solid #ccc;
+}
+
+.Nav-search {
+    border: none;
 }
 
 .Nav-search svg {
@@ -56,8 +76,48 @@ ul li {
     object-fit: cover;
 }
 
-.Nav-profile p{
+.Nav-profile p {
     font-weight: bold;
     margin: 0 5px;
 }
 
+.prompt {
+    width: 250px;
+    height: 250px;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.blackdrop {
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+ul.prompt-profile {
+    display: block;
+    padding: 10px 0 0 0;
+    margin: 0;
+}
+
+ul.prompt-profile li {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+}
+
+ul.prompt-profile li:hover {
+    background-color: dodgerblue;
+}
+
+ul.prompt-profile li a:hover {
+    color: #fff;
+}

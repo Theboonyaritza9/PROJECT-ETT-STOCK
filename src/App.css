@@ -4,6 +4,10 @@
   list-style: none;
 }
 
+body {
+  background-color: #ccc;
+}
+
 a {
   color: #000;
 }
