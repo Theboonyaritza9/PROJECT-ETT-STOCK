@@ -24,13 +24,13 @@ ul li {
     padding: 25px;
 }
 
-.li-Navlink:hover {
+/* .li-Navlink:hover { */
     /* border-bottom: 3px solid dodgerblue; */
-}
+/* } */
 
-.li-Navlink.active {
+/* .li-Navlink.active { */
     /* border-bottom: 3px solid dodgerblue; */
-}
+/* } */
 
 .Nav-footer {
     display: flex;
