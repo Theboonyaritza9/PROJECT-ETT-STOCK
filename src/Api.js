@@ -71,7 +71,25 @@ export const notificationApi = [
         exp: 1
     },
     {
+        id: 'u21',
+        user: "Yukino",
+        status: "Admin",
+        description: "Edit board ET-RS's description",
+        time: "34 minutes",
+        profile: "https://f.ptcdn.info/083/046/000/odr6r77nnA5k1CdKCJm-o.png",
+        exp: 1
+    },
+    {
         id: 'u3',
+        user: "Yuigahama",
+        status: "User",
+        description: "requested board ET-RS",
+        time: "Mon at 13:15",
+        profile: "https://i.pinimg.com/originals/75/a1/72/75a1727c7940f6325fd7b922c913ed2b.jpg",
+        exp: 0
+    },
+    {
+        id: 'u4',
         user: "Yuigahama",
         status: "User",
         description: "requested board ET-RS",

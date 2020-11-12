@@ -1,0 +1,48 @@
+ul.prompt-menu-ul {
+    display: block;
+    padding: 10px 0 0 0;
+    margin: 0;
+}
+
+ul.prompt-menu-ul li {
+    cursor: pointer;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+}
+
+ul.prompt-menu-ul li:hover {
+    background-color: dodgerblue;
+}
+
+ul.prompt-menu-ul li:hover a {
+    color: #fff;
+}
+
+.prompt-menu-tool {
+    width: 250px;
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    left: 430px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 2;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 4px 1px rgba(0, 0, 0, .18);
+}
+
+.prompt-menu-board {
+    width: 250px;
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    left: 540px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 2;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 4px 1px rgba(0, 0, 0, .18);
+}
+
+

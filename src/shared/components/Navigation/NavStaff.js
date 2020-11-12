@@ -4,18 +4,22 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 
-import './Navuser.css';
+import './NavStaff.css';
+
 import Profile from './Profile';
 import Search from './Search';
 import { equipmentApi, notificationApi, filterNotification } from '../../../Api';
 import Notification from './Notification';
+import PromptMenu from './PromptMenu';
 
 library.add(fas, far);
 
-export default function Navuser() {
+export default function Navstaff() {
 
     const [promptProfile, setPromptProfile] = useState(false);
     const [promptNotice, setpromptNotice] = useState(false);
+    const [promptMenu, setPromptMenu] = useState(false);
+    const [linkMenu, setLinkMenu] = useState(null)
     const [slideBar, setSlideBar] = useState(false);
     const [num, setNum] = useState(10);
     const [newData, setNewData] = useState([]);
@@ -40,6 +44,15 @@ export default function Navuser() {
             setpromptNotice(false)
             setBellColor("black");
         }
+    }
+
+    const handleMenuLink = () => {
+        setPromptMenu(true);
+        setLinkMenu("boards")
+    }
+    const handleMenuLink2 = () => {
+        setPromptMenu(true);
+        setLinkMenu(null)
     }
 
     useEffect(() => {
@@ -67,7 +80,7 @@ export default function Navuser() {
                     </div>
                 </div>
 
-                { slideBar && <div className="slideBar">
+                {slideBar && <div className="slideBar">
                     <div className="header-slide">
                         <div className="slide-profile">
                             <Profile name="Yukino" profileUser="https://f.ptcdn.info/083/046/000/odr6r77nnA5k1CdKCJm-o.png" />
@@ -82,7 +95,7 @@ export default function Navuser() {
                         <li className=""><a href="/">TodoList</a></li>
                         <li className=""><a href="/">อุปกรณ์ไม่ครบ</a></li>
                     </ul>
-                    <hr style={{background: "#ccc", height: '1px'}} />
+                    <hr style={{ background: "#ccc", height: '1px' }} />
                     <ul className="menu-slideBar">
                         <li className=""><a href="/">edit profile</a></li>
                         <li className=""><a href="/">Sign out</a></li>
@@ -92,10 +105,10 @@ export default function Navuser() {
                 <div className="headerName"><h1>ETT STOCK</h1></div>
 
                 <ul className="ul-Navlink">
-                    <li className="li-Navlink active"><a href="/">Tools</a></li>
-                    <li className="li-Navlink"><a href="/">Boards</a></li>
-                    <li className="li-Navlink"><a href="/">TodoList</a></li>
-                    <li className="li-Navlink"><a href="/">อุปกรณ์ไม่ครบ</a></li>
+                    <li className="li-Navlink active" onClick={handleMenuLink2}>Tools</li>
+                    <li className="li-Navlink" onClick={handleMenuLink}>Boards</li>
+                    <li className="li-Navlink">TodoList</li>
+                    <li className="li-Navlink">อุปกรณ์ไม่ครบ</li>
                 </ul>
 
                 {promptSearch && <div className="cover-search" onClick={handleAction} >
@@ -127,6 +140,10 @@ export default function Navuser() {
                     <div className="blackdrop" onClick={() => setPromptProfile(false)}></div>
                 }
 
+                {promptMenu &&
+                    <div className="blackdrop" onClick={() => setPromptMenu(false)}></div>
+                }
+
                 {/* Responsive 768px */}
                 {promptSearch && <div className="arrow-left">
                     <FontAwesomeIcon icon={['fas', 'arrow-left']} size="2x" onClick={() => setPromptSearch(false)} />
@@ -134,7 +151,10 @@ export default function Navuser() {
 
                 {promptNotice && <Notification newData={newData} oldData={oldData} className="resize" />}
 
+                {promptMenu && <PromptMenu type={linkMenu} />}
+
             </div>
         </div>
+
     )
 }

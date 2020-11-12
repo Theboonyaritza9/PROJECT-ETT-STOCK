@@ -3,10 +3,10 @@ import React from 'react';
 import './Notification.css';
 import Profile from './Profile';
 
-export default function Notification(props) {
+const Notification = (props) => {
 
     // console.log(items.length)
-
+    console.log('hi');
     // console.log(newData);
     // console.log(oldData);
 
@@ -38,3 +38,5 @@ export default function Notification(props) {
         </div>
     )
 }
+
+export default Notification;
