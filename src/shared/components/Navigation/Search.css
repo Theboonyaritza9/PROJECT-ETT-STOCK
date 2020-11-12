@@ -1,0 +1,125 @@
+.Nav-search {
+    min-width: 300px;
+    position: relative;
+    z-index: 2;
+    border: none;
+}
+
+.Nav-search input {
+    width: 100%;
+    text-indent: 30px;
+    border-radius: 20px;
+    height: 35px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 2;
+}
+
+.Nav-search input[type="text"]:focus {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 4px 1px rgba(0, 0, 0, .18);
+    /* z-index: 4; */
+}
+
+.Nav-search .icon-search {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 2;
+}
+
+.Nav-search  .container-icon-times {
+    display: none;
+
+}
+
+ul.search-suggest {
+    padding-left: 0px;
+    padding-top: 50px;
+    display: inline-block;
+    position: absolute;
+    left: -10px;
+    top: -25px;
+    width: 320px;
+    border: #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 4px 1px rgba(0, 0, 0, .18);
+    z-index: -1;
+    background-color: #fff;
+}
+
+ul.search-suggest li {
+    margin: 0;
+    padding: 10px 10px;
+}
+
+ul.search-suggest li:hover {
+    background-color: dodgerblue;
+}
+
+ul.search-suggest li:hover a {
+    color: #fff;
+}
+
+/* .blackdrop2 { 
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hotpink;
+} */
+
+@media (max-width: 768px) {
+    .cover-search {
+        /* display: none; */
+        position: absolute;
+        /* z-index: -1; */
+        width: 100%;
+        right: 0;
+        /* border: 3px solid greenyellow; */
+    }
+    .cover-search .Nav-search input {
+        height: 72px;
+        border-radius: 0;
+        text-indent: 40px;
+        /* border: 2px solid orange; */
+    }
+    .cover-search .Nav-search input::placeholder {
+        font-size: 20px;
+    }
+    .cover-search .Nav-search .icon-search {
+        display: none;
+    }
+    .cover-search .Nav-search .container-icon-times {
+        top: 0;
+        right: 0;
+        display: block;
+        z-index: 2;
+        position: absolute;
+    }
+    .cover-search .Nav-search .cover-icon-times {
+        position: relative;
+        width: 30px;
+        height: 70px;
+        background-color: #fff;
+
+    }
+    .cover-search .Nav-search .cover-icon-times .icon-cancel {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        font-size: 22px;
+    }
+    ul.search-suggest {
+        width: 100%;
+        top: 55px;
+        padding-top: 10px;
+        left: 0;
+        border-radius: 0;
+    }
+    
+}

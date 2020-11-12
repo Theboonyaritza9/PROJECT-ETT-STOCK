@@ -1,0 +1,28 @@
+.Nav-profile {
+    display: flex;
+    align-items: center;
+}
+
+.Nav-profile-img {
+    max-width: 32px;
+    height: 32px;
+}
+
+.Nav-profile-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.Nav-profile p {
+    font-weight: bold;
+    margin: 0 5px;
+    color: #444950;
+}
+
+.Nav-profile p span {
+    font-weight: normal;
+    font-size: 14px;
+}
+
