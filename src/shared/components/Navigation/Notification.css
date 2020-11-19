@@ -20,6 +20,7 @@
 .prompt-notification::-webkit-scrollbar-track {
     border: none;
     background-color: #fff;
+    display: block !important;
 }
 
 .prompt-notification::-webkit-scrollbar-thumb {
