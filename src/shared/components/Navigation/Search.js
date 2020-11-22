@@ -58,20 +58,25 @@ export default function Search(props) {
 
     return (
         <React.Fragment>
-            <div className="Nav-search" >
-                <input type="text" placeholder="search..." value={text} onChange={onTextChanged} />
-                <FontAwesomeIcon icon={['fas', 'search']} size="sm" className="icon-search" />
-                <div className="container-icon-times">
+            {/* <div className="Nav-search" > */}
+            <input type="text" placeholder="search..." value={text} onChange={onTextChanged} />
+            <div className="icon-search">
+                <FontAwesomeIcon icon={['fas', 'search']} size="sm" />
+            </div>
+            <div className="times-cancle" onClick={clearAllvalues}>
+                <FontAwesomeIcon icon={['fas', 'times']} size="2x" />
+            </div>
+            {/* <div className="container-icon-times">
                     <div className="cover-icon-times">
                         <FontAwesomeIcon icon={['fas', 'times']} 
                         size="sm" className="icon-cancel" 
                         onClick={clearAllvalues}
                         />
                     </div>
-                </div>
-                {action && renderSuggestions()}
-            </div >
-            {action && <div className="blackdrop" onClick={() => setAction(false)}></div>}
+                </div> */}
+            {action && renderSuggestions()}
+            {/* </div > */}
+            {/* {action && <div className="blackdrop2" onClick={() => setAction(false)}></div>} */}
         </React.Fragment>
     )
 

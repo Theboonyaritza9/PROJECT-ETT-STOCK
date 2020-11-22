@@ -4,17 +4,17 @@
     height: 450px;
     background-color: #fff;
     position: absolute;
-    top: 50px;
+    top: 65px;
     right: -50px;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 4px 1px rgba(0, 0, 0, .18);
     border-radius: 5px;
     border: 1px solid #ccc;
     padding: 10px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: auto;
 }
 
 .prompt-notification::-webkit-scrollbar {
+    /* display: block !important; */
     width: 10px;
 }
 
@@ -50,8 +50,22 @@
     font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 960px) {
+    .prompt-notification {
+        right: 10px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
     .list-notification .Nav-profile {
         display: flex;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .prompt-notification {
+        /* max-width: 500px; */
+        /* width: 100%; */
+        /* left: -900%; */
+    }
+}
+
