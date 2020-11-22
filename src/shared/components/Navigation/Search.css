@@ -96,7 +96,7 @@ ul.search-suggest li:hover a {
         position: absolute;
         height: 80px;
         padding-top: 10px;
-        z-index: 999;
+        z-index: 4;
     }
     .nav-search input {
         border-radius: 0;
@@ -106,6 +106,7 @@ ul.search-suggest li:hover a {
         -moz-user-select: text !important;
         -ms-user-select: text !important;
         user-select: text !important;
+        z-index: 999;
     }
     .nav-search .icon-search {
         top: 10px;
