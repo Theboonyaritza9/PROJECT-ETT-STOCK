@@ -24,11 +24,16 @@ export default function Navstaff() {
     const [blackDrop, setBlackDrop] = useState(false);
     const [promptProfile, setPromptProfile] = useState(false);
     const [menuIcon, setMenuIcon] = useState(false);
-    const [showSearch, setShowSearch] = useState(false);
+    const [showSearch, setShowSearch] = useState(true);
     const [active, setActive] = useState(false);
     const [colorMenu, setColorMenu] = useState("#000")
 
     useEffect(() => {
+        if (window.innerWidth <= 960) {
+            setShowSearch(false);
+        } else if (window.innerWidth > 960) {
+            setShowSearch(true);
+        }
         const data = filterNotification(notificationApi);
         setNewData(data.newData);
         setOldData(data.oldData);
@@ -47,7 +52,7 @@ export default function Navstaff() {
     const handleShowSearch = () => {
         if (window.innerWidth <= 960) {
             setShowSearch(false);
-        } else {
+        } else if (window.innerWidth > 960) {
             setShowSearch(true);
         }
     };
