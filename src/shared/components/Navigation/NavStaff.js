@@ -24,7 +24,7 @@ export default function Navstaff() {
     const [blackDrop, setBlackDrop] = useState(false);
     const [promptProfile, setPromptProfile] = useState(false);
     const [menuIcon, setMenuIcon] = useState(false);
-    const [showSearch, setShowSearch] = useState(true);
+    const [showSearch, setShowSearch] = useState(false);
     const [active, setActive] = useState(false);
     const [colorMenu, setColorMenu] = useState("#000")
 
@@ -55,7 +55,7 @@ export default function Navstaff() {
     window.addEventListener('resize', handleShowSearch);
 
     const handleMenuIcon = () => {
-        if(!menuIcon) {
+        if (!menuIcon) {
             setColorMenu("#fff");
         } else {
             setColorMenu("#000");
@@ -117,7 +117,7 @@ export default function Navstaff() {
             <div className="navbar-container">
                 <Link to="/" className="nav-logo"><h2>ETT-STOCK</h2></Link>
                 <div className="menu-icon" onClick={handleMenuIcon}>
-                    <FontAwesomeIcon icon={menuIcon ? ['fas', 'times'] : ['fas', 'bars']} size="2x" style={{color: colorMenu}} />
+                    <FontAwesomeIcon icon={menuIcon ? ['fas', 'times'] : ['fas', 'bars']} size="2x" style={{ color: colorMenu }} />
                 </div>
                 <ul className={active ? 'nav-menu active' : 'nav-menu'}>
                     <li className="nav-item">
@@ -144,7 +144,7 @@ export default function Navstaff() {
                 </ul>
                 {showSearch && <div className="nav-search" onClick={handleSearch}>
                     <div className="arrow-left" onClick={handleClickArrow}>
-                        <FontAwesomeIcon icon={['fas', 'arrow-left']} size="2x"  />
+                        <FontAwesomeIcon icon={['fas', 'arrow-left']} size="2x" />
                     </div>
                     <Search data={equipmentApi} status={promptSearch} />
                 </div>}

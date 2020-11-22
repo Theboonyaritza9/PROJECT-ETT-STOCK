@@ -90,7 +90,6 @@ ul.search-suggest li:hover a {
 
 @media screen and (max-width: 960px) {
     .nav-search {
-        /* display: none; */
         width: 100%;
         /* background-color: fuchsia; */
         background-color: #fff;

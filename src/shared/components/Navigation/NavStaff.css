@@ -228,7 +228,7 @@ ul.prompt-profile li:hover a {
 
 
     .nav-search {
-        display: flex;
+        display: flex !important;
         justify-content: center;
     }
 
