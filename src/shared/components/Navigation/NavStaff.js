@@ -27,7 +27,8 @@ export default function Navstaff() {
     const [showSearch, setShowSearch] = useState(true);
     const [active, setActive] = useState(false);
     const [colorMenu, setColorMenu] = useState("#000");
-    const [clientStat, setClientStat] = useState(true)
+    const [clientStat, setClientStat] = useState(false);
+    const [displaySearch, setDisplaySearch] = useState(null);
 
     useEffect(() => {
         if (window.innerWidth <= 960) {
@@ -48,6 +49,7 @@ export default function Navstaff() {
         setpromptNotice(false);
         setBellColor("black");
         setBlackDrop(false);
+        setDisplaySearch("flex");
     }
 
     const handleShowSearch = () => {
@@ -55,6 +57,7 @@ export default function Navstaff() {
             // setShowSearch(false);
         } else if (window.innerWidth > 960) {
             setShowSearch(true);
+            setDisplaySearch(null)
         }
     };
 
@@ -115,6 +118,7 @@ export default function Navstaff() {
     const handleClickArrow = () => {
         setShowSearch(false);
         setBlackDrop(false);
+        setDisplaySearch(null);
     }
 
 
@@ -154,7 +158,7 @@ export default function Navstaff() {
                         <Profile name="Yukino" profileUser="https://f.ptcdn.info/083/046/000/odr6r77nnA5k1CdKCJm-o.png" />
                     </li> */}
                 </ul>
-                {showSearch && <div className="nav-search" onClick={handleSearch}>
+                {showSearch && <div className="nav-search" onClick={handleSearch} style={{display: displaySearch}}>
                     <div className="arrow-left" onClick={handleClickArrow}>
                         <FontAwesomeIcon icon={['fas', 'arrow-left']} size="lg" />
                     </div>

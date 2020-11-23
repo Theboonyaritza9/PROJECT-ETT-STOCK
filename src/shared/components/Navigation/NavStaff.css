@@ -97,6 +97,7 @@
 }
 
 .nav-search {
+    display: block;
     flex: 1;
     /* border: 2px solid purple; */
     position: relative;
@@ -228,7 +229,7 @@ ul.prompt-profile li:hover a {
 
 
     .nav-search {
-        display: flex;
+        display: none;
         justify-content: center;
     }
 
