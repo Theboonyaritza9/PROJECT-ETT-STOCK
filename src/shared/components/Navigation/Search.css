@@ -61,11 +61,11 @@ ul.search-suggest li {
 }
 
 ul.search-suggest li:hover {
-    background-color: dodgerblue;
+    background-color: #f2f3f5;
 }
 
 ul.search-suggest li:hover a {
-    color: #fff;
+    /* color: #fff; */
 }
 
 .blackdrop2 {
@@ -94,9 +94,10 @@ ul.search-suggest li:hover a {
         /* background-color: fuchsia; */
         background-color: #fff;
         position: absolute;
-        height: 50px;
+        height: 80px;
         padding-top: 10px;
         z-index: 4;
+        padding-top: 20px;
     }
     .nav-search input {
         border-radius: 0;
@@ -108,7 +109,7 @@ ul.search-suggest li:hover a {
         user-select: text !important; */
     }
     .nav-search .icon-search {
-        top: 10px;
+        top: 20px;
         left: 50px;
         height: 30px;
         background-color: #fff;
@@ -119,21 +120,24 @@ ul.search-suggest li:hover a {
     }
     .arrow-left {
         display: block;
-        padding: 0 10px;
-        background-color: lawngreen;
+        padding: 5px 10px;
+        /* background-color: lawngreen; */
         height: 35px;
     }
     .times-cancle {
         display: block;
-        padding: 0 10px;
-        background-color: lawngreen;
+        padding: 5px 10px;
+        /* background-color: lawngreen; */
         height: 35px;
         z-index: 2;
     }
     ul.search-suggest {
-        top: 0;
+        top: 65px;
         left: 0;
         width: 100%;
+        padding-top: 0;
+        height: 100vh;
+        border-radius: 0;
     }
     ul.search-suggest li {
         padding-left: 60px;

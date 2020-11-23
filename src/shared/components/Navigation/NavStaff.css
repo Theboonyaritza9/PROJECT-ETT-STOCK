@@ -158,11 +158,11 @@ ul.prompt-profile li {
 }
 
 ul.prompt-profile li:hover {
-    background-color: dodgerblue;
+    background-color: #f2f3f5;
 }
 
 ul.prompt-profile li:hover a {
-    color: #fff;
+    /* color: #fff; */
 }
 
 /* Hamburgur Icon */

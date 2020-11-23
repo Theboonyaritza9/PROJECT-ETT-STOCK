@@ -31,7 +31,7 @@ export default function Navstaff() {
 
     useEffect(() => {
         if (window.innerWidth <= 960) {
-            setShowSearch(true);
+            setShowSearch(false);
         } else if (window.innerWidth > 960) {
             setShowSearch(true);
         }
@@ -156,7 +156,7 @@ export default function Navstaff() {
                 </ul>
                 {showSearch && <div className="nav-search" onClick={handleSearch}>
                     <div className="arrow-left" onClick={handleClickArrow}>
-                        <FontAwesomeIcon icon={['fas', 'arrow-left']} size="2x" />
+                        <FontAwesomeIcon icon={['fas', 'arrow-left']} size="lg" />
                     </div>
                     <Search data={equipmentApi} status={promptSearch} />
                 </div>}

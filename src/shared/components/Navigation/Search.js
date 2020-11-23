@@ -64,7 +64,7 @@ export default function Search(props) {
                 <FontAwesomeIcon icon={['fas', 'search']} size="sm" />
             </div>
             <div className="times-cancle" onClick={clearAllvalues}>
-                <FontAwesomeIcon icon={['fas', 'times']} size="2x" />
+                <FontAwesomeIcon icon={['fas', 'times']} size="lg" />
             </div>
             {/* <div className="container-icon-times">
                     <div className="cover-icon-times">
