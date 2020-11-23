@@ -26,7 +26,8 @@ export default function Navstaff() {
     const [menuIcon, setMenuIcon] = useState(false);
     const [showSearch, setShowSearch] = useState(true);
     const [active, setActive] = useState(false);
-    const [colorMenu, setColorMenu] = useState("#000")
+    const [colorMenu, setColorMenu] = useState("#000");
+    const [clientStat, setClientStat] = useState(true)
 
     useEffect(() => {
         if (window.innerWidth <= 960) {
@@ -125,27 +126,33 @@ export default function Navstaff() {
                     <FontAwesomeIcon icon={menuIcon ? ['fas', 'times'] : ['fas', 'bars']} size="2x" style={{ color: colorMenu }} />
                 </div>
                 <ul className={active ? 'nav-menu active' : 'nav-menu'}>
-                    <li className="nav-item">
-                        Tools
+                    {clientStat ? <li className="nav-item"><Link to="/">Tools</Link></li> :
+                        <li className="nav-item">
+                            Tools
                         <ul>
-                            <li><Link to="/">Add new tool</Link></li>
-                            <li><Link to="/">tool's list</Link></li>
-                            <li><Link to="/">request-tool history</Link></li>
-                        </ul>
-                    </li>
-                    <li className="nav-item">
-                        Boards
+                                <li><Link to="/">Add new tool</Link></li>
+                                <li><Link to="/">tool's list</Link></li>
+                                <li><Link to="/">request-tool history</Link></li>
+                            </ul>
+                        </li>}
+
+                    {clientStat ? <li className="nav-item"><Link to="/">Board</Link></li> :
+                        <li className="nav-item">
+                            Boards
                         <ul>
-                            <li><Link to="/">Add new board</Link></li>
-                            <li><Link to="/">Add new project</Link></li>
-                            <li><Link to="/">Request board</Link></li>
-                            <li><Link to="/">board's list</Link></li>
-                            <li><Link to="/">request-board history</Link></li>
-                            <li><Link to="/">request-project history</Link></li>
-                        </ul>
-                    </li>
+                                <li><Link to="/">Add new board</Link></li>
+                                <li><Link to="/">Add new project</Link></li>
+                                <li><Link to="/">Request board</Link></li>
+                                <li><Link to="/">board's list</Link></li>
+                                <li><Link to="/">request-board history</Link></li>
+                                <li><Link to="/">request-project history</Link></li>
+                            </ul>
+                        </li>}
                     <li className="nav-item"><Link to="/">TodoList</Link></li>
                     <li className="nav-item"><Link to="/">อุปกรณ์ไม่ครบ</Link></li>
+                    {/* <li className="nav-item" id="profile2">
+                        <Profile name="Yukino" profileUser="https://f.ptcdn.info/083/046/000/odr6r77nnA5k1CdKCJm-o.png" />
+                    </li> */}
                 </ul>
                 {showSearch && <div className="nav-search" onClick={handleSearch}>
                     <div className="arrow-left" onClick={handleClickArrow}>

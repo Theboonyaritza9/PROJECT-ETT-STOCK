@@ -228,7 +228,7 @@ ul.prompt-profile li:hover a {
 
 
     .nav-search {
-        display: flex !important;
+        display: flex;
         justify-content: center;
     }
 
@@ -244,6 +244,10 @@ ul.prompt-profile li:hover a {
         position: absolute;
         right: 0;
 
+    }
+
+    #profile2 {
+        z-index: 4;
     }
 
 }
