@@ -124,7 +124,7 @@ ul.search-suggest li:hover a {
         height: 35px;
     }
     .times-cancle {
-        display: block;
+        display: none;
         padding: 0 10px;
         /* background-color: lawngreen; */
         height: 35px;
