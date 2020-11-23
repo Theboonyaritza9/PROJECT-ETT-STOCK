@@ -31,7 +31,7 @@ export default function Navstaff() {
 
     useEffect(() => {
         if (window.innerWidth <= 960) {
-            setShowSearch(false);
+            setShowSearch(true);
         } else if (window.innerWidth > 960) {
             setShowSearch(true);
         }
