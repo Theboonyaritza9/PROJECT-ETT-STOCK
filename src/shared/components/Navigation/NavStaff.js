@@ -155,9 +155,9 @@ export default function Navstaff() {
                     </li> */}
                 </ul>
                 {showSearch && <div className="nav-search" onClick={handleSearch}>
-                    {/* <div className="arrow-left" onClick={handleClickArrow}>
+                    <div className="arrow-left" onClick={handleClickArrow}>
                         <FontAwesomeIcon icon={['fas', 'arrow-left']} size="2x" />
-                    </div> */}
+                    </div>
                     <Search data={equipmentApi} status={promptSearch} />
                 </div>}
                 <FontAwesomeIcon icon={['fas', 'search']} size="lg" className="icon-opensearch" onClick={handleClickSearch} />
