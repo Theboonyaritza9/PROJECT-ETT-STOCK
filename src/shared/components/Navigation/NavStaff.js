@@ -52,7 +52,7 @@ export default function Navstaff() {
 
     const handleShowSearch = () => {
         if (window.innerWidth <= 960) {
-            setShowSearch(false);
+            // setShowSearch(false);
         } else if (window.innerWidth > 960) {
             setShowSearch(true);
         }
