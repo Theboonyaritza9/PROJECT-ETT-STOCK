@@ -1,0 +1,120 @@
+/* Default */
+:root {
+    --back : #000;
+    --success : #68e4bc;
+    --danger : #f01;
+    --secondary : #b8b8b8;
+    --warning : #ffc107;
+    --submit : #24245c;
+}
+
+.link {
+    border-radius: 5px;
+    border: none;
+    margin-left: 3rem;
+}
+
+.btn {
+    border-radius: 5px;
+    border: none;
+    margin-left: 3rem;
+    width: 120px;
+    height: 40px;
+}
+
+.btn-full {
+    width: 100%;
+    height: 40px;
+}
+
+/* button back */
+.btn-back {
+    background-color: var(--back);
+    color: #fff;
+    padding: 10px 30px;
+}
+
+.btn-back svg {
+    margin-right: 5px;
+}
+
+.btn-back:hover {
+    background-color: #49404f;
+    transition: 0.3s;
+}
+
+/* edit-images button */
+.btn-edit-image {
+    padding: 10px 30px;
+    color: #000;
+    background-color: #e4e6eb;
+}
+
+.btn-edit-image:hover {
+    background-color: #ccc;
+}
+
+
+.btn-edit-image svg {
+    color: green;
+    margin-right: 5px;
+
+}
+
+/* btn-cancel */
+.btn-dark {
+    background-color: #000;
+    color: #fff;
+}
+.btn-dark-outline {
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #000;
+}
+.btn-dark-outline:hover {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    transition: 0.2s;
+}
+
+/* btn-save */
+.btn-sucess {
+    background-color: var(--success);
+    color: #fff;
+}
+.btn-success-outline {
+    color: var(--success);
+    background-color: transparent;
+    border: 2px solid var(--success);
+}
+.btn-success-outline:hover {
+    color: #fff;
+    background-color: var(--success);
+    transition: 0.2s;
+    border: none;
+}
+
+/* btn-delete */
+.btn-danger {
+    background-color: var(--danger);
+    color: #fff;
+}
+
+/* btn-edit */
+.btn-secondary {
+    background-color: var(--secondary);
+    color: #000;
+}
+
+/* btn-edit */
+.btn-warning {
+    background-color: var(--warning);
+    color: #000;
+}
+
+/* btn-submit */
+.btn-submit {
+    background-color: var(--submit);
+    color: #fff;
+}

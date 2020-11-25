@@ -61,7 +61,7 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 380px) {
     .prompt-notification {
         /* max-width: 500px; */
         /* width: 100%; */

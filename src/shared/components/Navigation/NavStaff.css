@@ -30,10 +30,6 @@
     /* background-color: orange; */
 }
 
-.nav-logo {
-    /* flex: 1; */
-}
-
 .nav-menu {
     flex: 2;
     display: grid;
@@ -174,7 +170,8 @@ ul.prompt-profile li:hover a {
 
 @media screen and (max-width: 960px) {
     .nav-logo {
-        display: none;
+        position: absolute;
+        z-index: 1;
     }
     /* hamburgur */
     .menu-icon {
@@ -251,4 +248,14 @@ ul.prompt-profile li:hover a {
         z-index: 4;
     }
 
+}
+
+/* Display 4 inch */
+@media screen and (max-width: 380px) {
+    .icon-opensearch {
+        right: 70px;
+    }
+    .nav-notification {
+        margin: 0 5px;
+    }
 }
