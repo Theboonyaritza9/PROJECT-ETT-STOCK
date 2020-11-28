@@ -12,7 +12,7 @@ function App() {
         <Nav />
         {/* <Auth /> */}
         <Switch>
-          <Route path="/" exact />
+          {/* <Route path="/" exact /> */}
           <Route path="/auth" exact>
             <Auth />
           </Route>
