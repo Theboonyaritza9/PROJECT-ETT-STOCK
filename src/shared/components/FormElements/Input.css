@@ -19,11 +19,11 @@
     padding: 0.15rem 0.25rem;
 }
 
-.form-control input:focus, .form-control textarea:focus {
+/* .form-control input:focus, .form-control textarea:focus { */
     /* outline: none;
     background: #ebebeb;
     border-color: #510077; */
-}
+/* } */
 
 .form-control--invalid label, .form-control--invalid p {
     color: red;

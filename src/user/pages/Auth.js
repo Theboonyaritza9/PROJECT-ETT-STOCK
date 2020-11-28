@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import Button from '../../shared/components/FormElements/Button';
+// import Button from '../../shared/components/FormElements/Button';
 import { useForm } from "../../shared/hooks/form-hook";
 import { VALIDATOR_MINLENGTH, VALIDATOR_EMAIL, VALIDATOR_REQUIRE } from "../../shared/util/validators";
 import Input from "../../shared/components/FormElements/Input";
 
-import "./Auth.css"
+import "./Auth.css";
+import "../../shared/components/FormElements/Button.css"
 
 function Auth() {
 
@@ -96,7 +97,7 @@ function Auth() {
                     errorText="Please enter a valid name, at least 1."
                     onInput={inputHandler}
                 />}
-                <Button type="submit" buttonStyle="btn btn-success btn-full" disabled={!formState.isValid}>{ isLoginMode ? 'Login' : 'Register '}</Button>
+                <button type="submit" className="btn btn-success btn-full" disabled={!formState.isValid}>{ isLoginMode ? 'Login' : 'Register '}</button>
                 <p className="linkAuth" onClick={switchModeHandler}>{ isLoginMode ? 'Have registered yet ?' : 'Login now '}</p>
             </div>
         </div>
