@@ -68,7 +68,7 @@ label {
     color: #9798AF;
 }
 
-h3:nth-child(2) {
+.headerAuth {
     text-align: center;
 }
 

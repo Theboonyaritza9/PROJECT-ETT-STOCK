@@ -61,7 +61,9 @@ function Auth() {
                 <div className="picture">
                     <img src='https://lh3.googleusercontent.com/proxy/6qnH-JQY4P3lqFMcbNOr-vS3AUPoBwFPWHrMp3AwprRNcmkP3MCz7dglqkO-uWLPs8m_UdTGH8uC8FoCy076F0YzkHnzbw6PkqUe7DjuFaaQEgWpi-xq' alt="png" />
                 </div>
-                { isLoginMode ? <h3>Login</h3> : <h3>Register</h3>}
+                <div className="headerAuth">
+                    {isLoginMode ? <h3>Login</h3> : <h3>Register</h3>}
+                </div>
                 {/* <h3>Username</h3>
                 <input type="text" placeholder="Enter username" />
                 <h3>Password</h3>
@@ -88,7 +90,7 @@ function Auth() {
                     errorText="Please enter a valid password, at least 6 characters."
                     onInput={inputHandler}
                 />
-                { !isLoginMode && <Input
+                {!isLoginMode && <Input
                     element="input"
                     id="name"
                     type="text"
@@ -97,8 +99,8 @@ function Auth() {
                     errorText="Please enter a valid name, at least 1."
                     onInput={inputHandler}
                 />}
-                <button type="submit" className="btn btn-success btn-full" disabled={!formState.isValid}>{ isLoginMode ? 'Login' : 'Register '}</button>
-                <p className="linkAuth" onClick={switchModeHandler}>{ isLoginMode ? 'Have registered yet ?' : 'Login now '}</p>
+                <button type="submit" className="btn btn-success btn-full" disabled={!formState.isValid}>{isLoginMode ? 'Login' : 'Register '}</button>
+                <p className="linkAuth" onClick={switchModeHandler}>{isLoginMode ? 'Have registered yet ?' : 'Login now '}</p>
             </div>
         </div>
     )
