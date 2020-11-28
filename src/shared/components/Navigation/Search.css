@@ -64,9 +64,9 @@ ul.search-suggest li:hover {
     background-color: #f2f3f5;
 }
 
-ul.search-suggest li:hover a {
+/* ul.search-suggest li:hover a { */
     /* color: #fff; */
-}
+/* } */
 
 .blackdrop2 {
     z-index: 1;
@@ -148,6 +148,6 @@ ul.search-suggest li:hover a {
 
 @media screen and (max-width: 420px) {
     .nav-search input {
-        text-indent: 50px;
+        text-indent: 55px;
     }
 }

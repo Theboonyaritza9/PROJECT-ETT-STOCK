@@ -108,10 +108,13 @@ export default function Navstaff() {
             setpromptNotice(false);
             setBlackDrop(false);
             setPromptProfile(false);
+            setBellColor("black");
         }
         else {
             setBlackDrop(true);
             setPromptProfile(true);
+            setpromptNotice(false);
+            setBellColor("black");
         }
     }
 
@@ -158,7 +161,7 @@ export default function Navstaff() {
                         <Profile name="Yukino" profileUser="https://f.ptcdn.info/083/046/000/odr6r77nnA5k1CdKCJm-o.png" />
                     </li> */}
                 </ul>
-                {showSearch && <div className="nav-search" onClick={handleSearch} style={{display: displaySearch}}>
+                {showSearch && <div className="nav-search" onClick={handleSearch} style={{ display: displaySearch }}>
                     <div className="arrow-left" onClick={handleClickArrow}>
                         <FontAwesomeIcon icon={['fas', 'arrow-left']} size="lg" />
                     </div>

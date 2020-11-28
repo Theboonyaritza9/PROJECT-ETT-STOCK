@@ -8,7 +8,7 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 library.add(fas, far);
 import "./Button.css"
 
-function Button({to, buttonStyle, children, type}) {
+function Button({to, buttonStyle, children, type, disabled, onClick}) {
     if (to) {
         if (buttonStyle == "btn-back") {
             return (
@@ -27,7 +27,7 @@ function Button({to, buttonStyle, children, type}) {
         }
     }
     return (
-        <button type={type ? type : "button"} className={buttonStyle}>
+        <button type={type ? type : "button"} className={buttonStyle} disabled={disabled} onClick={onClick}>
             {children}
         </button>
     )

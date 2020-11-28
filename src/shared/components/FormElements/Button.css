@@ -17,9 +17,17 @@
 .btn {
     border-radius: 5px;
     border: none;
-    margin-left: 3rem;
+    /* margin-left: 3rem; */
     width: 120px;
     height: 40px;
+    cursor: pointer;
+}
+
+.btn:disabled, .btn:hover:disabled, .btn:active:disabled {
+    background: #ccc;
+    color: #979797;
+    border-color: #ccc;
+    cursor: not-allowed;
 }
 
 .btn-full {
@@ -79,7 +87,7 @@
 }
 
 /* btn-save */
-.btn-sucess {
+.btn-success {
     background-color: var(--success);
     color: #fff;
 }
