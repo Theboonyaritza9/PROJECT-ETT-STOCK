@@ -8,27 +8,28 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 library.add(fas, far);
 import "./Button.css"
 
-function Button({to, buttonStyle, children, type, disabled, onClick}) {
-    if (to) {
-        if (buttonStyle == "btn-back") {
+const Button = (props) => {
+    if (props.to) {
+        // if (buttonStyle == "btn-back") {
+        //     return (
+        //         <Link to={to} className="btn btn-back">
+        //             <FontAwesomeIcon icon={['fas', 'arrow-left']} size="sm" />
+        //             {children}
+        //         </Link>
+        //     )
+        // } 
+        // else if (buttonStyle == "btn-edit-image") {
             return (
-                <Link to={to} className="btn btn-back">
-                    <FontAwesomeIcon icon={['fas', 'arrow-left']} size="sm" />
-                    {children}
-                </Link>
-            )
-        } else if (buttonStyle == "btn-edit-image") {
-            return (
-                <Link to={to} className="btn btn-edit-image">
+                <Link to={props.to} className="btn btn-edit-image">
                     <FontAwesomeIcon icon={['far', 'file-image']} size="lg" />
-                    {children}
+                    {props.children}
                 </Link>
             )
-        }
+        // }
     }
     return (
-        <button type={type ? type : "button"} className={buttonStyle} disabled={disabled} onClick={onClick}>
-            {children}
+        <button type={props.type ? props.type : "button"} className={props.buttonStyle} disabled={props.disabled} onClick={props.onClick}>
+            {props.children}
         </button>
     )
 }

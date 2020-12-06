@@ -59,7 +59,7 @@ export default function Search(props) {
     return (
         <React.Fragment>
             {/* <div className="Nav-search" > */}
-            <input type="text" placeholder="search..." value={text} onChange={onTextChanged} />
+            <input type="text" placeholder="search...(วิธีเทส ให้พิม r เป็นตัวแรก)" value={text} onChange={onTextChanged} />
             <div className="icon-search">
                 <FontAwesomeIcon icon={['fas', 'search']} size="sm" />
             </div>

@@ -8,6 +8,7 @@
     z-index: 999;
     /* border: 2px solid red; */
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 4px 1px rgba(0, 0, 0, .18);
+    margin-bottom: 3rem;
 }
 
 .navbar-container {
@@ -168,6 +169,10 @@ ul.prompt-profile li:hover {
     display: none;
 }
 
+#profile2 {
+    display: none;
+}
+
 @media screen and (max-width: 960px) {
     .nav-logo {
         position: absolute;
@@ -209,6 +214,9 @@ ul.prompt-profile li:hover {
         padding-left: 3rem;
         color: #fff;
     }
+    .nav-item:hover {
+        border-bottom: none;
+    }
     .nav-item a {
         color: #fff;
     }
@@ -218,10 +226,21 @@ ul.prompt-profile li:hover {
         top: 40px;
         z-index: 5;
     }
+    .nav-item .nav-item-profile {
+        /* background-color: orange; */
+        margin-top: 8px;
+    }
+    .nav-item .Nav-profile p {
+        margin-left: 15px;
+    }
 
     .nav-item ul li a  {
         color: #495057;
         padding-left: 3rem;
+    }
+
+    #profile2 {
+        display: flex;
     }
 
 
@@ -246,6 +265,15 @@ ul.prompt-profile li:hover {
 
     #profile2 {
         z-index: 4;
+    }
+    .nav-item .Nav-profile {
+        display: flex;
+    }
+    .nav-item .Nav-profile p{
+        color: #fff;
+    }
+    .nav-item:first-child {
+        margin: 1rem 0;
     }
 
 }

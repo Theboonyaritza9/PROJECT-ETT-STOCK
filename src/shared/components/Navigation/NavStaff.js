@@ -133,6 +133,13 @@ export default function Navstaff() {
                     <FontAwesomeIcon icon={menuIcon ? ['fas', 'times'] : ['fas', 'bars']} size="2x" style={{ color: colorMenu }} />
                 </div>
                 <ul className={active ? 'nav-menu active' : 'nav-menu'}>
+                    <li className="nav-item" id="profile2">
+                        <Profile name="Yukino" profileUser="https://f.ptcdn.info/083/046/000/odr6r77nnA5k1CdKCJm-o.png" />
+                        <ul className="nav-item-profile">
+                            <li><Link to="/">Edit Profile</Link></li>
+                            <li><Link to="/">Sign out</Link></li>
+                        </ul>
+                    </li>
                     {clientStat ? <li className="nav-item"><Link to="/">Tools</Link></li> :
                         <li className="nav-item">
                             Tools
@@ -157,9 +164,8 @@ export default function Navstaff() {
                         </li>}
                     <li className="nav-item"><Link to="/">TodoList</Link></li>
                     <li className="nav-item"><Link to="/">อุปกรณ์ไม่ครบ</Link></li>
-                    {/* <li className="nav-item" id="profile2">
-                        <Profile name="Yukino" profileUser="https://f.ptcdn.info/083/046/000/odr6r77nnA5k1CdKCJm-o.png" />
-                    </li> */}
+
+
                 </ul>
                 {showSearch && <div className="nav-search" onClick={handleSearch} style={{ display: displaySearch }}>
                     <div className="arrow-left" onClick={handleClickArrow}>
