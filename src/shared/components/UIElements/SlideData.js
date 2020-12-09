@@ -1,9 +1,9 @@
 export const SliderData = [
     {
-        image: '/images/Tool2.jpg'
+        image: '/images/tool2.jpg'
     },
     {
-        image: '/images/Tool1.jpg'
+        image: '/images/tool1.jpg'
     },
     {
         image: 'https://images.unsplash.com/photo-1606955317161-cb7d261c039a?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
