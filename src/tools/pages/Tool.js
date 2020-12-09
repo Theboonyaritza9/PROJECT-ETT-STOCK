@@ -37,7 +37,7 @@ function Tool() {
             <div className="section-bottom">
                 <div className="mobile">
                     <Link to="/detail"><img src="/images/tool2.jpg" alt="jpg" /></Link>
-                    <h3><Link>IC8002-1</Link></h3>
+                    <h3>IC8002-1</h3>
                     <div className="mobile-content">
                         <div className="left">
                             <h4>Type</h4>
@@ -77,7 +77,7 @@ function Tool() {
                 </div>
                 <div className="mobile">
                     <Link to="/detail"><img src="/images/lm.jpg" alt="jpg" /></Link>
-                    <h3><Link>IC8002-1</Link></h3>
+                    <h3>IC8002-1</h3>
                     <div className="mobile-content">
                         <div className="left">
                             <h4>Type</h4>
