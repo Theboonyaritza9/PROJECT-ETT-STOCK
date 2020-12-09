@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import { SliderData } from "./SlideData";
+// import { SliderData } from "./SlideData";
 
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/swiper.scss';
@@ -13,7 +13,7 @@ import "./SliderImages.css";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 
-function SliderImages() {
+function SliderImages({ SliderData }) {
 
     // const lengthImage = SliderData.length;
     const [introImage, setIntroImage] = useState('')

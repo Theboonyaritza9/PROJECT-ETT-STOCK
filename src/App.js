@@ -6,6 +6,7 @@ import Auth from './user/pages/Auth';
 // import Home from './Home';
 import DetailsTool from "./tools/pages/DetailsTool"
 import Tool from './tools/pages/Tool';
+import DetailsBoards from './boards/pages/DetailsBoards';
 // import TestSwipe from './TestSwipe';
 
 
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/detail">
             <DetailsTool />
+          </Route>
+          <Route path="/detailboard">
+            <DetailsBoards />
           </Route>
           <Redirect to="/" />
         </Switch>

@@ -60,7 +60,7 @@ function Auth() {
             <div className="section">
                 <div className="register">
                     <div className="picture">
-                        <img src="/images/profile.png" />
+                        <img src="/images/profile.png"  alt="555" />
                     </div>
                     <div className="headerAuth">
                         {isLoginMode ? <h3>Login</h3> : <h3>Register</h3>}

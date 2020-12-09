@@ -1,5 +1,6 @@
 import React from 'react';
-import SliderImages from '../components/SliderImages';
+import SliderImages from "../../shared/components/UIElements/SliderImages";
+import { SliderData } from "../../shared/components/UIElements/SlideData";
 
 import "./DetailsTool.css"
 import "../../shared/components/FormElements/Button.css"
@@ -12,7 +13,7 @@ function DetailsTool() {
             </div>
             <div className="container-detail">
                 <div>
-                    <SliderImages />
+                    <SliderImages SliderData={SliderData} />
                 </div>
                 <div className="box-description" >
                     <h2>IC8001-1</h2>
@@ -27,6 +28,7 @@ function DetailsTool() {
                             <p>Description</p>
                             <p>dcjskvbskjdvbsjkvbdskjvbdslkvjbdslvkjb</p>
                         </div>
+                        <button className="btn btn-back">Back</button>
                     </div>
                 </div>
             </div>
