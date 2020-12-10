@@ -2,60 +2,15 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import "./TableDetailBoard.css"
+import TableMobile from './TableMobile';
 
 
 function TableDetailBoard() {
     return (
         <section className="container-table-detail-board">
             <div className="section-bottom">
-                <div className="mobile">
-                    <Link to="/detail"><img src="/images/tool2.jpg" alt="jpg" /></Link>
-                    <h3><Link>IC8002-1</Link></h3>
-                    <div className="mobile-content">
-                        <div className="left">
-                            <h4>Type</h4>
-                            <h4>Status</h4>
-                            <h4>Use</h4>
-                        </div>
-                        <div className="righ">
-                            <p>IC</p>
-                            <p>getting out of stock</p>
-                            <p>10</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="mobile">
-                    <Link to="/detail"><img src="/images/tool1.jpg" alt="jpg" /></Link>
-                    <h3><Link to="/">IC8002-1</Link></h3>
-                    <div className="mobile-content">
-                        <div className="left">
-                            <h4>Type</h4>
-                            <h4>Status</h4>
-                            <h4>Use</h4>
-                        </div>
-                        <div className="righ">
-                            <p>IC</p>
-                            <p>out of stock</p>
-                            <p>10</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="mobile">
-                    <Link to="/detail"><img src="/images/tool1.jpg" alt="jpg" /></Link>
-                    <h3><Link>IC8002-1</Link></h3>
-                    <div className="mobile-content">
-                        <div className="left">
-                            <h4>Type</h4>
-                            {/* <h4>Status</h4> */}
-                            <h4>Use</h4>
-                        </div>
-                        <div className="righ">
-                            <p>IC</p>
-                            {/* <p>getting out of stock</p> */}
-                            <p>10</p>
-                        </div>
-                    </div>
-                </div>
+                <h3 className="topic-board">Board's Tools</h3>
+                <TableMobile />
                 <div className="desktop">
                     <table>
                         <tr>

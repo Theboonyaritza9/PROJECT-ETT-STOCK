@@ -19,3 +19,12 @@
     width: 100%;
     height: 100%;
 }
+
+@media (max-width: 500px) {
+    .intro-img img {
+        object-fit: cover;
+    }
+    .slide-img img {
+        object-fit: cover;
+    }
+}

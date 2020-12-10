@@ -1,3 +1,77 @@
 .container-table-detail-board {
     width: 100%;
 }
+
+.topic-board {
+    background-color: #eefaff;
+    width: 100%;
+    padding: 1rem;
+}
+
+.mobile-responsive {
+    display: none;
+    grid-gap: 1rem;
+    width: 100%;
+    /* border: 1px solid red; */
+    justify-content: space-around;
+    background-color: #fff;
+    padding: 3rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.mobile-responsive .box {
+    width: 100%;
+    /* border: 1px solid #000; */
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 10px 10px;
+}
+
+.mobile-responsive .box .images {
+    width: 100%;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.mobile-responsive .box .images img {
+    width: 100%;
+    height: 100%;
+}
+
+.mobile-responsive .box .text {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.mobile-responsive .box .text .type-board p {
+    text-align: right;
+}
+
+.mobile-responsive .box .text .total-board p {
+    color: red;
+}
+
+@media (max-width: 960px) {
+    .mobile-responsive {
+        display: grid;
+        grid-template-columns: repeat( 4, auto);
+        width: 100%;
+    }
+    .section-bottom {
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    .mobile-responsive {
+        grid-template-columns: repeat( 3, auto);
+
+    }
+}
+
+@media (max-width: 500px) {
+    .mobile-responsive {
+        grid-template-columns: 150px 150px;
+    }
+}
