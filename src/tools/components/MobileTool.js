@@ -9,7 +9,7 @@ function MobileTool(props) {
     return (
         toolList.map((res) => (
             <div className="mobile" key={res.id}>
-                <Link to="/detail"><img src={res.imageProfile} alt="jpg" /></Link>
+                <Link to={`detail/${res.id}`}><img src={res.imageProfile} alt="jpg" /></Link>
                 <h3>{res.toolName}</h3>
                 <div className="mobile-content">
                     <div className="left">
