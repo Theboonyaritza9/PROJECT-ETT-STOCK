@@ -150,14 +150,14 @@ export default function Navstaff() {
                             </ul>
                         </li>}
 
-                    {clientStat ? <li className="nav-item"><Link to="/">Board</Link></li> :
+                    {clientStat ? <li className="nav-item"><Link to="/boards">Board</Link></li> :
                         <li className="nav-item">
                             Boards
                         <ul>
                                 <li><Link to="/">Add new board</Link></li>
                                 <li><Link to="/">Add new project</Link></li>
                                 <li><Link to="/">Request board</Link></li>
-                                <li><Link to="/">board's list</Link></li>
+                                <li><Link to="/boards">board's list</Link></li>
                                 <li><Link to="/">request-board history</Link></li>
                                 <li><Link to="/">request-project history</Link></li>
                             </ul>

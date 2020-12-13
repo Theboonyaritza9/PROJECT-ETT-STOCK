@@ -1,4 +1,4 @@
-
+const { v4: uuidv4 } = require('uuid');
 export const equipmentApi = [
     {
         name: 'R100K',
@@ -119,6 +119,508 @@ export const filterNotification = (items) => {
         }
     }
     return { newData: newData1, oldData: oldData1 }
+}
+
+export const listToolApi = [
+    {
+        id: uuidv4(),
+        nameTool: "R10K",
+        imageProfile: "/images/tool2.jpg",
+        status: "Out of Stock",
+        type: "RESISTER",
+        size: "CODE_100",
+        total: "0",
+        category: "SURFACE"
+    },
+    {
+        id: uuidv4(),
+        nameTool: "LM-2575",
+        imageProfile: "/images/lm.jpg",
+        status: "In Stock",
+        type: "LM",
+        size: "CODE_845",
+        total: "250",
+        category: "SME"
+
+    },
+    {
+        id: uuidv4(),
+        nameTool: "ic1.jpg",
+        imageProfile: "/images/ic1.jpg",
+        status: "Getting out of Stock",
+        type: "IC",
+        size: "CODE_448",
+        total: "17",
+        category: "SURFACE"
+
+
+    },
+    {
+        id: uuidv4(),
+        nameTool: "Module-WIFI",
+        imageProfile: "/images/tool1.jpg",
+        status: "In Stock",
+        type: "Module",
+        size: "CODE_170",
+        total: "75",
+        category: "SURFACE"
+
+    }
+]
+
+// export const toolItem = {
+//     id: uuidv4(),
+//     nameTool: "R10K",
+//     imageProfile: "/images/tool2.jpg",
+//     images: [
+//         { image: "/images/tool2.jpg" },
+//         { image: "/images/b2.jpg" },
+//         { image: "/images/b1.png" },
+//         { image: "/images/b3.jpg" },
+//         { image: "/images/detailTool.jpg" }
+//     ],
+//     status: "Out of Stock",
+//     type: "RESISTER",
+//     size: "CODE_100",
+//     total: "0",
+//     category: "SURFACE",
+//     description: "this equipment is used for every project"
+// }
+
+export const toolItem = {
+    id: uuidv4(),
+    nameTool: "R10K",
+    imageProfile: "/images/tool2.jpg",
+    images: [
+        "/images/tool2.jpg",
+        "/images/b2.jpg",
+        "/images/b1.png",
+        "/images/b3.jpg",
+        "/images/detailTool.jpg"
+    ],
+    status: "Out of Stock",
+    type: "RESISTER",
+    size: "CODE_100",
+    total: "0",
+    category: "SURFACE",
+    description: "this equipment is used for every project"
+}
+
+export const listBoards = [
+    {
+        id: uuidv4(),
+        nameBoard: "ET-ARDUINO",
+        imageProfile: "/images/b2.jpg",
+        images: [
+            "/images/b1.png",
+            "/images/b2.jpg",
+            "/images/b3.jpg",
+            "/images/detailTool.jpg"
+        ],
+        type: "education",
+        description: "This board is only used for education.",
+        tools: [
+            {
+                id: uuidv4(),
+                nameTool: "R10K",
+                imageProfile: "/images/tool2.jpg",
+                status: "Out of Stock",
+                type: "RESISTER",
+                size: "CODE_100",
+                total: "0",
+                category: "SURFACE"
+            },
+            {
+                id: uuidv4(),
+                nameTool: "LM-2575",
+                imageProfile: "/images/lm.jpg",
+                status: "In Stock",
+                type: "LM",
+                size: "CODE_845",
+                total: "250",
+                category: "SME"
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "ic1.jpg",
+                imageProfile: "/images/ic1.jpg",
+                status: "Getting out of Stock",
+                type: "IC",
+                size: "CODE_448",
+                total: "17",
+                category: "SURFACE"
+
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "Module-WIFI",
+                imageProfile: "/images/tool1.jpg",
+                status: "In Stock",
+                type: "Module",
+                size: "CODE_170",
+                total: "75",
+                category: "SURFACE"
+
+            }
+        ]
+    },
+    {
+        id: uuidv4(),
+        nameBoard: "ET-ARDUINO",
+        imageProfile: "/images/b3.jpg",
+        images: [
+            "/images/b1.png",
+            "/images/b2.jpg",
+            "/images/b3.jpg",
+            "/images/detailTool.jpg"
+        ],
+        type: "education",
+        description: "This board is only used for education.",
+        tools: [
+            {
+                id: uuidv4(),
+                nameTool: "R10K",
+                imageProfile: "/images/tool2.jpg",
+                status: "Out of Stock",
+                type: "RESISTER",
+                size: "CODE_100",
+                total: "0",
+                category: "SURFACE"
+            },
+            {
+                id: uuidv4(),
+                nameTool: "LM-2575",
+                imageProfile: "/images/lm.jpg",
+                status: "In Stock",
+                type: "LM",
+                size: "CODE_845",
+                total: "250",
+                category: "SME"
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "ic1.jpg",
+                imageProfile: "/images/ic1.jpg",
+                status: "Getting out of Stock",
+                type: "IC",
+                size: "CODE_448",
+                total: "17",
+                category: "SURFACE"
+
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "Module-WIFI",
+                imageProfile: "/images/tool1.jpg",
+                status: "In Stock",
+                type: "Module",
+                size: "CODE_170",
+                total: "75",
+                category: "SURFACE"
+
+            }
+        ]
+    },
+    {
+        id: uuidv4(),
+        nameBoard: "ET-ARDUINO",
+        imageProfile: "/images/b2.jpg",
+        images: [
+            "/images/b1.png",
+            "/images/b2.jpg",
+            "/images/b3.jpg",
+            "/images/detailTool.jpg"
+        ],
+        type: "education",
+        description: "This board is only used for education.",
+        tools: [
+            {
+                id: uuidv4(),
+                nameTool: "R10K",
+                imageProfile: "/images/tool2.jpg",
+                status: "Out of Stock",
+                type: "RESISTER",
+                size: "CODE_100",
+                total: "0",
+                category: "SURFACE"
+            },
+            {
+                id: uuidv4(),
+                nameTool: "LM-2575",
+                imageProfile: "/images/lm.jpg",
+                status: "In Stock",
+                type: "LM",
+                size: "CODE_845",
+                total: "250",
+                category: "SME"
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "ic1.jpg",
+                imageProfile: "/images/ic1.jpg",
+                status: "Getting out of Stock",
+                type: "IC",
+                size: "CODE_448",
+                total: "17",
+                category: "SURFACE"
+
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "Module-WIFI",
+                imageProfile: "/images/tool1.jpg",
+                status: "In Stock",
+                type: "Module",
+                size: "CODE_170",
+                total: "75",
+                category: "SURFACE"
+
+            }
+        ]
+    },
+    {
+        id: uuidv4(),
+        nameBoard: "ET-ARDUINO",
+        imageProfile: "/images/b3.jpg",
+        images: [
+            "/images/b1.png",
+            "/images/b2.jpg",
+            "/images/b3.jpg",
+            "/images/detailTool.jpg"
+        ],
+        type: "education",
+        description: "This board is only used for education.",
+        tools: [
+            {
+                id: uuidv4(),
+                nameTool: "R10K",
+                imageProfile: "/images/tool2.jpg",
+                status: "Out of Stock",
+                type: "RESISTER",
+                size: "CODE_100",
+                total: "0",
+                category: "SURFACE"
+            },
+            {
+                id: uuidv4(),
+                nameTool: "LM-2575",
+                imageProfile: "/images/lm.jpg",
+                status: "In Stock",
+                type: "LM",
+                size: "CODE_845",
+                total: "250",
+                category: "SME"
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "ic1.jpg",
+                imageProfile: "/images/ic1.jpg",
+                status: "Getting out of Stock",
+                type: "IC",
+                size: "CODE_448",
+                total: "17",
+                category: "SURFACE"
+
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "Module-WIFI",
+                imageProfile: "/images/tool1.jpg",
+                status: "In Stock",
+                type: "Module",
+                size: "CODE_170",
+                total: "75",
+                category: "SURFACE"
+
+            }
+        ]
+    },
+    {
+        id: uuidv4(),
+        nameBoard: "ET-ARDUINO",
+        imageProfile: "/images/b2.jpg",
+        images: [
+            "/images/b1.png",
+            "/images/b2.jpg",
+            "/images/b3.jpg",
+            "/images/detailTool.jpg"
+        ],
+        type: "education",
+        description: "This board is only used for education.",
+        tools: [
+            {
+                id: uuidv4(),
+                nameTool: "R10K",
+                imageProfile: "/images/tool2.jpg",
+                status: "Out of Stock",
+                type: "RESISTER",
+                size: "CODE_100",
+                total: "0",
+                category: "SURFACE"
+            },
+            {
+                id: uuidv4(),
+                nameTool: "LM-2575",
+                imageProfile: "/images/lm.jpg",
+                status: "In Stock",
+                type: "LM",
+                size: "CODE_845",
+                total: "250",
+                category: "SME"
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "ic1.jpg",
+                imageProfile: "/images/ic1.jpg",
+                status: "Getting out of Stock",
+                type: "IC",
+                size: "CODE_448",
+                total: "17",
+                category: "SURFACE"
+
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "Module-WIFI",
+                imageProfile: "/images/tool1.jpg",
+                status: "In Stock",
+                type: "Module",
+                size: "CODE_170",
+                total: "75",
+                category: "SURFACE"
+
+            }
+        ]
+    },
+    {
+        id: uuidv4(),
+        nameBoard: "ET-ARDUINO",
+        imageProfile: "/images/b3.jpg",
+        images: [
+            "/images/b1.png",
+            "/images/b2.jpg",
+            "/images/b3.jpg",
+            "/images/detailTool.jpg"
+        ],
+        type: "education",
+        description: "This board is only used for education.",
+        tools: [
+            {
+                id: uuidv4(),
+                nameTool: "R10K",
+                imageProfile: "/images/tool2.jpg",
+                status: "Out of Stock",
+                type: "RESISTER",
+                size: "CODE_100",
+                total: "0",
+                category: "SURFACE"
+            },
+            {
+                id: uuidv4(),
+                nameTool: "LM-2575",
+                imageProfile: "/images/lm.jpg",
+                status: "In Stock",
+                type: "LM",
+                size: "CODE_845",
+                total: "250",
+                category: "SME"
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "ic1.jpg",
+                imageProfile: "/images/ic1.jpg",
+                status: "Getting out of Stock",
+                type: "IC",
+                size: "CODE_448",
+                total: "17",
+                category: "SURFACE"
+
+
+            },
+            {
+                id: uuidv4(),
+                nameTool: "Module-WIFI",
+                imageProfile: "/images/tool1.jpg",
+                status: "In Stock",
+                type: "Module",
+                size: "CODE_170",
+                total: "75",
+                category: "SURFACE"
+
+            }
+        ]
+    }
+]
+
+export const boardItem = {
+    id: uuidv4(),
+    nameBoard: "ET-ARDUINO",
+    imageProfile: "/images/b3.jpg",
+    images: [
+        "/images/b1.png",
+        "/images/b2.jpg",
+        "/images/b3.jpg",
+        "/images/detailTool.jpg"
+    ],
+    type: "education",
+    description: "This board is only used for education.",
+    tools: [
+        {
+            id: uuidv4(),
+            nameTool: "R10K",
+            imageProfile: "/images/tool2.jpg",
+            status: "Out of Stock",
+            type: "RESISTER",
+            size: "CODE_100",
+            total: "0",
+            category: "SURFACE"
+        },
+        {
+            id: uuidv4(),
+            nameTool: "LM-2575",
+            imageProfile: "/images/lm.jpg",
+            status: "In Stock",
+            type: "LM",
+            size: "CODE_845",
+            total: "250",
+            category: "SME"
+
+        },
+        {
+            id: uuidv4(),
+            nameTool: "ic1.jpg",
+            imageProfile: "/images/ic1.jpg",
+            status: "Getting out of Stock",
+            type: "IC",
+            size: "CODE_448",
+            total: "17",
+            category: "SURFACE"
+
+
+        },
+        {
+            id: uuidv4(),
+            nameTool: "Module-WIFI",
+            imageProfile: "/images/tool1.jpg",
+            status: "In Stock",
+            type: "Module",
+            size: "CODE_170",
+            total: "75",
+            category: "SURFACE"
+
+        }
+    ]
 }
 
 

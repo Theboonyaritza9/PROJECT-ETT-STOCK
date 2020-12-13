@@ -7,6 +7,7 @@ import Auth from './user/pages/Auth';
 import DetailsTool from "./tools/pages/DetailsTool"
 import Tool from './tools/pages/Tool';
 import DetailsBoards from './boards/pages/DetailsBoards';
+import Board from './boards/pages/Board';
 // import TestSwipe from './TestSwipe';
 
 
@@ -24,8 +25,11 @@ function App() {
           <Route path="/auth">
             <Auth />
           </Route>
-          <Route path="/detail">
+          <Route path="/detail/:toolId">
             <DetailsTool />
+          </Route>
+          <Route path="/boards">
+            <Board />
           </Route>
           <Route path="/detailboard">
             <DetailsBoards />

@@ -13,38 +13,41 @@ import "./SliderImages.css";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 
-function SliderImages({ SliderData }) {
+function SliderImages(props) {
 
-    // const lengthImage = SliderData.length;
-    const [introImage, setIntroImage] = useState('')
+    const [introImage, setIntroImage] = useState('');
+    const sliderData = props.SliderData;
 
     useEffect(() => {
-        setIntroImage(SliderData[0].image);
-        return () => {
-            //
+        if (sliderData) {
+            setIntroImage(sliderData[0])
         }
-    }, [])
+
+        return () => {
+
+        }
+    }, [sliderData])
 
     return (
         <div>
             <div className="intro-img">
-                {/* <img src="https://images.unsplash.com/photo-1607053075432-9036f44e98ef?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="555" /> */}
                 <img src={introImage} alt="555" />
-
             </div>
-            <Swiper
-                spaceBetween={20}
-                slidesPerView={4}
-                navigation
-                // pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
-            >
-                {SliderData.map((slide, index) => (
-                    <SwiperSlide className="slide-img" key={index} onClick={() => setIntroImage(slide.image)} ><img src={slide.image} alt={index} /></SwiperSlide>
-                ))}
-            </Swiper>
+            { !sliderData ? <div>Loading...</div> :
+                <Swiper
+                    spaceBetween={20}
+                    slidesPerView={4}
+                    navigation
+                    // pagination={{ clickable: true }}
+                    scrollbar={{ draggable: true }}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}
+                >
+                    {sliderData.map((slide, index) => (
+                        <SwiperSlide className="slide-img" key={index} onClick={() => setIntroImage(slide)} ><img src={slide} alt={index} /></SwiperSlide>
+                    ))}
+                </Swiper>
+            }
         </div>
     )
 }
