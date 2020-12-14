@@ -6,6 +6,7 @@
 .slide-img img {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .intro-img {
@@ -18,6 +19,22 @@
 .intro-img img {
     width: 100%;
     height: 100%;
+}
+
+.slide-img .cancle {
+    background-color: red;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    border-radius: 50%;
+    padding: 0px 5px 3px 5px;
+    text-align: center;
+}
+
+.slide-img .cancle span {
+    /* transform: translate(-50%, -50%); */
+    margin: 0;
 }
 
 @media (max-width: 500px) {

@@ -40,11 +40,14 @@ function SliderImages(props) {
                     navigation
                     // pagination={{ clickable: true }}
                     scrollbar={{ draggable: true }}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    // onSlideChange={() => console.log('slide change')}
+                    // onSwiper={(swiper) => console.log(swiper)}
                 >
                     {sliderData.map((slide, index) => (
-                        <SwiperSlide className="slide-img" key={index} onClick={() => setIntroImage(slide)} ><img src={slide} alt={index} /></SwiperSlide>
+                        <SwiperSlide className="slide-img" key={index} onClick={() => setIntroImage(slide)} >
+                                <img src={slide} alt={index} />
+                                { props.modeDisplay && <div className="cancle"><span>x</span></div>}
+                        </SwiperSlide>
                     ))}
                 </Swiper>
             }

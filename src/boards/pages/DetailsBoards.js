@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import SliderImages from "../../shared/components/UIElements/SliderImages";
@@ -15,6 +15,7 @@ function DetailsBoards() {
     const dispatch = useDispatch();
     const boardList = useSelector((state) => state.boardItem);
     const { board, loading, error } = boardList;
+    const [modeDisplay, setModeDisplay] = useState(false);
     // console.log(board.tools)
 
     useEffect(() => {
@@ -30,10 +31,10 @@ function DetailsBoards() {
     return (
         <div className="header-detail">
             <div className="box-button">
-                <button className="btn btn-secondary">Edit</button>
+                <button className="btn btn-secondary" onClick={() => setModeDisplay(!modeDisplay)}>Edit</button>
             </div>
             <div className="container-detail">
-                <SliderImages SliderData={board.images} />
+                <SliderImages SliderData={board.images} modeDisplay={modeDisplay} />
                 <DescriptionBoard name={board.nameBoard} des={board.description} type={board.type} />
             </div>
             <TableDetailBoard tools={board.tools} />    
