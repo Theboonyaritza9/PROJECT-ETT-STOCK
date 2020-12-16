@@ -31,6 +31,10 @@
     margin: 1rem 0;
 }
 
+.detail .form-control1 input {
+    width: 100%;
+}
+
 .detail p:nth-child(1) span, .detail p:nth-child(2) span, .detail p:nth-child(4) span {
     margin-left: 100px;
 }

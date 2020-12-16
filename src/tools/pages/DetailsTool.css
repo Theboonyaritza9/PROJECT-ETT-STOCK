@@ -73,13 +73,33 @@
 .footer-detail textarea {
     width: 100%;
     height: 50px;
+}
 
+.footer-detail .form-control1 label {
+    color: #000;
+    font-weight: bold;
 }
 
 .box-button{
     display: flex;
     justify-content: flex-end;
 }
+
+.cover-detail-tool .form-control1 {
+    width: 100%;
+}
+
+.cover-detail-tool .form-control1 input {
+    /* margin-left: 0px; */
+    margin: 5px 0 0 0;
+    width: 100%;
+}
+
+.cover-detail-tool .form-control1 label {
+    color: #000;
+    font-weight: bold;
+}
+
 
 @media (max-width: 960px) {
     .container-detail {

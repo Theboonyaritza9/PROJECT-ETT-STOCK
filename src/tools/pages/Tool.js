@@ -24,7 +24,7 @@ function Tool() {
         <section>
             <div className="section-top">
                 <div className="filter-button">
-                    <button className="btn btn-secondary">Filters</button>
+                    <button className="btn btn-secondary" style={{marginLeft: "10px"}}>Filters</button>
                     <button className="btn btn-success">+New Tool</button>
                 </div>
                 <FilterTool />

@@ -63,6 +63,18 @@ export default function Navstaff() {
 
     window.addEventListener('resize', handleShowSearch);
 
+    const closeLink = () => {
+        if (window.innerWidth <= 960) {
+            if (!menuIcon) {
+                setColorMenu("#fff");
+            } else {
+                setColorMenu("#000");
+            }
+        }
+        setActive(false);
+        setMenuIcon(false);
+    }
+
     const handleMenuIcon = () => {
         if (!menuIcon) {
             setColorMenu("#fff");
@@ -145,7 +157,7 @@ export default function Navstaff() {
                             Tools
                         <ul>
                                 <li><Link to="/">Add new tool</Link></li>
-                                <li><Link to="/">tool's list</Link></li>
+                                <li onClick={closeLink}><Link to="/">tool's list</Link></li>
                                 <li><Link to="/">request-tool history</Link></li>
                             </ul>
                         </li>}
@@ -157,7 +169,7 @@ export default function Navstaff() {
                                 <li><Link to="/">Add new board</Link></li>
                                 <li><Link to="/">Add new project</Link></li>
                                 <li><Link to="/">Request board</Link></li>
-                                <li><Link to="/boards">board's list</Link></li>
+                                <li onClick={closeLink}><Link to="/boards">board's list</Link></li>
                                 <li><Link to="/">request-board history</Link></li>
                                 <li><Link to="/">request-project history</Link></li>
                             </ul>

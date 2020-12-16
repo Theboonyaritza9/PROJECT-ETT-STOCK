@@ -1,5 +1,5 @@
 import {
-    TOOL_LIST_REQUEST, TOOL_LIST_SUCCESS, TOOL_LIST_FAIL, 
+    TOOL_LIST_REQUEST, TOOL_LIST_SUCCESS, TOOL_LIST_FAIL, TOOL_SAVE_SUCCESS,
     TOOL_ITEM_REQUEST, TOOL_ITEM_SUCCESS, TOOL_ITEM_FAIL
 } from "../constants/toolConstants";
 
@@ -21,6 +21,8 @@ const toolItemReducer = (state = { tool: {} }, action) => {
         case TOOL_ITEM_REQUEST:
             return { loading: true };
         case TOOL_ITEM_SUCCESS:
+            return { loading: false, tool: action.payload }
+        case TOOL_SAVE_SUCCESS:
             return { loading: false, tool: action.payload }
         case TOOL_ITEM_FAIL:
             return { loading: false, error: action.payload }
