@@ -91,7 +91,7 @@ function SliderImages(props) {
             }
             { props.modeDisplay && <ImageUpload
                 center
-                id="images"
+                id="newImages"
                 onInput={inputHandler}
                 imageProfile={imageProfile}
                 errorText="Please provide an image."

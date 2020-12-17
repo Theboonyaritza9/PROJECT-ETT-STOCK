@@ -1,6 +1,9 @@
 .container-detail {
     display: grid;
     grid-template-columns: 40% 60%;
+    background-color: #fff;
+    padding: 1rem;
+    /* box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.1); */
 }
 
 .header-detail {
@@ -55,6 +58,7 @@
 .box-button {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 960px) {

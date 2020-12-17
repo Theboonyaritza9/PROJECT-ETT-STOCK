@@ -50,6 +50,10 @@ function DetailsBoards() {
             images: {
                 value: null,
                 isValid: false
+            },
+            newImages: {
+                value: null,
+                isValid: false
             }
         },
         false

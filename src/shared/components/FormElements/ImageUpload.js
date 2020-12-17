@@ -40,22 +40,26 @@ const ImageUpload = props => {
         // console.log("Single", event.target.files)
         let pickedFile;
         let fileIsValid = isValid;
-        if (event.target.files && event.target.files.length === 1) {
+        if (event.target.files && event.target.files.length === 1 && props.id === 'image') {
+            // console.log("Image")
             pickedFile = event.target.files[0];
             setFile(pickedFile);
             setIsValid(true);
             fileIsValid = true;
-        } else if (event.target.files && event.target.files.length > 1) {
+        } else if (event.target.files && event.target.files.length > 0) {
+            // console.log("ImageArray")
             pickedFile = event.target.files;
             setFile(pickedFile);
             setIsValid(true);
             fileIsValid = true;
-            props.onInput(props.id, pickedFile, fileIsValid);
+            props.onInput("images", props.newSlide, true);
         }
         else {
             setIsValid(false);
             fileIsValid = false;
         }
+        props.onInput(props.id, pickedFile, fileIsValid);
+
         // props.onInput(props.id, [...pickedFile, ...props.newSlider], fileIsValid);
     };
 

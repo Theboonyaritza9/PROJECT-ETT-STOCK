@@ -54,6 +54,10 @@ function DetailsTool() {
                 value: null,
                 isValid: false
             },
+            newImages: {
+                value: null,
+                isValid: false
+            },
         },
         false
     );
@@ -66,8 +70,10 @@ function DetailsTool() {
         }
     }, [tool])
 
+    // console.log(formState.inputs.newImages.value)
 
-    const testText = (e) => {
+
+    const testText = () => {
         // setTotal(e.target.value);
         console.log(total);
     }
@@ -84,6 +90,7 @@ function DetailsTool() {
             size: formState.inputs.size.value,
             description: formState.inputs.description.value,
             images: formState.inputs.images.value,
+            newImages: formState.inputs.newImages.value,
             imageProfile: formState.inputs.image.value,
             statue: status
         }
@@ -101,7 +108,7 @@ function DetailsTool() {
                     <div className="container-detail">
                         <div>
                             <SliderImages
-                                SliderData={tool.images}
+                                SliderData={images}
                                 modeDisplay={modeDisplay}
                                 inputHandler={inputHandler}
                                 imageProfile={imageProfile}

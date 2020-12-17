@@ -115,7 +115,7 @@ export default function Navstaff() {
     }
 
     const handleProfile = () => {
-        console.log(promptProfile)
+        // console.log(promptProfile)
         if (promptProfile === true) {
             setpromptNotice(false);
             setBlackDrop(false);
