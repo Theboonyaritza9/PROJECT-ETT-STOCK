@@ -30,7 +30,7 @@ function TableDetailBoard(props) {
                                 <th><h4>Size</h4></th>
                                 {/* <th><h4>Status</h4></th> */}
                                 <th><h4>Piece</h4></th>
-                                <th><h4>Action</h4></th>
+                                {/* <th><h4>Action</h4></th> */}
                             </tr>
                         </thead>
                         <tbody>
@@ -43,10 +43,10 @@ function TableDetailBoard(props) {
                                     <th><p>{res.size}</p></th>
                                     {/* <th><p>getting out of stock</p></th> */}
                                     <th><p>{res.total}</p></th>
-                                    <th>
+                                    {/* <th>
                                         <button className="btn btn-submit">Request</button>
                                         <button className="btn btn-success">+Add</button>
-                                    </th>
+                                    </th> */}
                                 </tr>
                             ))}
                         </tbody>
