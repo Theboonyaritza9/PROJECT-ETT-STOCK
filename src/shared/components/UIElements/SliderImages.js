@@ -17,22 +17,28 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 function SliderImages(props) {
 
     const [introImage, setIntroImage] = useState('');
+    // const [imageUrl, setImageUrl] = useState([]);
     const [newSlider, setNewSlider] = useState([])
     const sliderData = props.SliderData;
-    const { imageProfile, inputHandler, modeDisplay } = props
+    const { imageProfile, inputHandler, modeDisplay, introImages } = props
     const [count, setCount] = useState(0)
 
-
-    // console.log(count)
-    // console.log(newSlider.length === 0 ? true : false)
-
-
     useEffect(() => {
+        // if (introImages) {
+        //     console.log(introImages)
+        //     const fileReader = new FileReader();
+        //     fileReader.onload = () => {
+        //         setImageUrl(fileReader.result);
+        //     };
+        //     for (var i = 0; i < introImages.length; i++) {
+        //         fileReader.readAsDataURL(introImages[i]);
+        //     }
+        //     fileReader.readAsDataURL(introImages[0]);
+        // }
         if (imageProfile && sliderData) {
             // console.log(newSlider.length === 0 ? true : false)
             // console.log(modeDisplay)
             if (sliderData.length > count || !modeDisplay) {
-                // console.log('morn than')
                 setCount(sliderData.length)
                 setIntroImage(imageProfile);
                 setNewSlider(sliderData);
@@ -40,7 +46,7 @@ function SliderImages(props) {
 
             } else {
                 inputHandler("images", newSlider, true)
-                if(newSlider.length === 0) {
+                if (newSlider.length === 0) {
                     inputHandler("images", null, false)
                 }
             }
@@ -62,7 +68,6 @@ function SliderImages(props) {
             <div className="intro-img">
                 <img src={introImage} alt="555" />
             </div>
-            {/* { props.modeDisplay && <input type="file" style={{ marginBottom: '1rem' }} />} */}
             { props.modeDisplay && <ImageUpload
                 center
                 id="image"
@@ -100,6 +105,7 @@ function SliderImages(props) {
                 newSlider={newSlider}
             />}
 
+            {/* <img src={imageUrl} alt="nothing" /> */}
         </div>
     )
 }

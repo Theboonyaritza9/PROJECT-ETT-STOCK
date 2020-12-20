@@ -623,5 +623,26 @@ export const boardItem = {
     ]
 }
 
+export const todos = [
+    {
+        id: uuidv4(),
+        name: "Developer",
+        header: "Speed-Raider",
+        date: '10/12/63 : 17.00',
+        status: 'processing',
+        deadline: 'Today : 17.00',
+        description: 'This is still incomplete..........'
+    },
+    {
+        id: uuidv4(),
+        name: "Admin",
+        header: "ET-OPPTO",
+        date: '12/12/63 : 10.00',
+        status: 'wait process',
+        deadline: '15/12/63 : 09.00',
+        description: 'This is still incomplete..........'
+    }
+] 
+
 
 

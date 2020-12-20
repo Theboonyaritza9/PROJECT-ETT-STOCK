@@ -1,0 +1,90 @@
+.container-todo {
+    width: 380px;
+    /* background-color: red; */
+    margin: 0 auto;
+}
+
+.title-todo {
+    width: 100%;
+    background-color: royalblue;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.title-todo h3 {
+    margin-left: 1rem;
+}
+
+.add-todo {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem 0;
+}
+
+.todo {
+    border: 1px solid #ccc ;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.header-todo {
+    display: flex;
+}
+
+.header-profile {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.header-profile-des {
+    margin: 0 1rem;
+}
+
+.header-profile-des p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.header-profile-des p:nth-child(1) {
+    font-weight: bold;
+}
+
+.header-profile-des p:nth-child(2) {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.header-profile img {
+    width: 100%;
+    height: 100%;
+}
+
+.content-todo {
+    margin: 1rem 0;
+}
+
+.content-text {
+    display: flex;
+}
+
+.content-text p:nth-child(1) {
+    width: 40%;
+    font-weight: bold;
+}
+
+.content-text p:nth-child(2) {
+    width: 60%;
+}
+
+.footer-todo button:first-child {
+    margin-right: 1rem;
+}
+
+@media (max-width: 400px) {
+    .container-todo {
+        width: 80%;
+    }
+}

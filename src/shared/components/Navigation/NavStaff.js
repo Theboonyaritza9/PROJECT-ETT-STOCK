@@ -158,7 +158,7 @@ export default function Navstaff() {
                         <ul>
                                 <li><Link to="/">Add new tool</Link></li>
                                 <li onClick={closeLink}><Link to="/">tool's list</Link></li>
-                                <li><Link to="/">request-tool history</Link></li>
+                                <li onClick={closeLink}><Link to="/history/boards">request-tool history</Link></li>
                             </ul>
                         </li>}
 
@@ -170,11 +170,11 @@ export default function Navstaff() {
                                 <li><Link to="/">Add new project</Link></li>
                                 <li><Link to="/">Request board</Link></li>
                                 <li onClick={closeLink}><Link to="/boards">board's list</Link></li>
-                                <li><Link to="/">request-board history</Link></li>
-                                <li><Link to="/">request-project history</Link></li>
+                                <li onClick={closeLink}><Link to="/history/boards">request-board history</Link></li>
+                                <li onClick={closeLink}><Link to="/history/boards">request-project history</Link></li>
                             </ul>
                         </li>}
-                    <li className="nav-item"><Link to="/">TodoList</Link></li>
+                    <li className="nav-item" onClick={closeLink}><Link to="/todo">TodoList</Link></li>
                     <li className="nav-item"><Link to="/">อุปกรณ์ไม่ครบ</Link></li>
 
 

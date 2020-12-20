@@ -62,6 +62,8 @@ function DetailsTool() {
         false
     );
 
+    // console.log(formState.inputs.newImages.value)
+
     useEffect(() => {
         dispatch(ItemToolAction());
         // console.log('work')
@@ -112,6 +114,7 @@ function DetailsTool() {
                                 modeDisplay={modeDisplay}
                                 inputHandler={inputHandler}
                                 imageProfile={imageProfile}
+                                introImages={formState.inputs.newImages.value}
 
                             />
                         </div>

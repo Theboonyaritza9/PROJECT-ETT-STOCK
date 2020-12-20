@@ -8,6 +8,8 @@ import DetailsTool from "./tools/pages/DetailsTool"
 import Tool from './tools/pages/Tool';
 import DetailsBoards from './boards/pages/DetailsBoards';
 import Board from './boards/pages/Board';
+import Todolist from './todolist/page/Todolist';
+import HistoryBoard from './history/page/HistoryBoard';
 // import TestSwipe from './TestSwipe';
 
 
@@ -33,6 +35,12 @@ function App() {
           </Route>
           <Route path="/detailboard">
             <DetailsBoards />
+          </Route>
+          <Route path="/todo">
+            <Todolist />
+          </Route>
+          <Route path="/history/boards">
+            <HistoryBoard />
           </Route>
           <Redirect to="/" />
         </Switch>

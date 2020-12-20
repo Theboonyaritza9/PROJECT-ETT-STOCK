@@ -4,7 +4,6 @@ const ImageUpload = props => {
     const [file, setFile] = useState();
     // const [previewUrl, setPreviewUrl] = useState();
     const [isValid, setIsValid] = useState(false);
-
     const filePickerRef = useRef();
     // console.log(props.imageProfile)
 
@@ -15,7 +14,7 @@ const ImageUpload = props => {
             // const fileReader = new FileReader();
             if (!file) {
                 setIsValid(true)
-                props.onInput(props.id, props.imageProfile, true);
+                props.onInput("image", props.imageProfile, true);
                 // fileReader.readAsDataURL(file);
             }
         }
@@ -23,9 +22,9 @@ const ImageUpload = props => {
             setIsValid(false);
             // props.onInput(props.id, null, false)
         }
-        if (!file) {
-            return;
-        }
+        // if (!file) {
+        //     return;
+        // }
 
         // const fileReader = new FileReader();
         // fileReader.onload = () => {
@@ -46,19 +45,20 @@ const ImageUpload = props => {
             setFile(pickedFile);
             setIsValid(true);
             fileIsValid = true;
+            props.onInput('image', pickedFile, fileIsValid);
         } else if (event.target.files && event.target.files.length > 0) {
             // console.log("ImageArray")
             pickedFile = event.target.files;
             setFile(pickedFile);
             setIsValid(true);
+            // setPreviewUrl(pickedFile)
             fileIsValid = true;
-            props.onInput("images", props.newSlide, true);
+            props.onInput("newImages", pickedFile, true);
         }
         else {
             setIsValid(false);
             fileIsValid = false;
         }
-        props.onInput(props.id, pickedFile, fileIsValid);
 
         // props.onInput(props.id, [...pickedFile, ...props.newSlider], fileIsValid);
     };
