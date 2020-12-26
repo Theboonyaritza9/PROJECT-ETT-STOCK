@@ -96,7 +96,7 @@ function DetailsTool() {
             imageProfile: formState.inputs.image.value,
             statue: status
         }
-        console.log(data)
+        console.log(data);
         // dispatch(SaveItemToolAction(data))
     }
 

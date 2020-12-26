@@ -74,6 +74,14 @@
     text-decoration: none;
 }
 
+.table-history th:last-child, .table-history td:last-child {
+    width: 250px;
+}
+
+.table-history th:last-child h4, .table-history th:first-child h4 {
+    text-align: left;
+}
+
 @media (max-width: 400px) {
     .container-history {
         width: 80%;

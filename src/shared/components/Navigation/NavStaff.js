@@ -171,7 +171,7 @@ export default function Navstaff() {
                                 <li><Link to="/">Request board</Link></li>
                                 <li onClick={closeLink}><Link to="/boards">board's list</Link></li>
                                 <li onClick={closeLink}><Link to="/history/boards">request-board history</Link></li>
-                                <li onClick={closeLink}><Link to="/history/boards">request-project history</Link></li>
+                                <li onClick={closeLink}><Link to="/history/project">request-project history</Link></li>
                             </ul>
                         </li>}
                     <li className="nav-item" onClick={closeLink}><Link to="/todo">TodoList</Link></li>

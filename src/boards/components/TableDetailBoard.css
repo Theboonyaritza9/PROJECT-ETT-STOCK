@@ -52,6 +52,10 @@
     color: red;
 }
 
+.table-detailBoard th:last-child h4 {
+    text-align: left;
+}
+
 @media (max-width: 960px) {
     .mobile-responsive {
         display: grid;

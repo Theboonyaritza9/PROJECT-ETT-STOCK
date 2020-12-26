@@ -20,7 +20,7 @@ function TableDetailBoard(props) {
                 <h3 className="topic-board">Board's Tools</h3>
                 <TableMobile tools={props.tools} />
                 <div className="desktop">
-                    <table>
+                    <table className="table-detailBoard">
                         <thead>
                             <tr>
                                 <th><h4>Image</h4></th>

@@ -10,6 +10,7 @@ import DetailsBoards from './boards/pages/DetailsBoards';
 import Board from './boards/pages/Board';
 import Todolist from './todolist/page/Todolist';
 import HistoryBoard from './history/page/HistoryBoard';
+import HistoryProject from './history/page/HistoryProject';
 // import TestSwipe from './TestSwipe';
 
 
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route path="/history/boards">
             <HistoryBoard />
+          </Route>
+          <Route path="/history/project">
+            <HistoryProject />
           </Route>
           <Redirect to="/" />
         </Switch>

@@ -171,10 +171,15 @@ table tr th button:first-child {
     table h4 {
         margin: 25px 0px;
         font-family: 'Roboto', sans-serif;
+        text-align: left;
     }
     table p {
         margin: 0;
         font-weight: normal;
         font-family: 'Roboto', sans-serif;
+        text-align: left;
+    }
+    table th:last-child h4, table th:first-child h4 {
+        text-align: center;
     }
 }
