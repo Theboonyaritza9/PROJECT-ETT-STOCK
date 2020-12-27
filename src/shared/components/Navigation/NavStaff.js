@@ -175,7 +175,7 @@ export default function Navstaff() {
                             </ul>
                         </li>}
                     <li className="nav-item" onClick={closeLink}><Link to="/todo">TodoList</Link></li>
-                    <li className="nav-item"><Link to="/">อุปกรณ์ไม่ครบ</Link></li>
+                    <li className="nav-item" onClick={closeLink}><Link to="/board/incomplete">อุปกรณ์ไม่ครบ</Link></li>
 
 
                 </ul>

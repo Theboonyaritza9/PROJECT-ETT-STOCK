@@ -54,7 +54,7 @@ function HistoryBoard() {
     return (
         <section>
             <div className="section-bottom">
-                <h3>To request Board</h3>
+                <h3 className="history-namepage">To request Board</h3>
                 <div className="desktop">
                     <table className="table-history">
                         <thead>
@@ -80,6 +80,24 @@ function HistoryBoard() {
                             ))}
                         </tbody>
                     </table>
+                </div>
+                <div className="box-history">
+                    <h3>To request Board</h3>
+                    {api.map((res) => (
+                        <div className="cover-moblie-history" key={res.id}>
+                            <div className="header-moblie-history">
+                                <h3>{res.date} : {res.time}</h3>
+                            </div>
+                            <div className="content-moblie-history">
+                                <p>{res.nameBoard} ({res.user})</p>
+                                <p>{res.total} board</p>
+                            </div>
+                            <div className="footer-moblie-history">
+                                <p>Description</p>
+                                <p>{res.description}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

@@ -1,0 +1,142 @@
+.container-incomplete {
+    width: 90%;
+    margin: 1rem auto;
+    padding: 3rem 5rem;
+    position: relative;
+}
+
+.section-incomplete {
+    display: flex;
+    background-color: #EDF3F9;
+    z-index: 1;
+}
+
+.figure-box {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #F6F0AA;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.figure-bar {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background-color: #F6F0AA;
+    z-index: -1;
+}
+
+.section-incomplete .headername-incomplete {
+    width: 50%;
+    text-align: center;
+}
+
+.proflie-img-incomplete {
+    width: 32px;
+    height: 32px;
+}
+
+.proflie-img-incomplete img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-incomplete {
+    display: flex;
+    align-items: center;
+}
+
+.header-incomplete div p {
+    margin: 0 10px;
+}
+
+.header-incomplete div p:first-child {
+    font-size: 14px;
+}
+
+.header-incomplete div p:last-child {
+    font-size: 12px;
+}
+
+.table-incomplete {
+    padding: 0;
+    border: none;
+}
+
+.table-incomplete tbody tr th, .table-incomplete thead tr th {
+    text-align: left;
+    padding-left: 5px;
+}
+
+.table-incomplete tbody tr th:last-child, .table-incomplete thead tr th:last-child {
+    text-align: center;
+    padding-left: 0;
+}
+
+.table-incomplete tbody tr th  {
+    font-weight: normal;
+}
+
+.table-incomplete tbody tr th input {
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 100px;
+}
+
+.table-incomplete tbody tr:nth-child(even) {
+    background: none;
+}
+
+.cover-incomplete {
+    width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #fff;
+}
+
+.btn-incomplete button {
+    width: 45%;
+    margin: 1rem 5px;
+}
+
+.detail-incomplete table {
+    width: 100%;
+}
+
+@media (max-width: 960px) {
+    .section-incomplete {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .headername-incomplete {
+        width: 100%;
+    }
+    .cover-incomplete {
+        margin: 1rem auto;
+        width: 90%;
+    }
+
+    /* .btn-incomplete button {
+        width: 40%;
+    } */
+}
+
+@media (max-width: 550px) {
+    .container-incomplete {
+        padding: 3rem 1rem;
+    }
+    .figure-bar {
+        display: none;
+    }
+    .figure-box {
+        display: none;
+    }
+}
