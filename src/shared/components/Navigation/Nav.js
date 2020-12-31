@@ -8,7 +8,6 @@ export default function Nav() {
         <div>
             {/* <Navuser /> */}
             <Navstaff />
-            {/* <Button type="submit" to="/" buttonStyle="btn btn-dark-outline">Save</Button> */}
         </div>
     )
 }

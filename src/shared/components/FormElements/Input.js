@@ -3,6 +3,8 @@ import React, { useReducer, useEffect } from 'react';
 import { validate } from '../../util/validators.js';
 import './Input.css';
 
+
+// Input of Login page
 const inputReducer = (state, action) => {
     switch (action.type) {
         case 'CHANGE':

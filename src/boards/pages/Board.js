@@ -10,7 +10,6 @@ function Board() {
     const dispatch = useDispatch();
     const boardList = useSelector((state) => state.boardList);
     const { boards, loading, error } = boardList;
-    // console.log(boards)
 
     useEffect(() => {
         dispatch(listBoardAction())

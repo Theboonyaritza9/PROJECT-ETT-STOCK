@@ -62,27 +62,15 @@ function DetailsTool() {
         false
     );
 
-    // console.log(formState.inputs.newImages.value)
-
     useEffect(() => {
         dispatch(ItemToolAction());
-        // console.log('work')
         return () => {
             //
         }
     }, [tool])
 
-    // console.log(formState.inputs.newImages.value)
-
-
-    const testText = () => {
-        // setTotal(e.target.value);
-        console.log(total);
-    }
-
     const handleSave = (e) => {
         setModeDisplay(false)
-        // console.log(formState.inputs);
         const data = {
             id: id,
             nameTool: formState.inputs.name.value,

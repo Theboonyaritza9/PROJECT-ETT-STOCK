@@ -1,6 +1,5 @@
 section {
     width: 90%;
-    /* margin: 30px auto 0px auto; */
 }
 
 .section-top {
@@ -33,7 +32,6 @@ border: 1px solid #007aff;
 
 .section-bottom-board {
     width: 100%;
-    /* margin: 30px auto 0px auto; */
     background-color: #fff;
     display: grid;
     grid-template-columns: repeat(1, 150px);
@@ -45,7 +43,6 @@ border: 1px solid #007aff;
 
 .single-board {
     width: 100%;
-    /* margin: 0px 1rem 30px 1rem; */
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -94,10 +91,6 @@ border: 1px solid #007aff;
         grid-template-columns: repeat(4, 150px);
         grid-gap: 2rem;
         justify-content: center;
-    }
-
-    .single-board {
-        /* margin: 0px 10px 40px 10px; */
     }
 }
 

@@ -58,7 +58,6 @@ export default function Search(props) {
 
     return (
         <React.Fragment>
-            {/* <div className="Nav-search" > */}
             <input type="text" placeholder="search...(วิธีเทส ให้พิม r เป็นตัวแรก)" value={text} onChange={onTextChanged} />
             <div className="icon-search">
                 <FontAwesomeIcon icon={['fas', 'search']} size="sm" />
@@ -66,17 +65,7 @@ export default function Search(props) {
             <div className="times-cancle" onClick={clearAllvalues}>
                 <FontAwesomeIcon icon={['fas', 'times']} size="lg" />
             </div>
-            {/* <div className="container-icon-times">
-                    <div className="cover-icon-times">
-                        <FontAwesomeIcon icon={['fas', 'times']} 
-                        size="sm" className="icon-cancel" 
-                        onClick={clearAllvalues}
-                        />
-                    </div>
-                </div> */}
             {action && renderSuggestions()}
-            {/* </div > */}
-            {/* {action && <div className="blackdrop2" onClick={() => setAction(false)}></div>} */}
         </React.Fragment>
     )
 

@@ -13,8 +13,6 @@ import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
-// import "./SliderImages.css";
-
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 function HistoryProject() {
@@ -24,7 +22,6 @@ function HistoryProject() {
     const [images, setImages] = useState(null);
     const boardList = useSelector((state) => state.boardItem);
     const { board, loading, error } = boardList;
-    // const [modeDisplay, setModeDisplay] = useState(false);
 
     useEffect(() => {
         dispatch(ItemBoardAction())
@@ -32,9 +29,6 @@ function HistoryProject() {
             setIntroImage(board.imageProfile);
             setImages(board.images);
         }
-        // if(board != undefined) {
-        // console.log(board)
-        // }
         return () => {
 
         }

@@ -5,11 +5,6 @@ import Profile from './Profile';
 
 const Notification = (props) => {
 
-    // console.log(items.length)
-    console.log('hi');
-    // console.log(newData);
-    // console.log(oldData);
-
     return (
         <div className="prompt-notification" id={props.className || ''}>
             <h2>Notifications</h2>

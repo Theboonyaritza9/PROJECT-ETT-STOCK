@@ -3,6 +3,7 @@ import "./HistoryBoard.css";
 
 function HistoryBoard() {
 
+    // Temporary Data
     const api = [
         {
             id: '1000',
@@ -55,6 +56,8 @@ function HistoryBoard() {
         <section>
             <div className="section-bottom">
                 <h3 className="history-namepage">To request Board</h3>
+
+                {/* It will display Width morn than 960px */}
                 <div className="desktop">
                     <table className="table-history">
                         <thead>
@@ -81,6 +84,8 @@ function HistoryBoard() {
                         </tbody>
                     </table>
                 </div>
+
+                 {/* It will display Width less than 960px */}
                 <div className="box-history">
                     <h3>To request Board</h3>
                     {api.map((res) => (
@@ -99,6 +104,7 @@ function HistoryBoard() {
                         </div>
                     ))}
                 </div>
+                
             </div>
         </section>
     )

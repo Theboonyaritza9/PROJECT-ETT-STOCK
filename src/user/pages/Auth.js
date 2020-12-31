@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import Button from '../../shared/components/FormElements/Button';
 import { useForm } from "../../shared/hooks/form-hook";
 import { VALIDATOR_MINLENGTH, VALIDATOR_EMAIL, VALIDATOR_REQUIRE } from "../../shared/util/validators";
 import Input from "../../shared/components/FormElements/Input";
@@ -21,10 +20,6 @@ function Auth() {
                 value: '',
                 isValid: false
             }
-            // name: {
-            //     value: '',
-            //     isValid: false
-            // }
         },
         false
     );
@@ -65,14 +60,6 @@ function Auth() {
                     <div className="headerAuth">
                         {isLoginMode ? <h3>Login</h3> : <h3>Register</h3>}
                     </div>
-                    {/* <h3>Username</h3>
-                <input type="text" placeholder="Enter username" />
-                <h3>Password</h3>
-                <input type="password" placeholder="********" />
-                <h3>Name</h3>
-                <input type="text" placeholder="Enter name" />
-                <br />
-                <button><a href="#">Register</a></button> */}
                     <Input
                         element="input"
                         id="email"
@@ -101,8 +88,6 @@ function Auth() {
                         onInput={inputHandler}
                     />}
                     <button type="submit" className="btn btn-success btn-full" disabled={!formState.isValid}>{isLoginMode ? 'Login' : 'Register '}</button>
-                    {/* <Button type="submit" buttonStyle="btn btn-success btn-full" disabled={!formState.isValid}>{isLoginMode ? 'Login' : 'Register '}</Button> */}
-
                     <p className="linkAuth" onClick={switchModeHandler}>{isLoginMode ? 'Have registered yet ?' : 'Login now '}</p>
                 </div>
             </div>

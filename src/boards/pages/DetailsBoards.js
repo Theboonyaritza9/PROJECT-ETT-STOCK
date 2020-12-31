@@ -8,7 +8,6 @@ import "./DetailsBoard.css"
 import "../../shared/components/FormElements/Button.css"
 import DescriptionBoard from '../components/DescriptionBoard';
 import TableDetailBoard from '../components/TableDetailBoard';
-// import { SliderData2 } from "../../shared/components/UIElements/SlideData";
 import { ItemBoardAction } from "../../actions/boardAction";
 
 function DetailsBoards() {
@@ -17,13 +16,9 @@ function DetailsBoards() {
     const boardList = useSelector((state) => state.boardItem);
     const { board, loading, error } = boardList;
     const [modeDisplay, setModeDisplay] = useState(false);
-    // console.log(board.tools)
 
     useEffect(() => {
         dispatch(ItemBoardAction())
-        // if(board != undefined) {
-        // console.log(board)
-        // }
         return () => {
 
         }
