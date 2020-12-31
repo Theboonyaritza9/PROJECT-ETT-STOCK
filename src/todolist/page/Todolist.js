@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { listToolAction } from "../../actions/todoAction";
 import Modal from "../../shared/components/UIElements/Modal";
 import Input from "../../shared/components/FormElements/Input2";
 import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from "../../shared/util/validators";
 import { useForm } from "../../shared/hooks/form-hook";
+import { AuthContext } from "../../shared/context/Auth-Context";
 
 import "./Todolist.css"
 
 function Todolist() {
 
+    const auth = useContext(AuthContext);
     const dispatch = useDispatch();
     const todolist = useSelector((res) => res.todoList);
     const { todos, loading, error } = todolist;
@@ -145,9 +147,10 @@ function Todolist() {
                         <div className="title-todo">
                             <h3>TodoList</h3>
                         </div>
-                        <div className="add-todo">
-                            <button className="btn btn-success" onClick={openAddHandler}>+ New TodoList</button>
-                        </div>
+                        {!auth.statusId ? null :
+                            <div className="add-todo">
+                                <button className="btn btn-success" onClick={openAddHandler}>+ New TodoList</button>
+                            </div>}
                         {todos.map(res => (
                             <div className="todo" key={res.id}>
                                 <div className="header-todo">
@@ -177,13 +180,15 @@ function Todolist() {
                                         <p>{res.description}</p>
                                     </div>
                                 </div>
-                                <div className="footer-todo">
-                                    <button className="btn btn-secondary"
-                                        onClick={() => openEditHandler(res)}>
-                                        Edit
+                                { !auth.statusId ? null :
+                                    <div className="footer-todo">
+                                        <button className="btn btn-secondary"
+                                            onClick={() => openEditHandler(res)}>
+                                            Edit
                                         </button>
-                                    <button className="btn btn-danger">Delete</button>
-                                </div>
+                                        <button className="btn btn-danger">Delete</button>
+                                    </div>
+                                }
                             </div>
                         ))}
                     </div >

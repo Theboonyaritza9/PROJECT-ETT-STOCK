@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { listBoardAction } from "../../actions/boardAction"
+import { AuthContext } from "../../shared/context/Auth-Context";
 
 import "./Board.css";
 
 function Board() {
 
+    const auth = useContext(AuthContext);
     const dispatch = useDispatch();
     const boardList = useSelector((state) => state.boardList);
     const { boards, loading, error } = boardList;
@@ -22,7 +24,7 @@ function Board() {
         <section>
             <div className="section-top">
                 <input type="text" placeholder="Search board.." className="search-board" />
-                <button className="btn btn-back ">+ New Board</button>
+                {!auth.statusId ? null : <button className="btn btn-back ">+ New Board</button>}
             </div>
             <div className="section-bottom-board">
                 {boards.map((res) => (

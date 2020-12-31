@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 
 import Modal from "../../shared/components/UIElements/Modal";
 import Input from "../../shared/components/FormElements/Input2";
 import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from "../../shared/util/validators";
 import { useForm } from "../../shared/hooks/form-hook";
+import { AuthContext } from "../../shared/context/Auth-Context";
 
 
 function MobileTool(props) {
 
     const toolList = props.toolList;
-
+    const auth = useContext(AuthContext);
     const [showPrompt, setShowPrompt] = useState(false);
     const [name, setName] = useState('');
     const [modePrompt, setModePrompt] = useState(true);
@@ -103,8 +104,8 @@ function MobileTool(props) {
                         </div>
                     </div>
                     <div className="mobile-button">
-                        <button className="btn btn-submit" onClick={() => openRequestHandler(res.nameTool)}>Request</button>
-                        <button className="btn btn-success" onClick={() => openAddHandler(res.nameTool)}>+Add</button>
+                        <button className="btn btn-submit btn-full" onClick={() => openRequestHandler(res.nameTool)}>Request</button>
+                        { !auth.statusId ? null :<button className="btn btn-success btn-full" onClick={() => openAddHandler(res.nameTool)}>+Add</button> }
                     </div>
                 </div>
             ))}

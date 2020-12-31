@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../../context/Auth-Context";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -29,6 +30,7 @@ export default function Navstaff() {
     const [colorMenu, setColorMenu] = useState("#000");
     const [clientStat, setClientStat] = useState(false);
     const [displaySearch, setDisplaySearch] = useState(null);
+    const auth = useContext(AuthContext);
 
     useEffect(() => {
         if (window.innerWidth <= 960) {
@@ -149,10 +151,10 @@ export default function Navstaff() {
                         <Profile name="Yukino" profileUser="https://f.ptcdn.info/083/046/000/odr6r77nnA5k1CdKCJm-o.png" />
                         <ul className="nav-item-profile">
                             <li><Link to="/">Edit Profile</Link></li>
-                            <li><Link to="/">Sign out</Link></li>
+                            <li onClick={() => auth.logout()}><Link to="/auth">Sign out</Link></li>
                         </ul>
                     </li>
-                    {clientStat ? <li className="nav-item"><Link to="/">Tools</Link></li> :
+                    {!auth.statusId ? <li className="nav-item" onClick={closeLink}><Link to="/">Tools</Link></li> :
                         <li className="nav-item">
                             Tools
                         <ul>
@@ -162,7 +164,7 @@ export default function Navstaff() {
                             </ul>
                         </li>}
 
-                    {clientStat ? <li className="nav-item"><Link to="/boards">Board</Link></li> :
+                    {!auth.statusId ? <li className="nav-item" onClick={closeLink}><Link to="/boards">Board</Link></li> :
                         <li className="nav-item">
                             Boards
                         <ul>

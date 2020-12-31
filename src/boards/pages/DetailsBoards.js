@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import SliderImages from "../../shared/components/UIElements/SliderImages";
 import { useForm } from "../../shared/hooks/form-hook";
+import { AuthContext } from "../../shared/context/Auth-Context";
 
 import "./DetailsBoard.css"
 import "../../shared/components/FormElements/Button.css"
@@ -12,6 +13,7 @@ import { ItemBoardAction } from "../../actions/boardAction";
 
 function DetailsBoards() {
 
+    const auth = useContext(AuthContext)
     const dispatch = useDispatch();
     const boardList = useSelector((state) => state.boardItem);
     const { board, loading, error } = boardList;
@@ -62,9 +64,11 @@ function DetailsBoards() {
 
     return (
         <div className="header-detail">
-            <div className="box-button">
-                <button className="btn btn-secondary" onClick={() => setModeDisplay(!modeDisplay)}>Edit</button>
-            </div>
+            { !auth.statusId ? null :
+                <div className="box-button">
+                    <button className="btn btn-secondary" onClick={() => setModeDisplay(!modeDisplay)}>Edit</button>
+                </div>
+            }
             <div className="container-detail">
                 <SliderImages SliderData={board.images}
                     modeDisplay={modeDisplay}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ItemToolAction } from "../../actions/toolAction";
@@ -6,6 +6,7 @@ import { useForm } from "../../shared/hooks/form-hook";
 import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from "../../shared/util/validators";
 import Input from "../../shared/components/FormElements/Input2";
 import SliderImages from "../../shared/components/UIElements/SliderImages";
+import { AuthContext } from "../../shared/context/Auth-Context";
 
 
 import "./DetailsTool.css"
@@ -13,6 +14,7 @@ import "../../shared/components/FormElements/Button.css"
 
 function DetailsTool() {
 
+    const auth = useContext(AuthContext)
     const dispatch = useDispatch();
     const toolItem = useSelector(state => state.toolItem);
     const { loading, error, tool } = toolItem;
@@ -91,7 +93,7 @@ function DetailsTool() {
     return (
         <div className="header-detail">
             <div className="box-button">
-                <button className="btn btn-secondary" onClick={() => setModeDisplay(!modeDisplay)}>Edit</button>
+                {!auth.statusId ? null : <button className="btn btn-secondary" onClick={() => setModeDisplay(!modeDisplay)}>Edit</button>}
             </div>
             { loading ? <div>Loading...</div> :
                 error ? <div>{error}</div> :
