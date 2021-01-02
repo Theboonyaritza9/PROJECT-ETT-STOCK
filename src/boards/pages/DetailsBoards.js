@@ -42,15 +42,19 @@ function DetailsBoards() {
             },
             image: {
                 value: null,
-                isValid: false
+                isValid: true
             },
             images: {
                 value: null,
                 isValid: false
             },
+            newImage: {
+                value: null,
+                isValid: true
+            },
             newImages: {
                 value: null,
-                isValid: false
+                isValid: true
             }
         },
         false
@@ -61,6 +65,7 @@ function DetailsBoards() {
         console.log(formState.inputs);
     }
 
+    // console.log(formState.inputs)
 
     return (
         <div className="header-detail">

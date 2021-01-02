@@ -22,6 +22,7 @@ function DetailsTool() {
     const { nameTool, type, category, size, total, description, imageProfile, id, images, status } = tool;
 
 
+    // The main variant
     const [formState, inputHandler, setFormData] = useForm(
         {
             name: {
@@ -50,27 +51,35 @@ function DetailsTool() {
             },
             image: {
                 value: null,
-                isValid: false
+                isValid: true
             },
             images: {
                 value: null,
                 isValid: false
             },
+            newImage: {
+                value: null,
+                isValid: true
+            },
             newImages: {
                 value: null,
-                isValid: false
+                isValid: true
             },
         },
         false
     );
 
+    // console.log(formState.inputs);
+
     useEffect(() => {
+        // request api from database using Redux.
         dispatch(ItemToolAction());
         return () => {
             //
         }
     }, [tool])
 
+    // when press button-save
     const handleSave = (e) => {
         setModeDisplay(false)
         const data = {
@@ -87,6 +96,10 @@ function DetailsTool() {
             statue: status
         }
         console.log(data);
+
+        // update api onto database
+        // ***** Coding later *****
+
         // dispatch(SaveItemToolAction(data))
     }
 
@@ -104,8 +117,7 @@ function DetailsTool() {
                                 modeDisplay={modeDisplay}
                                 inputHandler={inputHandler}
                                 imageProfile={imageProfile}
-                                introImages={formState.inputs.newImages.value}
-
+                                newImages={formState.inputs.newImages.value}
                             />
                         </div>
                         <div className="box-description" >
@@ -124,7 +136,6 @@ function DetailsTool() {
                                         initialValue={nameTool}
                                         initialValid={true}
                                     />
-
                                     }
                                 </div>
                                 <div className="cover-detail-tool">

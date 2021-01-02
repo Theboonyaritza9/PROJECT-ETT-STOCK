@@ -19,10 +19,10 @@ import { useAuth } from "./shared/hooks/auth-hook";
 function App() {
 
   const { login, token, statusId, logout } = useAuth();
-  console.log("App", token);
+  // console.log("App", token);
 
+  // This code block for deploying
   let routes;
-
   if (!token) {
     routes = (
       <Switch>
@@ -69,9 +69,9 @@ function App() {
     )
   }
 
-
+  // Uncomment when coding or revise program
   // return (
-  //   <AuthContext.Provider value={{ isLoggedIn: token, login: login }}>
+  //   <AuthContext.Provider value={{ isLoggedIn: token, login: login, statusId: true }}>
   //     <div className="App">
   //       <Router>
   //         <Nav />
@@ -111,16 +111,17 @@ function App() {
   //   </AuthContext.Provider>
   // );
 
-  return (
-    <AuthContext.Provider value={{ isLoggedIn: token, login: login, statusId: statusId, logout: logout }}>
-      <div className="App">
-        <Router>
-          {routes}
-        </Router>
+    // This Return for deploying
+    return (
+      <AuthContext.Provider value={{ isLoggedIn: token, login: login, statusId: statusId, logout: logout }}>
+        <div className="App">
+          <Router>
+            {routes}
+          </Router>
 
-      </div>
-    </AuthContext.Provider>
-  );
+        </div>
+      </AuthContext.Provider>
+    );
 }
 
 export default App;

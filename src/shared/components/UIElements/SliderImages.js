@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 // import { SliderData } from "./SlideData";
 import ImageUpload from "../FormElements/ImageUpload";
+import ImageUploadMultiple from "../FormElements/ImageUploadMultiple";
 
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/swiper.scss';
@@ -17,50 +18,44 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 function SliderImages(props) {
 
     const [introImage, setIntroImage] = useState('');
-    // const [imageUrl, setImageUrl] = useState([]);
-    const [newSlider, setNewSlider] = useState([])
+    const [slides, setSlides] = useState([])
     const sliderData = props.SliderData;
-    const { imageProfile, inputHandler, modeDisplay, introImages } = props
+    const { imageProfile, inputHandler, modeDisplay } = props
     const [count, setCount] = useState(0)
 
     useEffect(() => {
-        // if (introImages) {
-        //     console.log(introImages)
-        //     const fileReader = new FileReader();
-        //     fileReader.onload = () => {
-        //         setImageUrl(fileReader.result);
-        //     };
-        //     for (var i = 0; i < introImages.length; i++) {
-        //         fileReader.readAsDataURL(introImages[i]);
-        //     }
-        //     fileReader.readAsDataURL(introImages[0]);
-        // }
         if (imageProfile && sliderData) {
-            // console.log(newSlider.length === 0 ? true : false)
-            // console.log(modeDisplay)
+            // set default api
             if (sliderData.length > count || !modeDisplay) {
                 setCount(sliderData.length)
                 setIntroImage(imageProfile);
-                setNewSlider(sliderData);
+                setSlides(sliderData);
                 inputHandler("images", sliderData, true)
 
-            } else {
-                inputHandler("images", newSlider, true)
-                if (newSlider.length === 0) {
-                    inputHandler("images", null, false)
+            }
+            // set a new array of default api when you discard a image
+            else {
+                inputHandler("images", slides, true)
+                if (slides.length === 0) {
+                    // can't update api, if you dont select a new image or no image's in default api
+                    if (!props.newImages || props.newImages.length === 0) {
+                        inputHandler("images", null, false)
+                        inputHandler("newImages", null, false)
+                    }
+                    // can update api, provided that you select a new image, althought no image's in default api 
+                    else {
+                        inputHandler("images", null, true)
+                    }
                 }
             }
         }
         return () => {
         }
-    }, [imageProfile, newSlider, modeDisplay])
+    }, [imageProfile, slides, modeDisplay])
 
+    // delete old images from database
     const deleteImage = (data) => {
-        // console.log('Delete', data)
-        setNewSlider(newSlider.filter(res => res !== data));
-        // setCount(count === 0 ? 0 : count - 1);
-        // console.log(newSlider)
-        // inputHandler("images", ["/images/b1.png", "/images/b3.jpg", "/images/detailTool.jpg"], true)
+        setSlides(slides.filter(res => res !== data));
     }
 
     return (
@@ -68,13 +63,11 @@ function SliderImages(props) {
             <div className="intro-img">
                 <img src={introImage} alt="555" />
             </div>
-            { props.modeDisplay && <ImageUpload
+            { modeDisplay && <ImageUpload
                 center
-                id="image"
+                id="newImage"
                 onInput={inputHandler}
-                imageProfile={imageProfile}
                 errorText="Please provide an image."
-                multiple={false}
             />}
             { !sliderData ? <div>Loading...</div> :
                 <Swiper
@@ -86,7 +79,7 @@ function SliderImages(props) {
                 // onSlideChange={() => console.log('slide change')}
                 // onSwiper={(swiper) => console.log(swiper)}
                 >
-                    {newSlider.map((slide, index) => (
+                    {slides.map((slide, index) => (
                         <SwiperSlide className="slide-img" key={index} onClick={() => setIntroImage(slide)} >
                             <img src={slide} alt={index} />
                             { props.modeDisplay && <div className="cancle" onClick={() => deleteImage(slide)}><span>x</span></div>}
@@ -94,18 +87,14 @@ function SliderImages(props) {
                     ))}
                 </Swiper>
             }
-            { props.modeDisplay && <ImageUpload
-                center
+            { modeDisplay && <ImageUploadMultiple
                 id="newImages"
-                onInput={inputHandler}
-                imageProfile={imageProfile}
                 errorText="Please provide an image."
-                multiple={true}
-                lengthofImages={newSlider.length === 0 ? true : false}
-                newSlider={newSlider}
-            />}
-
-            {/* <img src={imageUrl} alt="nothing" /> */}
+                onInput={inputHandler}
+                modeDisplay={modeDisplay}
+                defaultImages={slides}
+            />
+            }
         </div>
     )
 }
