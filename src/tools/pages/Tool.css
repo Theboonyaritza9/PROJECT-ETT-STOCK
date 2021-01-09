@@ -22,7 +22,31 @@ section {
 }
 
 .checkbox {
-    display: none;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background: white;
+}
+
+.stock-status, .filter-tools {
+    width: 49%;
+    padding: 0px 10px 10px 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.stock-status h4, .filter-tools h4 {
+    font-size: 13px;
+}
+
+.cover-filter-input-status select {
+    width: 100%;
+}
+
+.cover-filter-input-equipment select {
+    width: 100%;
 }
 
 .checkbox label {
@@ -81,9 +105,6 @@ section {
     padding-left: 10px;
 }
 
-
-
-
 .mobile-button {
     width: 100%;
     display: flex;
@@ -100,6 +121,12 @@ section {
 
 table tr th button:first-child {
     margin-right: 10px;
+}
+
+@media (min-width: 500px) {
+    .stock-status h4, .filter-tools h4 {
+        font-size: 16px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -122,24 +149,13 @@ table tr th button:first-child {
         flex-direction: row-reverse;
         justify-content: space-between;
     }
-    .checkbox {
-        width: 100%;
-        margin-top: 10px;
-        display: flex;
-        justify-content: space-between;
+    .stock-status h4, .filter-tools h4 {
+        font-size: 16px;
     }
-    .stock-status, .filter-tools {
-        width: 49%;
-        padding: 0px 10px 10px 10px;
-        background: white;
-        border: 1px solid #D6D6D0;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-    h4, label {
+    /* h4, label {
         margin: 10px 0px;
         font-family: 'Roboto', sans-serif;
-    }
+    } */
     .section-bottom {
         width: 100%;
         margin: 20px 0px;

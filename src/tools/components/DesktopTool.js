@@ -12,8 +12,14 @@ function DesktopTool(props) {
     const [showPrompt, setShowPrompt] = useState(false);
     const [name, setName] = useState('');
     const [modePrompt, setModePrompt] = useState(true);
+    const [statConvert, setStatConvert] = useState([
+        {value: "In Stock", color: "black"},
+        {value: "Out of Stock", color: "red"},
+        {value: "Getting out of Stock", color: "orange"}
+    ])
+    const [equipConvert, setEquipConvert] = useState(["IC", "Module", "R", "C", "LM"])
 
-    const [formState, inputHandler ] = useForm(
+    const [formState, inputHandler] = useForm(
         {
             total: {
                 value: '',
@@ -65,7 +71,7 @@ function DesktopTool(props) {
                     <Input
                         id="total"
                         element="input"
-                        type="text"
+                        type="number"
                         label="Total"
                         errorText="Please enter a valid Tool."
                         validators={[VALIDATOR_MINLENGTH(1)]}
@@ -107,10 +113,11 @@ function DesktopTool(props) {
                                 <tr key={res.id}>
                                     <th><Link to={`/detail/${res.id}`}><img src={res.imageProfile} alt="jpg" /></Link></th>
                                     <th><p>{res.nameTool}</p></th>
-                                    <th><p>{res.type}</p></th>
+                                    {/* <th><p>{res.type}</p></th> */}
+                                    <th><p>{equipConvert[Number(res.type) - 1]}</p></th>
                                     <th><p>{res.size}</p></th>
                                     <th><p>{res.category}</p></th>
-                                    <th><p>{res.status}</p></th>
+                                    <th><p style={{color: statConvert[Number(res.status) - 1].color}}>{statConvert[Number(res.status) - 1].value}</p></th>
                                     <th><p>{res.total}</p></th>
                                     <th>
                                         <button className="btn btn-submit" onClick={() => openRequestHandler(res.nameTool)}>Request</button>

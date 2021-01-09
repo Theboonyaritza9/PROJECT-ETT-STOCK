@@ -1,27 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function FilterTool() {
+function FilterTool(props) {
+
+    const [checkStatus, setCheckStatus] = useState("1");
+    const [checkEquipment, setCheckEquipment] = useState("");
+
+    // const { tool } = useFilter();
+
+    const handleCheckboxStatus = (e) => {
+        setCheckStatus(e.target.value)
+        props.filterFunction(e.target.value, checkEquipment)
+    }
+
+    const handleCheckboxEquipment = (e) => {
+        setCheckEquipment(e.target.value)
+        props.filterFunction(checkStatus, e.target.value)
+    }
+
     return (
         <div className="checkbox">
             <div className="stock-status">
-                <h4>stock status</h4>
-                <input type="checkbox" />
-                <label htmlFor="#">All tools</label>
-                <input type="checkbox" />
-                <label htmlFor="#">Out of stock</label>
-                <input type="checkbox" />
-                <label htmlFor="#">Getting out of stock</label>
+                <h4>Stock Status</h4>
+
+                <div className="cover-filter-input-status">
+                    <select onChange={handleCheckboxStatus}>
+                        <option value="1">Default</option>
+                        <option value="2">Out of Stock</option>
+                        <option value="3">Getting out of Stock</option>
+                    </select>
+                </div>
             </div>
             <div className="filter-tools">
-                <h4>filter tools' name</h4>
-                <input type="checkbox" />
-                <label htmlFor="#">IC</label>
-                <input type="checkbox" />
-                <label htmlFor="#">Module</label>
-                <input type="checkbox" />
-                <label htmlFor="#">Coi</label>
-                <input type="checkbox" />
-                <label htmlFor="#">LM</label>
+                <h4>Filter tools' name</h4>
+                <div className="cover-filter-input-equipment">
+                    <select onChange={handleCheckboxEquipment}>
+                        <option value="0">Default</option>
+                        <option value="1">IC</option>
+                        <option value="2">Module</option>
+                        <option value="3">R</option>
+                        <option value="4">C</option>
+                        <option value="5">LM</option>
+                    </select>
+                </div>
             </div>
         </div>
     )

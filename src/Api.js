@@ -126,8 +126,18 @@ export const listToolApi = [
         id: uuidv4(),
         nameTool: "R10K",
         imageProfile: "/images/tool2.jpg",
-        status: "Out of Stock",
-        type: "RESISTER",
+        status: "2",
+        type: "3",
+        size: "CODE_100",
+        total: "0",
+        category: "SURFACE"
+    },
+    {
+        id: uuidv4(),
+        nameTool: "R10K",
+        imageProfile: "/images/tool2.jpg",
+        status: "2",
+        type: "5",
         size: "CODE_100",
         total: "0",
         category: "SURFACE"
@@ -136,19 +146,18 @@ export const listToolApi = [
         id: uuidv4(),
         nameTool: "LM-2575",
         imageProfile: "/images/lm.jpg",
-        status: "In Stock",
-        type: "LM",
+        status: "1",
+        type: "5",
         size: "CODE_845",
         total: "250",
         category: "SME"
-
     },
     {
         id: uuidv4(),
         nameTool: "ic1.jpg",
         imageProfile: "/images/ic1.jpg",
-        status: "Getting out of Stock",
-        type: "IC",
+        status: "3",
+        type: "1",
         size: "CODE_448",
         total: "17",
         category: "SURFACE"
@@ -159,8 +168,8 @@ export const listToolApi = [
         id: uuidv4(),
         nameTool: "Module-WIFI",
         imageProfile: "/images/tool1.jpg",
-        status: "In Stock",
-        type: "Module",
+        status: "1",
+        type: "2",
         size: "CODE_170",
         total: "75",
         category: "SURFACE"

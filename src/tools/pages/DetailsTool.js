@@ -143,7 +143,7 @@ function DetailsTool() {
                                     {modeDisplay && <Input
                                         id="total"
                                         element="input"
-                                        type="text"
+                                        type="number"
                                         label="Total"
                                         validators={[VALIDATOR_REQUIRE()]}
                                         errorText="Please enter a valid title."

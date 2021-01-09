@@ -15,6 +15,12 @@ function MobileTool(props) {
     const [showPrompt, setShowPrompt] = useState(false);
     const [name, setName] = useState('');
     const [modePrompt, setModePrompt] = useState(true);
+    const [statConvert, setStatConvert] = useState([
+        {value: "In Stock", color: "black"},
+        {value: "Out of Stock", color: "red"},
+        {value: "Getting out of Stock", color: "orange"}
+    ])
+    const [equipConvert, setEquipConvert] = useState(["IC", "Module", "R", "C", "LM"])
 
     const [formState, inputHandler] = useForm(
         {
@@ -65,7 +71,7 @@ function MobileTool(props) {
                     <Input
                         id="total"
                         element="input"
-                        type="text"
+                        type="number"
                         label="Total"
                         errorText="Please enter a valid Tool."
                         validators={[VALIDATOR_MINLENGTH(1)]}
@@ -98,8 +104,8 @@ function MobileTool(props) {
                             <h4>Piece</h4>
                         </div>
                         <div className="righ">
-                            <p>{res.type}</p>
-                            <p>{res.status}</p>
+                            <p>{equipConvert[Number(res.type) - 1]}</p>
+                            <p style={{color: statConvert[Number(res.status) - 1].color}}>{statConvert[Number(res.status) - 1].value}</p>
                             <p>{res.total}</p>
                         </div>
                     </div>

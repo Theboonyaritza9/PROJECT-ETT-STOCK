@@ -33,17 +33,17 @@ function BoardIncomplete() {
                                         <tr>
                                             <th>R100K</th>
                                             <th>10</th>
-                                            <th><input type="text" /></th>
+                                            <th><input type="number" /></th>
                                         </tr>
                                         <tr>
                                             <th>R560</th>
                                             <th>3</th>
-                                            <th><input type="text" /></th>
+                                            <th><input type="number" /></th>
                                         </tr>
                                         <tr>
                                             <th>R470</th>
                                             <th>8</th>
-                                            <th><input type="text" /></th>
+                                            <th><input type="number" /></th>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -81,17 +81,17 @@ function BoardIncomplete() {
                                         <tr>
                                             <th>IC1001</th>
                                             <th>2</th>
-                                            <th><input type="text" /></th>
+                                            <th><input type="number" /></th>
                                         </tr>
                                         <tr>
                                             <th>C0.1</th>
                                             <th>3</th>
-                                            <th><input type="text" /></th>
+                                            <th><input type="number" /></th>
                                         </tr>
                                         <tr>
                                             <th>10 uf</th>
                                             <th>8</th>
-                                            <th><input type="text" /></th>
+                                            <th><input type="number" /></th>
                                         </tr>
                                     </tbody>
                                 </table>
