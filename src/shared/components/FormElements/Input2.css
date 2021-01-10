@@ -1,27 +1,37 @@
-.form-control {
+.form-control1 {
     margin: 1rem 0;
 }
 
-.form-control label, .form-control input, .form-control textarea {
+.form-control1 label, .form-control1 input, .form-control1 textarea {
     display: block;
 }
 
-.form-control label {
+.form-control1 input {
+    height: 52px;
+    border: 1px solid #ccc;
+}
+
+.form-control1 textarea {
+    border: 1px solid #ccc;
+}
+
+
+.form-control1 label {
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
-.form-control input, .form-control textarea {
+.form-control1 input, .form-control1 textarea {
     width: 100%;
     font: inherit;
     padding: 0.15rem 0.25rem;
 }
 
-.form-control--invalid label, .form-control--invalid p {
+.form-control1--invalid label, .form-control1--invalid p {
     color: red;
 }
 
-.form-control--invalid input, .form-control--invalid textarea {
+.form-control1--invalid input, .form-control1--invalid textarea {
     border-color: red;
     background: #ffd1d1;
 }

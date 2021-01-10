@@ -2,18 +2,22 @@ import React, { useRef, useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+library.add(fas);
 
 function ImageUploadMultiple(props) {
 
     const [previewfiles, setPreviewFiles] = useState([]);
     const [files, setFiles] = useState([]);
-    const [isValid, setIsValid] = useState(false);
     const filePickerRef = useRef();
     // console.log(files)
 
@@ -115,10 +119,10 @@ function ImageUploadMultiple(props) {
 
                 </div>
                 <button type="button" className="btn btn-submit" onClick={pickImageHandler}>
-                    NEW IMAGES
-            </button>
+                    <FontAwesomeIcon icon={['fas', 'camera']} size="2x" style={{ color: 'white' }} />
+                </button>
             </div>
-            {!isValid && <p>{props.errorText}</p>}
+            {!props.isValid && <p style={{ color: "red", fontWeight: "bold" }}>{props.errorText}</p>}
         </div>
     )
 }

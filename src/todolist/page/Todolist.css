@@ -1,6 +1,6 @@
 .container-todo {
     width: 380px;
-    /* background-color: red; */
+    /* background-color: #fff; */
     margin: 0 auto;
 }
 
@@ -77,6 +77,10 @@
 
 .content-text p:nth-child(2) {
     width: 60%;
+}
+
+.footer-todo {
+    display: flex;
 }
 
 .footer-todo button:first-child {

@@ -118,6 +118,7 @@ function DetailsTool() {
                                 inputHandler={inputHandler}
                                 imageProfile={imageProfile}
                                 newImages={formState.inputs.newImages.value}
+                                isValid={formState.inputs.newImages.isValid}
                             />
                         </div>
                         <div className="box-description" >

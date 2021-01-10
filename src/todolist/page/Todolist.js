@@ -182,11 +182,11 @@ function Todolist() {
                                 </div>
                                 { !auth.statusId ? null :
                                     <div className="footer-todo">
-                                        <button className="btn btn-secondary"
+                                        <button className="btn btn-secondary btn-full"
                                             onClick={() => openEditHandler(res)}>
                                             Edit
                                         </button>
-                                        <button className="btn btn-danger">Delete</button>
+                                        <button className="btn btn-danger btn-full">Delete</button>
                                     </div>
                                 }
                             </div>

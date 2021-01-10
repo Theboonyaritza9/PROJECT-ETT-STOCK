@@ -20,6 +20,7 @@ function Tool() {
     const [toolListBackup, setToolListBackup] = useState([]);
 
     // console.log(filter.status, " ", filter.type);
+    
 
     useEffect(() => {
         dispatch(listToolAction());

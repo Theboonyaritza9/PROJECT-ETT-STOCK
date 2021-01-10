@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./FilterTool.css";
 
 function FilterTool(props) {
 
@@ -23,7 +24,7 @@ function FilterTool(props) {
                 <h4>Stock Status</h4>
 
                 <div className="cover-filter-input-status">
-                    <select onChange={handleCheckboxStatus}>
+                    <select onChange={handleCheckboxStatus} className="filter-select">
                         <option value="1">Default</option>
                         <option value="2">Out of Stock</option>
                         <option value="3">Getting out of Stock</option>
@@ -33,7 +34,7 @@ function FilterTool(props) {
             <div className="filter-tools">
                 <h4>Filter tools' name</h4>
                 <div className="cover-filter-input-equipment">
-                    <select onChange={handleCheckboxEquipment}>
+                    <select onChange={handleCheckboxEquipment} className="filter-select">
                         <option value="0">Default</option>
                         <option value="1">IC</option>
                         <option value="2">Module</option>

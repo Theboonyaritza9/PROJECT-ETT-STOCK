@@ -1,0 +1,9 @@
+.filter-select {
+    height: 52px;
+    border: 1px solid #ccc;
+    text-indent: 10px;
+}
+
+.filter-select:focus {
+    border: 2px solid skyblue;
+}

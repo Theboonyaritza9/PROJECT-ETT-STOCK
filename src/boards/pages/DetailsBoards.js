@@ -78,7 +78,8 @@ function DetailsBoards() {
                 <SliderImages SliderData={board.images}
                     modeDisplay={modeDisplay}
                     inputHandler={inputHandler}
-                    imageProfile={board.imageProfile} />
+                    imageProfile={board.imageProfile} 
+                    isValid={formState.inputs.newImages.isValid} />
                 <DescriptionBoard name={board.nameBoard} des={board.description} type={board.type} modeDisplay={modeDisplay} inputHandler={inputHandler} />
             </div>
             <TableDetailBoard tools={board.tools} />

@@ -25,12 +25,16 @@
     height: auto;
 }
 
-.cover-detail-tool input{
-    margin-left: 6rem;
-    width: 100%;
+.cover-detail-tool .form-control1 input:focus {
+    border: 2px solid skyblue;
 }
 
-.cover-detail-tool:nth-child(1) input{
+/* .cover-detail-tool input{
+    margin-left: 6rem;
+    width: 100%;
+} */
+
+/* .cover-detail-tool:nth-child(1) input{
     margin-left: 5.5rem;
     width: 100%;
 }
@@ -38,7 +42,7 @@
 .cover-detail-tool:nth-child(4) input{
     margin-left: 4rem;
     width: 100%;
-}
+} */
 
 .detail p {
     font-weight: bold;

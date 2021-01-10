@@ -1,0 +1,34 @@
+.container-editProfile {
+    width: 380px;
+    margin: 0 auto 3rem auto;
+    background-color: #fff;
+    padding: 2rem 1rem;
+    border-radius: 5px;
+}
+
+.header-editProfile {
+    text-align: center;
+}
+
+.footer-editProfile {
+    display: flex;
+}
+
+.footer-editProfile button:first-child {
+    margin-right: 5px;
+}
+
+.footer-editProfile button:nth-child(2) {
+    padding: 0;
+    margin-left: 5px;
+}
+
+.footer-editProfile button:nth-child(2) a {
+    color: #fff;
+}
+
+@media (max-width: 400px) {
+    .container-editProfile {
+        width: 90%;
+    }
+}

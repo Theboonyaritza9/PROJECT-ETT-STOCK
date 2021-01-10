@@ -1,5 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+
 import './ImageUpload.css';
+
+library.add(fas);
+
 
 const ImageUpload = props => {
     const [file, setFile] = useState();
@@ -10,6 +18,10 @@ const ImageUpload = props => {
 
 
     useEffect(() => {
+        if(props.initialValue) {
+            setPreviewUrl(props.initialValue);
+            props.onInput(props.id, props.initialValue, props.initialValid)
+        }
 
         if (!file) return;
 
@@ -19,7 +31,7 @@ const ImageUpload = props => {
         };
         fileReader.readAsDataURL(file);
 
-    }, [file]);
+    }, [file, props.initialValue]);
 
     const pickedHandler = event => {
         let pickedFile;
@@ -55,13 +67,13 @@ const ImageUpload = props => {
             <div className={`image-upload ${props.center && 'center'}`}>
                 <div className="image-upload__preview">
                     {previewUrl && <img src={previewUrl} alt="Preview" />}
-                    {previewUrl && <div className="cancle-single-img" onClick={deleteImage}><span>x</span></div>}
+                { props.initialValue ? null : previewUrl && <div className="cancle-single-img" onClick={deleteImage}><span>x</span></div>}
                 </div>
                 <button type="button" className="btn btn-submit" onClick={pickImageHandler}>
-                    NEW IMAGE
+                    <FontAwesomeIcon icon={['fas', 'camera']} size="2x" style={{ color: 'white' }} />
                 </button>
             </div>
-            {!isValid && <p>{props.errorText}</p>}
+            {/* {!isValid && <p>{props.errorText}</p>} */}
         </div>
     );
 };

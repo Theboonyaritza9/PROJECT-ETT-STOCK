@@ -93,6 +93,7 @@ function SliderImages(props) {
                 onInput={inputHandler}
                 modeDisplay={modeDisplay}
                 defaultImages={slides}
+                isValid={props.isValid}
             />
             }
         </div>

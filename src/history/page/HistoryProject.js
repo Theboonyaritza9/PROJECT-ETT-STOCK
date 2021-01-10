@@ -1,90 +1,71 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
 import { Link } from "react-router-dom";
-
-
-import TableDetailBoard from "../../boards/components/TableDetailBoard";
-import { ItemBoardAction } from "../../actions/boardAction";
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/swiper.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
-
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+import "./HistoryBoard.css";
 
 function HistoryProject() {
 
-    const dispatch = useDispatch();
-    const [introImage, setIntroImage] = useState('');
-    const [images, setImages] = useState(null);
-    const boardList = useSelector((state) => state.boardItem);
-    const { board, loading, error } = boardList;
-
-    useEffect(() => {
-        dispatch(ItemBoardAction())
-        if (board) {
-            setIntroImage(board.imageProfile);
-            setImages(board.images);
+    const api = [
+        {
+            id: "12",
+            month: "May 2020",
+            history: [
+                {
+                    id: '1000',
+                    nameBoard: "WETHER-RAIN",
+                    user: "Boonyarit",
+                    total: "50",
+                    date: "12/05/63",
+                    time: "13.50 pm",
+                    description: "nocdsc cdscdsc cdscs dcscsc sdcsdc"
+                },
+                {
+                    id: '1001',
+                    nameBoard: "ET-CNT002",
+                    user: "User",
+                    total: "50",
+                    date: "12/05/63",
+                    time: "13.50 pm",
+                    description: "nocdsc cdscdsc cdscs dcscsc sdcsdc"
+                }
+            ]
+        },
+        {
+            id: "13",
+            month: "June 2020",
+            history: [
+                {
+                    id: '2000',
+                    nameBoard: "PROJECT-1",
+                    user: "Boonyarit",
+                    total: "5",
+                    date: "12/05/63",
+                    time: "13.50 pm",
+                    description: "nocdsc cdscdsc cdscs dcscsc sdcsdc"
+                }
+            ]
         }
-        return () => {
-
-        }
-    }, [board])
-
+    ]
 
     return (
         <React.Fragment>
-            {loading ? <div>loading...</div> :
-                error ? <div>{error}</div> :
-                    <div className="header-detail">
-                        <h3>To request project of Arduino-v.2</h3>
-                        <div className="container-detail">
-                            <div>
-                                <div className="intro-img">
-                                    <img src={introImage} alt="555" />
-                                </div>
-                                {!images ? <div>Loading...</div> :
-                                    <Swiper
-                                        spaceBetween={20}
-                                        slidesPerView={4}
-                                        navigation
-                                        scrollbar={{ draggable: true }}
-                                    >
-                                        {images.map((slide, index) => (
-                                            <SwiperSlide className="slide-img" key={index} onClick={() => setIntroImage(slide)} >
-                                                <img src={slide} alt={index} />
-                                            </SwiperSlide>
-                                        ))}
-                                    </Swiper>
-                                }
+            <div className="container-history">
+                <div className="title-history">
+                    <h3>To request Project</h3>
+                </div>
+                {api.map(mon => (
+                    <div className="history" key={mon.id}>
+                        <p>{mon.month} : <span>{mon.history.length} list</span></p>
+                        {mon.history.map(res => (
+                            <div className="cover-history" key={res.id}>
+                                <p>{res.nameBoard}</p>
+                                <p><Link to="/history/detailproject">Description</Link></p>
                             </div>
-                            <div className="box-description" >
-                                <h2>{board.name}</h2>
-                                <h3>Board's Description</h3>
-                                <div className="detail">
-                                    <p>User <span>Boonyarit</span></p>
-                                    <p>Total <span style={{marginLeft: "94px"}}>10</span></p>
-                                    <p>Date <span style={{marginLeft: "96px"}}>12/12/63</span></p>
-                                    <p>Time <span style={{marginLeft: "94px"}}>11.30 am</span></p>
-                                    <p>Kind of work <span style={{marginLeft: "40px"}}>{board.type}</span></p>
-                                    <div className="footer-detail">
-                                        <p>Description</p>
-                                        <p>{board.description}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <TableDetailBoard tools={board.tools} />
-                        <div>
-                            <Link to="/boards"><button className="btn btn-back">Back</button></Link>
-                        </div>
+                        ))}
                     </div>
-            }
-        </React.Fragment>
+                ))}
 
+            </div>
+        </React.Fragment>
     )
 }
 

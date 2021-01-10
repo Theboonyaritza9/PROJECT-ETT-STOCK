@@ -150,7 +150,7 @@ export default function Navstaff() {
                     <li className="nav-item" id="profile2">
                         <Profile name="Yukino" profileUser="https://f.ptcdn.info/083/046/000/odr6r77nnA5k1CdKCJm-o.png" />
                         <ul className="nav-item-profile">
-                            <li><Link to="/">Edit Profile</Link></li>
+                            <li onClick={closeLink}><Link to="/profile">Edit Profile</Link></li>
                             <li onClick={() => auth.logout()}><Link to="/auth">Sign out</Link></li>
                         </ul>
                     </li>
@@ -160,7 +160,7 @@ export default function Navstaff() {
                         <ul>
                                 <li><Link to="/">Add new tool</Link></li>
                                 <li onClick={closeLink}><Link to="/">tool's list</Link></li>
-                                <li onClick={closeLink}><Link to="/history/boards">request-tool history</Link></li>
+                                <li onClick={closeLink}><Link to="/history/tools">request-tool history</Link></li>
                             </ul>
                         </li>}
 
@@ -201,7 +201,7 @@ export default function Navstaff() {
 
             {promptProfile && <div className="prompt">
                 <ul className="prompt-profile">
-                    <li><a href="/">edit profile</a></li>
+                    <li><Link to="/profile">edit profile</Link></li>
                     <li><a href="/">Sign out</a></li>
                 </ul>
             </div>}

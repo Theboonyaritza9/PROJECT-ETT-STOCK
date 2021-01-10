@@ -6,8 +6,10 @@
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    display: flex;
+    /* display: flex; */
     align-items: center;
+
+    position: relative;
 }
 
 label {
@@ -21,11 +23,16 @@ label {
 
 .register {
     width: 80%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 0px 10px 40px 10px;
     box-sizing: border-box;
     background-color: rgba(0,0,0,0.6);
     border-radius: 5px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .picture {
