@@ -158,7 +158,7 @@ export default function Navstaff() {
                         <li className="nav-item">
                             Tools
                         <ul>
-                                <li><Link to="/">Add new tool</Link></li>
+                                <li onClick={closeLink}><Link to="/createtool">Add new tool</Link></li>
                                 <li onClick={closeLink}><Link to="/">tool's list</Link></li>
                                 <li onClick={closeLink}><Link to="/history/tools">request-tool history</Link></li>
                             </ul>
@@ -170,7 +170,7 @@ export default function Navstaff() {
                         <ul>
                                 <li><Link to="/">Add new board</Link></li>
                                 <li><Link to="/">Add new project</Link></li>
-                                <li><Link to="/">Request board</Link></li>
+                                <li onClick={closeLink}><Link to="/requestboard">Request board</Link></li>
                                 <li onClick={closeLink}><Link to="/boards">board's list</Link></li>
                                 <li onClick={closeLink}><Link to="/history/boards">request-board history</Link></li>
                                 <li onClick={closeLink}><Link to="/history/project">request-project history</Link></li>

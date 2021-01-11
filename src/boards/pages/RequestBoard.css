@@ -1,0 +1,48 @@
+.container-requestBoardForm {
+    width: 380px;
+    margin: 0 auto 2rem auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container-requestBoardForm h2 {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #24245c;
+    margin: 0;
+    color: #fff;
+}
+
+.container-requestBoardForm form {
+    padding: 0rem 1rem 2rem 1rem;
+}
+
+.container-requestBoardForm select {
+    width: 100%;
+}
+
+.requestBoardForm-error  {
+    width: 100%;
+    padding: 1rem;
+    background: rgb(255, 187, 187);
+    transition: 0.1s;
+}
+
+.requestBoardForm-error p {
+    width: 50%;
+    color: red;
+}
+
+.requestBoardForm-error div {
+    display: flex;
+}
+
+
+
+
+@media (max-width: 400px) {
+    .container-requestBoardForm {
+        width: 90%;
+    }
+}

@@ -14,11 +14,9 @@ const ImageUpload = props => {
     const [previewUrl, setPreviewUrl] = useState();
     const [isValid, setIsValid] = useState(false);
     const filePickerRef = useRef();
-    // console.log(props.imageProfile)
-
 
     useEffect(() => {
-        if(props.initialValue) {
+        if (props.initialValue) {
             setPreviewUrl(props.initialValue);
             props.onInput(props.id, props.initialValue, props.initialValid)
         }
@@ -65,9 +63,9 @@ const ImageUpload = props => {
                 onChange={pickedHandler}
             />
             <div className={`image-upload ${props.center && 'center'}`}>
-                <div className="image-upload__preview">
+                <div className="image-upload__preview" style={{  display: !previewUrl && 'none'}} >
                     {previewUrl && <img src={previewUrl} alt="Preview" />}
-                { props.initialValue ? null : previewUrl && <div className="cancle-single-img" onClick={deleteImage}><span>x</span></div>}
+                    {props.initialValue ? null : previewUrl && <div className="cancle-single-img" onClick={deleteImage}><span>x</span></div>}
                 </div>
                 <button type="button" className="btn btn-submit" onClick={pickImageHandler}>
                     <FontAwesomeIcon icon={['fas', 'camera']} size="2x" style={{ color: 'white' }} />

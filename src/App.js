@@ -17,6 +17,8 @@ import { FilterContext } from "./shared/context/Filter-Context";
 import { useFilter } from "./shared/filter/Filter-Tool";
 import HistoryProject from './history/page/HistoryProject';
 import EditProfile from './user/pages/EditProfile';
+import CreateTool from './tools/pages/CreateTool';
+import RequestBoard from './boards/pages/RequestBoard';
 // import TestSwipe from './TestSwipe';
 
 
@@ -49,6 +51,9 @@ function App() {
               <Tool />
             </FilterContext.Provider>
           </Route>
+          <Route path="/createtool">
+            <CreateTool />
+          </Route>
           <Route path="/profile">
             <EditProfile />
           </Route>
@@ -57,6 +62,9 @@ function App() {
           </Route>
           <Route path="/boards">
             <Board />
+          </Route>
+          <Route path="/requestboard">
+            <RequestBoard />
           </Route>
           <Route path="/detailboard">
             <DetailsBoards />
@@ -67,7 +75,8 @@ function App() {
           <Route path="/history/boards">
             <History keyApi={1} />
           </Route>
-          <Route path="/history/tools">
+          <Route path="/history/tools
+          ">
             <History keyApi={2} />
           </Route>
           <Route path="/history/project">
@@ -93,9 +102,12 @@ function App() {
   //         <Nav />
   //         <Switch>
   //           <Route path="/" exact>
-  //             <FilterContext.Provider value={{ type: type, status: status, tool: tool}}>
+  //             <FilterContext.Provider value={{ type: type, status: status, tool: tool }}>
   //               <Tool />
   //             </FilterContext.Provider>
+  //           </Route>
+  //           <Route path="/createtool">
+  //             <CreateTool />
   //           </Route>
   //           <Route path="/auth">
   //             <Auth />
@@ -109,6 +121,9 @@ function App() {
   //           <Route path="/boards">
   //             <Board />
   //           </Route>
+  //           <Route path="/requestboard">
+  //             <RequestBoard />
+  //           </Route>
   //           <Route path="/detailboard">
   //             <DetailsBoards />
   //           </Route>
@@ -116,10 +131,10 @@ function App() {
   //             <Todolist />
   //           </Route>
   //           <Route path="/history/boards">
-  //             <History keyApi={1}  />
+  //             <History keyApi={1} />
   //           </Route>
   //           <Route path="/history/tools">
-  //             <History keyApi={2}  />
+  //             <History keyApi={2} />
   //           </Route>
   //           <Route path="/history/project">
   //             <HistoryProject />

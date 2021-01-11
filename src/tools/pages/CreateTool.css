@@ -1,0 +1,47 @@
+.container-toolForm {
+    width: 380px;
+    margin: 0 auto 2rem auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container-toolForm h2 {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #24245c;
+    margin: 0;
+    color: #fff;
+}
+
+.container-toolForm form {
+    padding: 0rem 1rem 2rem 1rem;
+}
+
+.toolForm-input-flexbox {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+}
+
+.toolForm-input-flexbox div:first-child {
+    padding-right: 10px;
+}
+
+.toolForm-input-flexbox div:last-child {
+    padding-left: 10px;
+}
+
+.container-toolForm .form-control .image-upload .image-upload__preview {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+@media (max-width: 400px) {
+    .container-toolForm {
+        width: 90%;
+    }
+}
+
+
