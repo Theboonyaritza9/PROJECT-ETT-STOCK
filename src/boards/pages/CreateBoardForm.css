@@ -1,0 +1,66 @@
+.container-createboardform {
+    width: 380px;
+    margin: 0 auto 2rem auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container-createboardform h2 {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #24245c;
+    margin: 0;
+    color: #fff;
+}
+
+.container-createboardform form {
+    padding: 0rem 1rem 2rem 1rem;
+}
+
+.addTool-createboardform {
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.cover-addTool-createboardform {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.cover-addTool-createboardform .form-control1:first-child{
+    padding-right: 5px;
+}
+
+.cover-addTool-createboardform .form-control1:last-child{
+    padding-left: 5px;
+}
+
+.table-createboardform {
+    text-align: left;
+    width: 100%;
+}
+
+.table-createboardform thead .tr-header-createboardform {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+}
+
+.table-createboardform tr th:nth-child(3) {
+    text-align: center;
+}
+
+.table-createboardform tbody tr th {
+    font-weight: normal;
+}
+
+.container-createboardform .form-control .image-upload .image-upload__preview {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* @media (min-width: 960px) {
+    .table-createboardform
+} */

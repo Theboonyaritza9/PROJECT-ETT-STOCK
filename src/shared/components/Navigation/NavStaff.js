@@ -168,8 +168,8 @@ export default function Navstaff() {
                         <li className="nav-item">
                             Boards
                         <ul>
-                                <li><Link to="/">Add new board</Link></li>
-                                <li><Link to="/">Add new project</Link></li>
+                                <li onClick={closeLink}><Link to="/createboard">Add new board</Link></li>
+                                <li onClick={closeLink}><Link to="/createproject">Add new project</Link></li>
                                 <li onClick={closeLink}><Link to="/requestboard">Request board</Link></li>
                                 <li onClick={closeLink}><Link to="/boards">board's list</Link></li>
                                 <li onClick={closeLink}><Link to="/history/boards">request-board history</Link></li>

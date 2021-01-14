@@ -19,6 +19,7 @@ import HistoryProject from './history/page/HistoryProject';
 import EditProfile from './user/pages/EditProfile';
 import CreateTool from './tools/pages/CreateTool';
 import RequestBoard from './boards/pages/RequestBoard';
+import CreateBoardForm from './boards/pages/CreateBoardForm';
 // import TestSwipe from './TestSwipe';
 
 
@@ -29,141 +30,144 @@ function App() {
   // console.log("App", token);
 
   // This code block for deploying
-  let routes;
-  if (!token) {
-    routes = (
-      <Switch>
-        <Route path="/auth">
-          <Auth />
-        </Route>
-        <Redirect to="/auth" />
-      </Switch>
-    )
-  }
+  // let routes;
+  // if (!token) {
+  //   routes = (
+  //     <Switch>
+  //       <Route path="/auth">
+  //         <Auth />
+  //       </Route>
+  //       <Redirect to="/auth" />
+  //     </Switch>
+  //   )
+  // }
 
-  else {
-    routes = (
-      <React.Fragment>
-        <Nav />
-        <Switch>
-          <Route path="/" exact>
-            <FilterContext.Provider value={{ type: type, status: status, tool: tool }}>
-              <Tool />
-            </FilterContext.Provider>
-          </Route>
-          <Route path="/createtool">
-            <CreateTool />
-          </Route>
-          <Route path="/profile">
-            <EditProfile />
-          </Route>
-          <Route path="/detail/:toolId">
-            <DetailsTool />
-          </Route>
-          <Route path="/boards">
-            <Board />
-          </Route>
-          <Route path="/requestboard">
-            <RequestBoard />
-          </Route>
-          <Route path="/detailboard">
-            <DetailsBoards />
-          </Route>
-          <Route path="/todo">
-            <Todolist />
-          </Route>
-          <Route path="/history/boards">
-            <History keyApi={1} />
-          </Route>
-          <Route path="/history/tools
-          ">
-            <History keyApi={2} />
-          </Route>
-          <Route path="/history/project">
-            <HistoryProject />
-          </Route>
-          <Route path="/history/detailproject">
-            <DetailHistoryProject />
-          </Route>
-          <Route path="/board/incomplete">
-            <BoardIncomplete />
-          </Route>
-          <Redirect to="/" />
-        </Switch>
-      </React.Fragment>
-    )
-  }
+  // else {
+  //   routes = (
+  //     <React.Fragment>
+  //       <Nav />
+  //       <Switch>
+  //         <Route path="/" exact>
+  //           <FilterContext.Provider value={{ type: type, status: status, tool: tool }}>
+  //             <Tool />
+  //           </FilterContext.Provider>
+  //         </Route>
+  //         <Route path="/createtool">
+  //           <CreateTool />
+  //         </Route>
+  //         <Route path="/profile">
+  //           <EditProfile />
+  //         </Route>
+  //         <Route path="/detail/:toolId">
+  //           <DetailsTool />
+  //         </Route>
+  //         <Route path="/boards">
+  //           <Board />
+  //         </Route>
+  //         <Route path="/requestboard">
+  //           <RequestBoard />
+  //         </Route>
+  //         <Route path="/detailboard">
+  //           <DetailsBoards />
+  //         </Route>
+  //         <Route path="/todo">
+  //           <Todolist />
+  //         </Route>
+  //         <Route path="/history/boards">
+  //           <History keyApi={1} />
+  //         </Route>
+  //         <Route path="/history/tools
+  //         ">
+  //           <History keyApi={2} />
+  //         </Route>
+  //         <Route path="/history/project">
+  //           <HistoryProject />
+  //         </Route>
+  //         <Route path="/history/detailproject">
+  //           <DetailHistoryProject />
+  //         </Route>
+  //         <Route path="/board/incomplete">
+  //           <BoardIncomplete />
+  //         </Route>
+  //         <Redirect to="/" />
+  //       </Switch>
+  //     </React.Fragment>
+  //   )
+  // }
 
   // Uncomment when coding or revise program
-  // return (
-  //   <AuthContext.Provider value={{ isLoggedIn: token, login: login, statusId: true }}>
-  //     <div className="App">
-  //       <Router>
-  //         <Nav />
-  //         <Switch>
-  //           <Route path="/" exact>
-  //             <FilterContext.Provider value={{ type: type, status: status, tool: tool }}>
-  //               <Tool />
-  //             </FilterContext.Provider>
-  //           </Route>
-  //           <Route path="/createtool">
-  //             <CreateTool />
-  //           </Route>
-  //           <Route path="/auth">
-  //             <Auth />
-  //           </Route>
-  //           <Route path="/profile">
-  //             <EditProfile />
-  //           </Route>
-  //           <Route path="/detail/:toolId">
-  //             <DetailsTool />
-  //           </Route>
-  //           <Route path="/boards">
-  //             <Board />
-  //           </Route>
-  //           <Route path="/requestboard">
-  //             <RequestBoard />
-  //           </Route>
-  //           <Route path="/detailboard">
-  //             <DetailsBoards />
-  //           </Route>
-  //           <Route path="/todo">
-  //             <Todolist />
-  //           </Route>
-  //           <Route path="/history/boards">
-  //             <History keyApi={1} />
-  //           </Route>
-  //           <Route path="/history/tools">
-  //             <History keyApi={2} />
-  //           </Route>
-  //           <Route path="/history/project">
-  //             <HistoryProject />
-  //           </Route>
-  //           <Route path="/history/detailproject">
-  //             <DetailHistoryProject />
-  //           </Route>
-  //           <Route path="/board/incomplete">
-  //             <BoardIncomplete />
-  //           </Route>
-  //           <Redirect to="/" />
-  //         </Switch>
-  //       </Router>
-
-  //     </div>
-  //   </AuthContext.Provider>
-  // );
-
-  // This Return for deploying
   return (
-    <AuthContext.Provider value={{ isLoggedIn: token, login: login, statusId: statusId, logout: logout }}>
+    <AuthContext.Provider value={{ isLoggedIn: token, login: login, statusId: true }}>
       <div className="App">
         <Router>
-          {routes}
+          <Nav />
+          <Switch>
+            <Route path="/" exact>
+              <FilterContext.Provider value={{ type: type, status: status, tool: tool }}>
+                <Tool />
+              </FilterContext.Provider>
+            </Route>
+            <Route path="/createtool">
+              <CreateTool />
+            </Route>
+            <Route path="/auth">
+              <Auth />
+            </Route>
+            <Route path="/profile">
+              <EditProfile />
+            </Route>
+            <Route path="/detail/:toolId">
+              <DetailsTool />
+            </Route>
+            <Route path="/boards">
+              <Board />
+            </Route>
+            <Route path="/createboard">
+              <CreateBoardForm />
+            </Route>
+            <Route path="/requestboard">
+              <RequestBoard />
+            </Route>
+            <Route path="/detailboard">
+              <DetailsBoards />
+            </Route>
+            <Route path="/todo">
+              <Todolist />
+            </Route>
+            <Route path="/history/boards">
+              <History keyApi={1} />
+            </Route>
+            <Route path="/history/tools">
+              <History keyApi={2} />
+            </Route>
+            <Route path="/history/project">
+              <HistoryProject />
+            </Route>
+            <Route path="/history/detailproject">
+              <DetailHistoryProject />
+            </Route>
+            <Route path="/board/incomplete">
+              <BoardIncomplete />
+            </Route>
+            <Redirect to="/" />
+          </Switch>
         </Router>
 
       </div>
     </AuthContext.Provider>
   );
+
+  // This Return for deploying
+  // return (
+  //   <AuthContext.Provider value={{ isLoggedIn: token, login: login, statusId: statusId, logout: logout }}>
+  //     <div className="App">
+  //       <Router>
+  //         {routes}
+  //       </Router>
+
+  //     </div>
+  //   </AuthContext.Provider>
+  // );
 }
 
 export default App;

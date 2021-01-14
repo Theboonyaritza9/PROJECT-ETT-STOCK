@@ -86,6 +86,7 @@ function CreateTool() {
                     validators={[VALIDATOR_REQUIRE()]}
                     errorText="Please enter a valid name."
                     onInput={inputHandler}
+                    required
                 />
                 <div className="toolForm-input-flexbox">
                     <SelectTag
@@ -93,9 +94,9 @@ function CreateTool() {
                         label="Type"
                         validators={[VALIDATOR_REQUIRE()]}
                         errorText="Please enter a valid type"
-                        onInput={inputHandler} 
+                        onInput={inputHandler}
                         optionList={apiType}
-                        />
+                    />
                     <Input
                         id="category"
                         element="input"
@@ -104,6 +105,7 @@ function CreateTool() {
                         validators={[VALIDATOR_REQUIRE()]}
                         errorText="Please enter a valid category."
                         onInput={inputHandler}
+                        required
                     />
                 </div>
                 <div className="toolForm-input-flexbox">
