@@ -76,6 +76,7 @@ function RequestBoard() {
                         errorText="Please enter a valid board"
                         onInput={inputHandler}
                         optionList={apiType}
+                        required
                     />
                 </div>
                 <Input
@@ -86,6 +87,7 @@ function RequestBoard() {
                     validators={[VALIDATOR_REQUIRE()]}
                     errorText="Please enter a valid total."
                     onInput={inputHandler}
+                    required
                 />
                 <Input
                     id="description"

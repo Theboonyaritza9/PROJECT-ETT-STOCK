@@ -20,6 +20,7 @@ import EditProfile from './user/pages/EditProfile';
 import CreateTool from './tools/pages/CreateTool';
 import RequestBoard from './boards/pages/RequestBoard';
 import CreateBoardForm from './boards/pages/CreateBoardForm';
+import CreateProjectForm from './boards/pages/CreateProjectForm';
 // import TestSwipe from './TestSwipe';
 
 
@@ -125,6 +126,9 @@ function App() {
             <Route path="/createboard">
               <CreateBoardForm />
             </Route>
+            <Route path="/createproject">
+              <CreateProjectForm />
+            </Route>
             <Route path="/requestboard">
               <RequestBoard />
             </Route>
@@ -136,6 +140,9 @@ function App() {
             </Route>
             <Route path="/history/boards">
               <History keyApi={1} />
+            </Route>
+            <Route path="/history/board/:bid">
+              <History/>
             </Route>
             <Route path="/history/tools">
               <History keyApi={2} />

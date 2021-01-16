@@ -1,6 +1,10 @@
 .container-history {
-    width: 380px;
-    margin: 0 auto;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.container-history .desktop {
+    display: block;
 }
 
 .title-history {
@@ -111,8 +115,28 @@
     font-weight: bold;
 }
 
+.total-history {
+    background: rgb(255, 187, 187);
+    padding: 1rem;
+    display: flex;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.total-history p {
+    width: 50%;
+    color: red;
+    margin: 0;
+}
+
+.total-history p:last-child {
+    text-align: right;
+}
 
 @media (max-width: 960px) {
+    .container-history .desktop {
+        display: none;
+    }
     .box-history {
         display: block;
     }

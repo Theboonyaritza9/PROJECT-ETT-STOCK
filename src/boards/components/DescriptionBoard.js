@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from "../../shared/components/FormElements/Input2";
 import { VALIDATOR_MINLENGTH } from "../../shared/util/validators";
+import { Link } from "react-router-dom";
 
 function DescriptionBoard(props) {
 
@@ -55,6 +56,7 @@ function DescriptionBoard(props) {
                         initialValid={true}
                     />
                     }
+                    { !modeDisplay && <Link to="/history/board/2vdsvdsns" className="history-month">22/12/2563</Link>}
                 </div>
             </div>
         </div>

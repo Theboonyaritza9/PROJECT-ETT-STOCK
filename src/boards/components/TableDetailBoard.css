@@ -25,6 +25,7 @@
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     padding: 10px 10px;
+    position: relative;
 }
 
 .mobile-responsive .box .images {
@@ -43,12 +44,24 @@
     grid-template-columns: 50% 50%;
 }
 
-.mobile-responsive .box .text .type-board p {
-    text-align: right;
-}
-
 .mobile-responsive .box .text .total-board p {
     color: red;
+    text-align: right;
+
+}
+
+.mobile-responsive .box .cancle {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mobile-responsive .box .cancle {
+    color: #fff;
+    padding: 0px 4px 1px 4px;
 }
 
 .table-detailBoard th:last-child h4 {

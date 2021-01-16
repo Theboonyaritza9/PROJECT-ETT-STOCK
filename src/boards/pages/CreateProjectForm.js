@@ -9,13 +9,14 @@ import { listToolApi } from "../../Api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import "./CreateBoardForm.css";
+import "./CreateProjectForm.css";
 import ImageUpload from '../../shared/components/FormElements/ImageUpload';
+import ImageUploadMultiple from "../components/ImageUploadMultiple";
 
 library.add(fas);
 
 
-function CreateBoardForm() {
+function CreateProjectForm() {
 
     const [tools, setTools] = useState([]);
     const [filterType, setFilterType] = useState([]);
@@ -29,40 +30,22 @@ function CreateBoardForm() {
     useEffect(() => {
         setTools(listToolApi)
         return () => {
+
         }
     }, [])
 
     // console.log(tools)
     // console.log(filterType)
 
-    const apiType = [
-        {
-            name: "IC",
-            value: "1"
-        },
-        {
-            name: "Module",
-            value: "2"
-        },
-        {
-            name: "R",
-            value: "3"
-        },
-        {
-            name: "C",
-            value: "4"
-        },
-        {
-            name: "LM",
-            value: "5"
-        }
-    ]
-
     const [formState, inputHandler, setFormData] = useForm(
         {
             name: {
                 value: '',
                 isValid: false
+            },
+            total: {
+                value: '',
+                isValid: true
             },
             size: {
                 value: '',
@@ -80,8 +63,8 @@ function CreateBoardForm() {
                 value: null,
                 isValid: true
             },
-            tools: {
-                value: [],
+            images: {
+                value: null,
                 isValid: true
             }
         },
@@ -90,8 +73,12 @@ function CreateBoardForm() {
 
 
     const filterDataType = async (e) => {
+        // console.log('work')
         const value = e.target.value;
+        // let initialApi = { id: "000", category: null, nameTool: "---" }
+        // console.log(formState.inputs.toolType)
         let filterData = await tools.filter((res) => res.type === value);
+        // filterData = [...filterData, initialApi ]
         setFilterType(filterData)
         setFilterCategory(filterData)
         setShowBtnAdd(false);
@@ -115,6 +102,8 @@ function CreateBoardForm() {
     }
 
     const toolSelected = async () => {
+        // e.preventDefault();
+        // console.log(filterName)
         const { nameTool, type, imageProfile, size, id } = filterName[0];
         const data = {
             id,
@@ -126,6 +115,8 @@ function CreateBoardForm() {
         }
 
         let appendNewdata = await [...newTools, data]
+
+        // setTools(listToolApi);
         setShowBtnAdd(false);
         setFilterCategory([]);
         setFilterName([]);
@@ -143,8 +134,10 @@ function CreateBoardForm() {
         e.preventDefault();
         let data = {
             name : formState.inputs.name.value,
+            total : formState.inputs.total.value,
             tools: newTools,
             image : formState.inputs.image.value,
+            images : formState.inputs.images.value,
             type: formState.inputs.type.value,
             description : formState.inputs.description.value
         }
@@ -157,8 +150,8 @@ function CreateBoardForm() {
 
 
     return (
-        <div className="container-createboardform">
-            <h2>Create new Board</h2>
+        <div className="container-createprojectform">
+            <h2>Create new Project</h2>
             <form onSubmit={onSubmit}>
                 <Input
                     id="name"
@@ -170,9 +163,19 @@ function CreateBoardForm() {
                     onInput={inputHandler}
                     required
                 />
+                <Input
+                    id="total"
+                    element="input"
+                    type="number"
+                    label="Total"
+                    validators={[VALIDATOR_REQUIRE()]}
+                    errorText="Please enter a valid total."
+                    onInput={inputHandler}
+                    required
+                />
                 <h4>Required Tool</h4>
-                <div className="addTool-createboardform">
-                    <div className="cover-addTool-createboardform">
+                <div className="addTool-createprojectform">
+                    <div className="cover-addTool-createprojectform">
                         <div className="form-control1">
                             <p>Type <span style={{color: "red"}}>*</span></p>
                             <select onChange={filterDataType} className="filter-select" style={{ width: "100%" }}>
@@ -228,11 +231,11 @@ function CreateBoardForm() {
                     {/* </div> */}
                     <button type="button" className="btn btn-success" onClick={toolSelected} disabled={showBtnAdd ? false : true}>add</button>
                     <hr />
-                    <div className="selectedTool-createboardform">
+                    <div className="selectedTool-createprojectform">
                         <h4>Selected tools</h4>
-                        <table className="table-createboardform">
+                        <table className="table-createprojectform">
                             <thead>
-                                <tr className="tr-header-createboardform" >
+                                <tr className="tr-header-createprojectform" >
                                     <th>Tool's name</th>
                                     <th>Total</th>
                                     <th>Action</th>
@@ -242,7 +245,7 @@ function CreateBoardForm() {
                                 {newTools.length === 0 ?
                                     null :
                                     newTools.map((item) => (
-                                        <tr className="tr-header-createboardform" key={item.id}>
+                                        <tr className="tr-header-createprojectform" key={item.id}>
                                             <th>{item.nameTool}</th>
                                             <th>{item.toolTotal}</th>
                                             <th>
@@ -266,6 +269,13 @@ function CreateBoardForm() {
                     errorText="Please provide an image."
                     initialValid={true}
                 />
+                <h4>Other Iamges</h4>
+                <ImageUploadMultiple
+                    id="images"
+                    errorText="Please provide an images."
+                    onInput={inputHandler}
+                    isValid={true}
+                />
                 <Input
                     id="type"
                     element="input"
@@ -286,10 +296,10 @@ function CreateBoardForm() {
                     onInput={inputHandler}
                     initialValid={true}
                 />
-                <button className="btn btn-submit btn-full" disabled={!formState.isValid}>Create</button>
+                <button type="submit" className="btn btn-submit btn-full" disabled={!formState.isValid}>Create</button>
             </form>
         </div >
     )
 }
 
-export default CreateBoardForm
+export default CreateProjectForm

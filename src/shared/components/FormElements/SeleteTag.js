@@ -55,13 +55,13 @@ const SelectTag = props => {
 
     const element =
         (
-            <select 
+            <select
                 className="filter-select"
                 id={props.id}
                 onChange={changeHandler}
                 onBlur={touchHandler}
                 value={inputState.value}
-                style={{width: "100%"}}
+                style={{ width: "100%" }}
             >
                 <option defaultValue >-- none --</option>
                 {props.optionList.map((res) => (
@@ -75,7 +75,7 @@ const SelectTag = props => {
             className={`form-control1 ${!inputState.isValid && inputState.isTouched &&
                 'form-control--invalid'}`}
         >
-            <p htmlFor={props.id}>{props.label}</p>
+            <p htmlFor={props.id}>{props.label} {props.required && <span style={{ color: "red" }}>*</span>}</p>
             {element}
             {!inputState.isValid && inputState.isTouched && <p>{props.errorText}</p>}
         </div>

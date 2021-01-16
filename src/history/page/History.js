@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { apiHistoryTool, apiHistoryBoard } from "../../ApiHistory";
+import { useParams } from "react-router-dom";
+import { apiHistoryTool, apiHistoryBoard, apiHistory } from "../../ApiHistory";
 import "./HistoryBoard.css";
 
 function History(props) {
@@ -7,8 +8,13 @@ function History(props) {
     const [api, setApi] = useState([]);
     const [headerPage, setHeaderPage] = useState()
     // console.log(props.keyApi)
+    const boardid = useParams().bid;
 
     useEffect(() => {
+        if (boardid) {
+            setHeaderPage("ETT-TEST");
+            setApi(apiHistory);
+        }
         if (props.keyApi === 1) {
             setApi(apiHistoryBoard)
             setHeaderPage("Board");
@@ -27,7 +33,7 @@ function History(props) {
 
     return (
         <section>
-            <div className="section-bottom">
+            <div className="container-history">
                 <h3 className="history-namepage">To request {headerPage}</h3>
 
                 {/* It will display Width morn than 960px */}
@@ -36,7 +42,7 @@ function History(props) {
                         <thead>
                             <tr>
                                 <th><h4>Date</h4></th>
-                                <th><h4>Name {headerPage}</h4></th>
+                                <th><h4>Name {!boardid && headerPage}</h4></th>
                                 <th><h4>Total</h4></th>
                                 <th><h4>Username</h4></th>
                                 <th><h4>Time</h4></th>
@@ -56,6 +62,10 @@ function History(props) {
                             ))}
                         </tbody>
                     </table>
+                    { boardid && <div className="total-history">
+                        <p>All boards in this year</p>
+                        <p>160 boars</p>
+                    </div> }
                 </div>
 
                 {/* It will display Width less than 960px */}
@@ -68,7 +78,7 @@ function History(props) {
                             </div>
                             <div className="content-moblie-history">
                                 <p>{res.name} ({res.user})</p>
-                                <p>{res.total} {headerPage}</p>
+                                <p>{res.total} {boardid ? "pcs" : headerPage}</p>
                             </div>
                             <div className="footer-moblie-history">
                                 <p>Description</p>
@@ -76,6 +86,10 @@ function History(props) {
                             </div>
                         </div>
                     ))}
+                    { boardid && <div className="total-history">
+                        <p>All boards in this year</p>
+                        <p>160 boars</p>
+                    </div> }
                 </div>
 
             </div>

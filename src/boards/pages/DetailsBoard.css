@@ -60,6 +60,12 @@
     margin-bottom: 1rem;
 }
 
+.history-month {
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 @media (max-width: 960px) {
     .container-detail {
         grid-template-columns: 100%;

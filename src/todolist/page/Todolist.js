@@ -105,6 +105,7 @@ function Todolist() {
                                     onInput={inputHandler}
                                     initialValue={name}
                                     initialValid={true}
+                                    required
                                 />
                                 <Input
                                     id="status"
@@ -125,6 +126,7 @@ function Todolist() {
                                     errorText="Please enter a valid Deadline."
                                     validators={[VALIDATOR_REQUIRE()]}
                                     onInput={inputHandler}
+                                    required
                                 />
                                 <Input
                                     id="description"

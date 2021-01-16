@@ -76,6 +76,7 @@ function DesktopTool(props) {
                         errorText="Please enter a valid Tool."
                         validators={[VALIDATOR_MINLENGTH(1)]}
                         onInput={inputHandler}
+                        required
                     />
                     <Input
                         id="description"
