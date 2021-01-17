@@ -68,9 +68,23 @@ function CreateTool() {
 
     // console.log(formState.inputs);
 
+    // Await connecting with Back-end
     const onSubmit = (e) => {
+        const { name, total, size, category, type, description, image } = formState.inputs
         e.preventDefault();
-        console.log(formState.inputs);
+        const data = {
+            name: name.value,
+            total: total.value,
+            size: size.value,
+            category: category.value,
+            type: type.value,
+            description: description.value,
+            image: image.value
+        }
+        console.log(data);
+
+        // ---------- Coding Back-end -------------
+        
     }
 
 

@@ -21,38 +21,6 @@ section {
     margin-top: 10px;
 }
 
-.checkbox {
-    width: 100%;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    background: white;
-}
-
-.stock-status, .filter-tools {
-    width: 49%;
-    padding: 0px 10px 10px 10px;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.stock-status h4, .filter-tools h4 {
-    font-size: 13px;
-}
-
-.cover-filter-input-status select {
-    width: 100%;
-}
-
-.cover-filter-input-equipment select {
-    width: 100%;
-}
-
-.checkbox label {
-    color: #000;
-}
-
 .section-bottom {
     width: 100%;
     margin: 10px auto 0px auto;

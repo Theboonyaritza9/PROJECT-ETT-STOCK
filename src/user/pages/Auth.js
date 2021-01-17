@@ -52,12 +52,12 @@ function Auth() {
     };
 
     const authHandler = (e) => {
+        e.preventDefault();
         const statusId = formState.inputs.email.value
         let authentication = false
         if( statusId === "admin@hotmail.com" ) {
             authentication = true
         }
-        e.preventDefault();
         auth.login(true, authentication)
     }
 

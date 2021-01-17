@@ -60,7 +60,16 @@ function RequestBoard() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(formState.inputs);
+        const { board, total, description } = formState.inputs
+        const data = {
+            board: board.value,
+            total: total.value,
+            description: description.value
+        }
+        console.log(data);
+
+        // -------------- Coding Back-end -----------------
+
     }
 
 
@@ -115,7 +124,6 @@ function RequestBoard() {
                         <p>required 120</p>
                     </div>
                 </div>}
-
             </form>
         </div>
     )

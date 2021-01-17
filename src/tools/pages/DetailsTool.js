@@ -23,7 +23,7 @@ function DetailsTool() {
 
 
     // The main variant
-    const [formState, inputHandler, setFormData] = useForm(
+    const [formState, inputHandler] = useForm(
         {
             name: {
                 value: '',
@@ -80,7 +80,8 @@ function DetailsTool() {
     }, [tool])
 
     // when press button-save
-    const handleSave = (e) => {
+    const onSubmit = (e) => {
+        e.preventDefault();
         setModeDisplay(false)
         const data = {
             id: id,
@@ -92,6 +93,7 @@ function DetailsTool() {
             description: formState.inputs.description.value,
             images: formState.inputs.images.value,
             newImages: formState.inputs.newImages.value,
+            newImage: formState.inputs.newImage.value,
             imageProfile: formState.inputs.image.value,
             statue: status
         }
@@ -110,121 +112,123 @@ function DetailsTool() {
             </div>
             { loading ? <div>Loading...</div> :
                 error ? <div>{error}</div> :
-                    <div className="container-detail">
-                        <div>
-                            <SliderImages
-                                SliderData={images}
-                                modeDisplay={modeDisplay}
-                                inputHandler={inputHandler}
-                                imageProfile={imageProfile}
-                                newImages={formState.inputs.newImages.value}
-                                isValid={formState.inputs.newImages.isValid}
-                            />
-                        </div>
-                        <div className="box-description" >
-                            <h2>{nameTool}</h2>
-                            <h3>Tool's Description</h3>
-                            <div className="detail">
-                                <div className="cover-detail-tool">
-                                    {modeDisplay && <Input
-                                        id="name"
-                                        element="input"
-                                        type="text"
-                                        label="Name"
-                                        validators={[VALIDATOR_MINLENGTH(3)]}
-                                        errorText="Please enter a valid title."
-                                        onInput={inputHandler}
-                                        initialValue={nameTool}
-                                        initialValid={true}
-                                    />
-                                    }
-                                </div>
-                                <div className="cover-detail-tool">
-                                    {!modeDisplay && <p>Total <span>{total}</span></p>}
-                                    {modeDisplay && <Input
-                                        id="total"
-                                        element="input"
-                                        type="number"
-                                        label="Total"
-                                        validators={[VALIDATOR_REQUIRE()]}
-                                        errorText="Please enter a valid title."
-                                        onInput={inputHandler}
-                                        initialValue={total}
-                                        initialValid={true}
-                                    />}
-                                </div>
-                                <div className="cover-detail-tool">
-                                    {!modeDisplay && <p>Type <span>{type}</span></p>}
-                                    {modeDisplay && <Input
-                                        id="type"
-                                        element="input"
-                                        type="text"
-                                        label="Type"
-                                        validators={[VALIDATOR_REQUIRE()]}
-                                        errorText="Please enter a valid title."
-                                        onInput={inputHandler}
-                                        initialValue={type}
-                                        initialValid={true}
-                                    />}
-                                </div>
-                                <div className="cover-detail-tool">
-                                    {!modeDisplay && <p>Category <span>{category}</span></p>}
-                                    {modeDisplay && <Input
-                                        id="category"
-                                        element="input"
-                                        type="text"
-                                        label="Category"
-                                        validators={[VALIDATOR_REQUIRE()]}
-                                        errorText="Please enter a valid title."
-                                        onInput={inputHandler}
-                                        initialValue={category}
-                                        initialValid={true}
-                                    />}
-                                </div>
-                                <div className="cover-detail-tool">
-                                    {!modeDisplay && <p>Size <span>{size}</span></p>}
-                                    {modeDisplay && <Input
-                                        id="size"
-                                        element="input"
-                                        type="text"
-                                        label="Size"
-                                        validators={[VALIDATOR_REQUIRE()]}
-                                        errorText="Please enter a valid title."
-                                        onInput={inputHandler}
-                                        initialValue={size}
-                                        initialValid={true}
-                                    />}
-                                </div>
-                                {!modeDisplay &&
+                    <form onSubmit={onSubmit}>
+                        <div className="container-detail">
+                            <div>
+                                <SliderImages
+                                    SliderData={images}
+                                    modeDisplay={modeDisplay}
+                                    inputHandler={inputHandler}
+                                    imageProfile={imageProfile}
+                                    newImages={formState.inputs.newImages.value}
+                                    isValid={formState.inputs.newImages.isValid}
+                                />
+                            </div>
+                            <div className="box-description" >
+                                <h2>{nameTool}</h2>
+                                <h3>Tool's Description</h3>
+                                <div className="detail">
                                     <div className="cover-detail-tool">
-                                        <p>Status <span>{status}</span></p>
-                                    </div>}
-                                <div className="footer-detail">
-                                    {!modeDisplay && <p>Description</p>}
-                                    {!modeDisplay && <p>{description}</p>}
-                                    {modeDisplay && <Input
-                                        id="description"
-                                        element="textarea"
-                                        label="Description"
-                                        validators={[VALIDATOR_REQUIRE()]}
-                                        errorText="Please enter a valid title."
-                                        onInput={inputHandler}
-                                        initialValue={description}
-                                        initialValid={true}
-                                    />}
-                                </div>
-                                <div>
-                                    {modeDisplay &&
-                                        <button className="btn btn-success"
-                                            disabled={!formState.isValid} style={{ marginRight: '1rem' }}
-                                            onClick={handleSave}>
-                                            Save
+                                        {modeDisplay && <Input
+                                            id="name"
+                                            element="input"
+                                            type="text"
+                                            label="Name"
+                                            validators={[VALIDATOR_MINLENGTH(3)]}
+                                            errorText="Please enter a valid title."
+                                            onInput={inputHandler}
+                                            initialValue={nameTool}
+                                            initialValid={true}
+                                        />
+                                        }
+                                    </div>
+                                    <div className="cover-detail-tool">
+                                        {!modeDisplay && <p>Total <span>{total}</span></p>}
+                                        {modeDisplay && <Input
+                                            id="total"
+                                            element="input"
+                                            type="number"
+                                            label="Total"
+                                            validators={[VALIDATOR_REQUIRE()]}
+                                            errorText="Please enter a valid title."
+                                            onInput={inputHandler}
+                                            initialValue={total}
+                                            initialValid={true}
+                                        />}
+                                    </div>
+                                    <div className="cover-detail-tool">
+                                        {!modeDisplay && <p>Type <span>{type}</span></p>}
+                                        {modeDisplay && <Input
+                                            id="type"
+                                            element="input"
+                                            type="text"
+                                            label="Type"
+                                            validators={[VALIDATOR_REQUIRE()]}
+                                            errorText="Please enter a valid title."
+                                            onInput={inputHandler}
+                                            initialValue={type}
+                                            initialValid={true}
+                                        />}
+                                    </div>
+                                    <div className="cover-detail-tool">
+                                        {!modeDisplay && <p>Category <span>{category}</span></p>}
+                                        {modeDisplay && <Input
+                                            id="category"
+                                            element="input"
+                                            type="text"
+                                            label="Category"
+                                            validators={[VALIDATOR_REQUIRE()]}
+                                            errorText="Please enter a valid title."
+                                            onInput={inputHandler}
+                                            initialValue={category}
+                                            initialValid={true}
+                                        />}
+                                    </div>
+                                    <div className="cover-detail-tool">
+                                        {!modeDisplay && <p>Size <span>{size}</span></p>}
+                                        {modeDisplay && <Input
+                                            id="size"
+                                            element="input"
+                                            type="text"
+                                            label="Size"
+                                            validators={[VALIDATOR_REQUIRE()]}
+                                            errorText="Please enter a valid title."
+                                            onInput={inputHandler}
+                                            initialValue={size}
+                                            initialValid={true}
+                                        />}
+                                    </div>
+                                    {!modeDisplay &&
+                                        <div className="cover-detail-tool">
+                                            <p>Status <span>{status}</span></p>
+                                        </div>}
+                                    <div className="footer-detail">
+                                        {!modeDisplay && <p>Description</p>}
+                                        {!modeDisplay && <p>{description}</p>}
+                                        {modeDisplay && <Input
+                                            id="description"
+                                            element="textarea"
+                                            label="Description"
+                                            validators={[VALIDATOR_REQUIRE()]}
+                                            errorText="Please enter a valid title."
+                                            onInput={inputHandler}
+                                            initialValue={description}
+                                            initialValid={true}
+                                        />}
+                                    </div>
+                                    <div>
+                                        {modeDisplay &&
+                                            <button type="submit" className="btn btn-success"
+                                                disabled={!formState.isValid} style={{ marginRight: '1rem' }}
+                                            >
+                                                Save
                                         </button>}
-                                    <Link to="/"><button className="btn btn-back">Back</button></Link>
+                                        <Link to="/"><button className="btn btn-back">Back</button></Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
             }
         </div>
     )

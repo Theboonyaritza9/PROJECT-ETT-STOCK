@@ -17,8 +17,12 @@ const ImageUpload = props => {
 
     useEffect(() => {
         if (props.initialValue) {
-            setPreviewUrl(props.initialValue);
-            props.onInput(props.id, props.initialValue, props.initialValid)
+            if(file) {
+                props.onInput(props.id, file, true)
+            } else {
+                setPreviewUrl(props.initialValue);
+                props.onInput(props.id, props.initialValue, props.initialValid)
+            }
         }
 
         if (!file) return;

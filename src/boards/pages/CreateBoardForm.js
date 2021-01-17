@@ -14,7 +14,6 @@ import ImageUpload from '../../shared/components/FormElements/ImageUpload';
 
 library.add(fas);
 
-
 function CreateBoardForm() {
 
     const [tools, setTools] = useState([]);
@@ -35,30 +34,7 @@ function CreateBoardForm() {
     // console.log(tools)
     // console.log(filterType)
 
-    const apiType = [
-        {
-            name: "IC",
-            value: "1"
-        },
-        {
-            name: "Module",
-            value: "2"
-        },
-        {
-            name: "R",
-            value: "3"
-        },
-        {
-            name: "C",
-            value: "4"
-        },
-        {
-            name: "LM",
-            value: "5"
-        }
-    ]
-
-    const [formState, inputHandler, setFormData] = useForm(
+    const [formState, inputHandler] = useForm(
         {
             name: {
                 value: '',
@@ -149,12 +125,13 @@ function CreateBoardForm() {
             description : formState.inputs.description.value
         }
         console.log(data)
+
+        // ---------- Coding Back-end ---------------
+
     }
 
     // console.log(filterType);
     // console.log(formState.inputs);
-
-
 
     return (
         <div className="container-createboardform">

@@ -7,3 +7,36 @@
 .filter-select:focus {
     border: 2px solid skyblue;
 }
+
+.checkbox {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background: white;
+    padding-bottom: 10px;
+}
+
+.stock-status, .filter-tools {
+    width: 49%;
+    padding: 0px 10px 10px 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.stock-status h4, .filter-tools h4 {
+    font-size: 13px;
+}
+
+.cover-filter-input-status select {
+    width: 100%;
+}
+
+.cover-filter-input-equipment select {
+    width: 100%;
+}
+
+.checkbox label {
+    color: #000;
+}

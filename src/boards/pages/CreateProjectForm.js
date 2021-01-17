@@ -25,6 +25,7 @@ function CreateProjectForm() {
     const [toolTotal, setToolTotal] = useState(0);
     const [showBtnAdd, setShowBtnAdd] = useState(false);
     const [newTools, setNewTools] = useState([]);
+    const [boxError, setBoxError] = useState(false)
 
 
     useEffect(() => {
@@ -37,7 +38,7 @@ function CreateProjectForm() {
     // console.log(tools)
     // console.log(filterType)
 
-    const [formState, inputHandler, setFormData] = useForm(
+    const [formState, inputHandler] = useForm(
         {
             name: {
                 value: '',
@@ -75,8 +76,6 @@ function CreateProjectForm() {
     const filterDataType = async (e) => {
         // console.log('work')
         const value = e.target.value;
-        // let initialApi = { id: "000", category: null, nameTool: "---" }
-        // console.log(formState.inputs.toolType)
         let filterData = await tools.filter((res) => res.type === value);
         // filterData = [...filterData, initialApi ]
         setFilterType(filterData)
@@ -102,8 +101,6 @@ function CreateProjectForm() {
     }
 
     const toolSelected = async () => {
-        // e.preventDefault();
-        // console.log(filterName)
         const { nameTool, type, imageProfile, size, id } = filterName[0];
         const data = {
             id,
@@ -131,23 +128,22 @@ function CreateProjectForm() {
     }
 
     const onSubmit = (e) => {
+        setBoxError(true);
         e.preventDefault();
         let data = {
-            name : formState.inputs.name.value,
-            total : formState.inputs.total.value,
+            name: formState.inputs.name.value,
+            total: formState.inputs.total.value,
             tools: newTools,
-            image : formState.inputs.image.value,
-            images : formState.inputs.images.value,
+            image: formState.inputs.image.value,
+            images: formState.inputs.images.value,
             type: formState.inputs.type.value,
-            description : formState.inputs.description.value
+            description: formState.inputs.description.value
         }
         console.log(data)
     }
 
     // console.log(filterType);
     // console.log(formState.inputs);
-
-
 
     return (
         <div className="container-createprojectform">
@@ -177,7 +173,7 @@ function CreateProjectForm() {
                 <div className="addTool-createprojectform">
                     <div className="cover-addTool-createprojectform">
                         <div className="form-control1">
-                            <p>Type <span style={{color: "red"}}>*</span></p>
+                            <p>Type <span style={{ color: "red" }}>*</span></p>
                             <select onChange={filterDataType} className="filter-select" style={{ width: "100%" }}>
                                 <option value="0">Default</option>
                                 <option value="1">IC</option>
@@ -201,7 +197,7 @@ function CreateProjectForm() {
                         </div>
                     </div>
                     <div className="form-control1">
-                        <p>Tool's name <span style={{color: "red"}}>*</span></p>
+                        <p>Tool's name <span style={{ color: "red" }}>*</span></p>
                         <select className="filter-select" onChange={filterDataName} style={{ width: "100%" }}>
                             {filterCategory.length === 0 ?
                                 <option>---</option> :
@@ -297,6 +293,21 @@ function CreateProjectForm() {
                     initialValid={true}
                 />
                 <button type="submit" className="btn btn-submit btn-full" disabled={!formState.isValid}>Create</button>
+
+                {boxError && <div className="requestBoardForm-error">
+                    <div>
+                        <p>LM-2575  </p>
+                        <p>required 17</p>
+                    </div>
+                    <div>
+                        <p>IC1001</p>
+                        <p>required 5</p>
+                    </div>
+                    <div>
+                        <p>C0.1</p>
+                        <p>required 120</p>
+                    </div>
+                </div>}
             </form>
         </div >
     )

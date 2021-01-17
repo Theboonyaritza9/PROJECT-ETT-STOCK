@@ -6,8 +6,6 @@ function FilterTool(props) {
     const [checkStatus, setCheckStatus] = useState("1");
     const [checkEquipment, setCheckEquipment] = useState("");
 
-    // const { tool } = useFilter();
-
     const handleCheckboxStatus = (e) => {
         setCheckStatus(e.target.value)
         props.filterFunction(e.target.value, checkEquipment)

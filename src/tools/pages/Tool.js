@@ -89,8 +89,8 @@ function Tool() {
         <section>
             <div className="section-top">
                 <div className="filter-button">
-                    <button className="btn btn-secondary" style={{ marginLeft: "10px" }}>Filters</button>
-                    {!auth.statusId ? null : <button className="btn btn-success">+New Tool</button>}
+                    {/* <button className="btn btn-secondary" style={{ marginLeft: "10px" }}>Filters</button> */}
+                    {/* {!auth.statusId ? null : <button className="btn btn-success">+New Tool</button>} */}
                 </div>
                 <FilterTool filterFunction={filter.tool} />
             </div>

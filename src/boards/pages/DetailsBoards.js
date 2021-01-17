@@ -42,7 +42,7 @@ function DetailsBoards() {
         }
     }, [board])
 
-    const [formState, inputHandler, setFormData] = useForm(
+    const [formState, inputHandler] = useForm(
         {
             name: {
                 value: '',
@@ -73,7 +73,7 @@ function DetailsBoards() {
                 isValid: true
             },
             tools: {
-                value: [],
+                value: listToolApi,
                 isValid: true
             },
             newTools: {
@@ -96,7 +96,6 @@ function DetailsBoards() {
 
     const filterDataCategory = async (e) => {
         const value = e.target.value;
-        // console.log(value)
         let filterData = await filterType.filter((res) => res.category === value);
         setFilterCategory(filterData)
         setShowBtnAdd(false);
@@ -111,8 +110,6 @@ function DetailsBoards() {
     }
 
     const toolSelected = async () => {
-        // e.preventDefault();
-        // console.log(filterName)
         const { nameTool, type, imageProfile, size, id } = filterName[0];
         const data = {
             id,
@@ -124,8 +121,6 @@ function DetailsBoards() {
         }
 
         let appendNewdata = await [...newTools, data]
-
-        // setTools(listToolApi);
         setShowBtnAdd(false);
         setFilterCategory([]);
         setFilterName([]);
@@ -141,10 +136,22 @@ function DetailsBoards() {
         inputHandler("newTools", filterData, true);
     }
 
-    const handleSave = () => {
+    const onSubmit = (e) => {
+        e.preventDefault();
         setModeDisplay(false);
-        console.log(newTools);
-        console.log(formState.inputs);
+        const { name, type, description, image, images, newImage, newImages, tools } = formState.inputs;
+        const data = {
+            name: name.value,
+            type: type.value,
+            description: description.value,
+            image: image.value,
+            images: images.value,
+            newImage: newImage.value,
+            newImages: newImages.value,
+            tools: tools,
+            newTools: formState.inputs.newTools.value
+        }
+        console.log(data)
     }
 
     // console.log(formState.inputs)
@@ -156,20 +163,21 @@ function DetailsBoards() {
                     <button className="btn btn-secondary" onClick={() => setModeDisplay(!modeDisplay)}>Edit</button>
                 </div>
             }
-            <div className="container-detail">
-                <SliderImages SliderData={board.images}
-                    modeDisplay={modeDisplay}
-                    inputHandler={inputHandler}
-                    imageProfile={board.imageProfile}
-                    isValid={formState.inputs.newImages.isValid} />
-                <DescriptionBoard name={board.nameBoard} des={board.description} type={board.type} modeDisplay={modeDisplay} inputHandler={inputHandler} />
-            </div>
-            <TableDetailBoard tools={board.tools} modeDisplay={modeDisplay} onInput={inputHandler} newTools={formState.inputs.tools.value} />
+            <form onSubmit={onSubmit}>
+                <div className="container-detail">
+                    <SliderImages SliderData={board.images}
+                        modeDisplay={modeDisplay}
+                        inputHandler={inputHandler}
+                        imageProfile={board.imageProfile}
+                        isValid={formState.inputs.newImages.isValid} />
+                    <DescriptionBoard name={board.nameBoard} des={board.description} type={board.type} modeDisplay={modeDisplay} inputHandler={inputHandler} />
+                </div>
+                <TableDetailBoard tools={formState.inputs.tools.value} modeDisplay={modeDisplay} onInput={inputHandler} newTools={formState.inputs.tools.value} />
 
-            {modeDisplay && <div className="addTool-createboardform" style={{width: "300px"}}>
+                {modeDisplay && <div className="addTool-createboardform" style={{ width: "300px", background: "#fff" }}>
                     <div className="cover-addTool-createboardform">
                         <div className="form-control1">
-                            <p>Type <span style={{color: "red"}}>*</span></p>
+                            <p>Type <span style={{ color: "red" }}>*</span></p>
                             <select onChange={filterDataType} className="filter-select" style={{ width: "100%" }}>
                                 <option value="0">Default</option>
                                 <option value="1">IC</option>
@@ -193,7 +201,7 @@ function DetailsBoards() {
                         </div>
                     </div>
                     <div className="form-control1">
-                        <p>Tool's name <span style={{color: "red"}}>*</span></p>
+                        <p>Tool's name <span style={{ color: "red" }}>*</span></p>
                         <select className="filter-select" onChange={filterDataName} style={{ width: "100%" }}>
                             {filterCategory.length === 0 ?
                                 <option>---</option> :
@@ -252,16 +260,17 @@ function DetailsBoards() {
                             </tbody>
                         </table>
                     </div>
-                </div> }
-            <div> 
-                {modeDisplay &&
-                    <button className="btn btn-success"
-                        disabled={!formState.isValid} style={{ marginRight: '1rem' }}
-                        onClick={handleSave}>
-                        Save
+                </div>}
+                <div>
+                    {modeDisplay &&
+                        <button type="submit" className="btn btn-success"
+                            disabled={!formState.isValid} style={{ marginRight: '1rem' }}
+                        >
+                            Save
                 </button>}
-                <Link to="/boards"><button className="btn btn-back">Back</button></Link>
-            </div>
+                    <Link to="/boards"><button className="btn btn-back">Back</button></Link>
+                </div>
+            </form>
         </div>
     )
 }

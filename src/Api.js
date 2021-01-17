@@ -134,12 +134,32 @@ export const listToolApi = [
     },
     {
         id: uuidv4(),
-        nameTool: "R10K",
-        imageProfile: "/images/tool2.jpg",
-        status: "2",
-        type: "5",
+        nameTool: "C470UF",
+        imageProfile: "/images/c1.jpg",
+        status: "1",
+        type: "4",
         size: "CODE_100",
-        total: "0",
+        total: "150",
+        category: "SURFACE"
+    },
+    {
+        id: uuidv4(),
+        nameTool: "R560K",
+        imageProfile: "/images/r2.jpg",
+        status: "1",
+        type: "3",
+        size: "CODE_105",
+        total: "550",
+        category: "SURFACE"
+    },
+    {
+        id: uuidv4(),
+        nameTool: "R120",
+        imageProfile: "/images/tool2.jpg",
+        status: "3",
+        type: "3",
+        size: "CODE_107",
+        total: "20",
         category: "SURFACE"
     },
     {
@@ -154,7 +174,7 @@ export const listToolApi = [
     },
     {
         id: uuidv4(),
-        nameTool: "ic1.jpg",
+        nameTool: "IC-1",
         imageProfile: "/images/ic1.jpg",
         status: "3",
         type: "1",
@@ -163,6 +183,26 @@ export const listToolApi = [
         category: "SURFACE"
 
 
+    },
+    {
+        id: uuidv4(),
+        nameTool: "IC-2",
+        imageProfile: "/images/i2.jpg",
+        status: "1",
+        type: "1",
+        size: "CODE_449",
+        total: "17",
+        category: "SURFACE"
+    },
+    {
+        id: uuidv4(),
+        nameTool: "IC-3",
+        imageProfile: "/images/i2.jpg",
+        status: "2",
+        type: "1",
+        size: "CODE_441",
+        total: "0",
+        category: "SURFACE"
     },
     {
         id: uuidv4(),

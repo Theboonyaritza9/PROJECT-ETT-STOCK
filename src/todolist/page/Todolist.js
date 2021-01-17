@@ -79,6 +79,15 @@ function Todolist() {
         setName('');
         setStatus('');
         setDescription('');
+
+        const { header, status, deadline, description } = formState.inputs;
+        const data = {
+            header: header.value,
+            status: status.value,
+            deadline: deadline.value,
+            description: description.value
+        }
+        console.log(data);
         // console.log("success request: " + formState.inputs.total.value)
     }
 

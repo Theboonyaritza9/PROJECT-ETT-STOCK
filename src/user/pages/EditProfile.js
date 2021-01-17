@@ -9,7 +9,7 @@ import "./EditProfile.css";
 
 function EditProfile() {
 
-    const [formState, inputHandler, setFormData] = useForm(
+    const [formState, inputHandler] = useForm(
         {
             email: {
                 value: '',
@@ -31,11 +31,22 @@ function EditProfile() {
         false
     );
 
-    console.log(formState.inputs)
+    // console.log(formState.inputs)
 
+    // Await connecting with Back-end
     const onSubmit = (e) => {
+        const { email, name, password, image } = formState.inputs;
         e.preventDefault();
-        console.log(formState.inputs);
+        const data = {
+            email: email.value,
+            name: name.value,
+            password: password.value,
+            image: image.value
+        }
+        console.log(data);
+
+        // --------- Coding Back-end -----------
+
     }
 
 
@@ -53,6 +64,7 @@ function EditProfile() {
                     onInput={inputHandler}
                     initialValue="admin@gmail.com"
                     initialValid={true}
+                    required
                 />
                 <Input
                     id="name"
@@ -64,6 +76,7 @@ function EditProfile() {
                     onInput={inputHandler}
                     initialValue="Ruri ichikyo"
                     initialValid={true}
+                    required
                 />
                 <Input
                     id="password"
@@ -75,6 +88,7 @@ function EditProfile() {
                     onInput={inputHandler}
                     initialValue="123456"
                     initialValid={true}
+                    required
                 />
                 <p>Image</p>
                 <ImageUpload

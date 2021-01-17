@@ -141,3 +141,45 @@ export const apiHistoryTool = [
         description: "nocdsc cdscdsc cdscs dcscsc sdcsdc ffdsf vdsvsdvs sdfdssasd dscacasc facasca cascacaca"
     }
 ]
+
+export const apiProject = [
+    {
+        id: "12",
+        month: "May 2020",
+        history: [
+            {
+                id: '1000',
+                nameBoard: "WETHER-RAIN",
+                user: "Boonyarit",
+                total: "50",
+                date: "12/05/63",
+                time: "13.50 pm",
+                description: "nocdsc cdscdsc cdscs dcscsc sdcsdc"
+            },
+            {
+                id: '1001',
+                nameBoard: "ET-CNT002",
+                user: "User",
+                total: "50",
+                date: "12/05/63",
+                time: "13.50 pm",
+                description: "nocdsc cdscdsc cdscs dcscsc sdcsdc"
+            }
+        ]
+    },
+    {
+        id: "13",
+        month: "June 2020",
+        history: [
+            {
+                id: '2000',
+                nameBoard: "PROJECT-1",
+                user: "Boonyarit",
+                total: "5",
+                date: "12/05/63",
+                time: "13.50 pm",
+                description: "nocdsc cdscdsc cdscs dcscsc sdcsdc"
+            }
+        ]
+    }
+]

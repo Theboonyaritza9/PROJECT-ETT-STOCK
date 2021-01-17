@@ -1,0 +1,48 @@
+.container-history-project {
+    width: 380px;
+    margin: 1rem auto;
+}
+
+.title-history {
+    width: 100%;
+    background-color: royalblue;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.title-history h3 {
+    text-align: center;
+    color: #fff;
+}
+
+.cover-history {
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 1rem;
+    margin: 1rem 0;
+    position: relative;
+    background-color: #fff;
+}
+
+.cover-history p:nth-child(1), .cover-history p:nth-child(2) {
+    width: 50%;
+    margin: 0;
+}
+
+.cover-history p:nth-child(2) {
+    text-align: right;
+    text-decoration: underline;
+}
+
+
+.cover-history .des-content p {
+    width: 50%;
+    text-align: left;
+    text-decoration: none;
+}
+
+@media (max-width: 400px) {
+    .container-history-project {
+        width: 80%;
+    }
+}

@@ -6,8 +6,9 @@ import "./HistoryBoard.css";
 function History(props) {
 
     const [api, setApi] = useState([]);
-    const [headerPage, setHeaderPage] = useState()
-    // console.log(props.keyApi)
+    const [headerPage, setHeaderPage] = useState();
+    
+    // http://localhost:3000/history/vdsvjskvnskvjsn
     const boardid = useParams().bid;
 
     useEffect(() => {

@@ -29,21 +29,6 @@
     border: 2px solid skyblue;
 }
 
-/* .cover-detail-tool input{
-    margin-left: 6rem;
-    width: 100%;
-} */
-
-/* .cover-detail-tool:nth-child(1) input{
-    margin-left: 5.5rem;
-    width: 100%;
-}
-
-.cover-detail-tool:nth-child(4) input{
-    margin-left: 4rem;
-    width: 100%;
-} */
-
 .detail p {
     font-weight: bold;
     margin: 16px 0;
@@ -51,7 +36,6 @@
 
 .detail span {
     font-weight: normal;
-    /* margin: 16px 0; */
 }
 
 .detail button {

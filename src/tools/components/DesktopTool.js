@@ -12,12 +12,13 @@ function DesktopTool(props) {
     const [showPrompt, setShowPrompt] = useState(false);
     const [name, setName] = useState('');
     const [modePrompt, setModePrompt] = useState(true);
-    const [statConvert, setStatConvert] = useState([
-        {value: "In Stock", color: "black"},
-        {value: "Out of Stock", color: "red"},
-        {value: "Getting out of Stock", color: "orange"}
-    ])
-    const [equipConvert, setEquipConvert] = useState(["IC", "Module", "R", "C", "LM"])
+    const [toolId, setToolId] = useState('');
+    const statConvert = [
+        { value: "In Stock", color: "black" },
+        { value: "Out of Stock", color: "red" },
+        { value: "Getting out of Stock", color: "orange" }
+    ]
+    const equipConvert = ["IC", "Module", "R", "C", "LM"]
 
     const [formState, inputHandler] = useForm(
         {
@@ -37,22 +38,32 @@ function DesktopTool(props) {
         setShowPrompt(false)
     }
 
-    const openRequestHandler = (name) => {
+    const openRequestHandler = (name, id) => {
         setName(name);
+        setToolId(id);
         setShowPrompt(true)
         setModePrompt(true);
     }
 
-    const openAddHandler = (name) => {
+    const openAddHandler = (name, id) => {
         setName(name);
+        setToolId(id);
         setShowPrompt(true)
         setModePrompt(false);
     }
 
+    // ---------Back-end------------ //
     const handleRequestForm = (e) => {
         e.preventDefault();
         setShowPrompt(false);
-        // console.log("success request: " + formState.inputs.total.value)
+        let data = {
+            id: toolId,
+            total: formState.inputs.total.value,
+            description: formState.inputs.description.value
+        }
+        console.log(data);
+
+        // ---------Back-end------------ //
     }
 
 
@@ -86,7 +97,8 @@ function DesktopTool(props) {
                         errorText="Please enter a valid description."
                         onInput={inputHandler}
                         validators={[VALIDATOR_REQUIRE()]}
-
+                        initialValue={""}
+                        initialValid={true}
                     />
                     <div>
                         <button type="submit" disabled={!formState.isValid} className="btn btn-submit" style={{ marginRight: "12px" }}>submit</button>
@@ -118,11 +130,11 @@ function DesktopTool(props) {
                                     <th><p>{equipConvert[Number(res.type) - 1]}</p></th>
                                     <th><p>{res.size}</p></th>
                                     <th><p>{res.category}</p></th>
-                                    <th><p style={{color: statConvert[Number(res.status) - 1].color}}>{statConvert[Number(res.status) - 1].value}</p></th>
+                                    <th><p style={{ color: statConvert[Number(res.status) - 1].color }}>{statConvert[Number(res.status) - 1].value}</p></th>
                                     <th><p>{res.total}</p></th>
                                     <th>
-                                        <button className="btn btn-submit" onClick={() => openRequestHandler(res.nameTool)}>Request</button>
-                                        <button className="btn btn-success" onClick={() => openAddHandler(res.nameTool)}>+Add</button>
+                                        <button className="btn btn-submit" onClick={() => openRequestHandler(res.nameTool, res.id)}>Request</button>
+                                        <button className="btn btn-success" onClick={() => openAddHandler(res.nameTool, res.id)}>+Add</button>
                                     </th>
                                 </tr>
                             ))
