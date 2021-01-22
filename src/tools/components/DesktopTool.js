@@ -24,6 +24,7 @@ function DesktopTool(props) {
         {
             total: {
                 value: '',
+                
                 isValid: false
             },
             description: {

@@ -19,7 +19,7 @@ function ImageUploadMultiple(props) {
     const [previewfiles, setPreviewFiles] = useState([]);
     const [files, setFiles] = useState([]);
     const filePickerRef = useRef();
-    // console.log(files)
+    console.log(typeof(files))
 
     useEffect(() => {
         if (!props.modeDisplay) {
@@ -60,12 +60,17 @@ function ImageUploadMultiple(props) {
     };
 
     const deleteImage = async (image, index) => {
+        console.log(index)
         // set new array of files variant that will be saved on database.
         // ***** coding this below line later *****
 
         // set new array of previewfiles variant after deleting a image.
         const delImg = await previewfiles.filter((prevImages) => prevImages !== image);
-        // console.log(delImg.length)
+        const delfile = Array.from(files).filter((res, id) => id !== index);
+        // const filterFiles = await files.filter((file) => file.name !==); 
+        console.log(delfile)
+        console.log(typeof(delfile))
+
         setPreviewFiles(delImg);
         props.onInput(props.id, delImg, true)
 

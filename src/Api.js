@@ -214,6 +214,28 @@ export const listToolApi = [
         total: "75",
         category: "SURFACE"
 
+    },
+    {
+        id: uuidv4(),
+        nameTool: "Module-WIFI v.2",
+        imageProfile: "/images/tool1.jpg",
+        status: "3",
+        type: "2",
+        size: "CODE_170",
+        total: "71",
+        category: "SURFACE"
+
+    },
+    {
+        id: uuidv4(),
+        nameTool: "Module-WIFI v.3",
+        imageProfile: "/images/tool1.jpg",
+        status: "3",
+        type: "2",
+        size: "CODE_170",
+        total: "79",
+        category: "SURFACE"
+
     }
 ]
 
@@ -258,7 +280,7 @@ export const toolItem = {
 export const listBoards = [
     {
         id: uuidv4(),
-        nameBoard: "ET-ARDUINO",
+        nameBoard: "ET-ARDUINO v.1",
         imageProfile: "/images/b2.jpg",
         images: [
             "/images/b1.png",
@@ -317,7 +339,7 @@ export const listBoards = [
     },
     {
         id: uuidv4(),
-        nameBoard: "ET-ARDUINO",
+        nameBoard: "ET-ARDUINO v.2",
         imageProfile: "/images/b3.jpg",
         images: [
             "/images/b1.png",
@@ -376,7 +398,7 @@ export const listBoards = [
     },
     {
         id: uuidv4(),
-        nameBoard: "ET-ARDUINO",
+        nameBoard: "ET-ARDUINO v.3",
         imageProfile: "/images/b2.jpg",
         images: [
             "/images/b1.png",
@@ -435,7 +457,7 @@ export const listBoards = [
     },
     {
         id: uuidv4(),
-        nameBoard: "ET-ARDUINO",
+        nameBoard: "ET-ARDUINO v.4",
         imageProfile: "/images/b3.jpg",
         images: [
             "/images/b1.png",
@@ -494,7 +516,7 @@ export const listBoards = [
     },
     {
         id: uuidv4(),
-        nameBoard: "ET-ARDUINO",
+        nameBoard: "ET-ARDUINO v.5",
         imageProfile: "/images/b2.jpg",
         images: [
             "/images/b1.png",
@@ -553,7 +575,7 @@ export const listBoards = [
     },
     {
         id: uuidv4(),
-        nameBoard: "ET-ARDUINO",
+        nameBoard: "ET-ARDUINO v.6",
         imageProfile: "/images/b3.jpg",
         images: [
             "/images/b1.png",
